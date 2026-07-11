@@ -3,9 +3,17 @@
   "theme": "mint",
   "name": "Dataleap Docs",
   "colors": {
-    "primary": "#7C3AED",
-    "light": "#A78BFA",
-    "dark": "#6D28D9"
+    "primary": "#6176F3",
+    "light": "#A5B4FC",
+    "dark": "#444FE7"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter Tight"
+    },
+    "body": {
+      "family": "Inter"
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -31,6 +39,16 @@
         "group": "Operate agents",
         "pages": [
           "usage-and-runs"
+        ]
+      },
+      {
+        "group": "Video Series",
+        "pages": [
+          "video-series/overview",
+          "video-series/section-1",
+          "video-series/section-2",
+          "video-series/section-3",
+          "video-series/section-4"
         ]
       }
     ],
