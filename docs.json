@@ -20,6 +20,10 @@
     }
   },
   "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
   "navigation": {
     "groups": [
       {
