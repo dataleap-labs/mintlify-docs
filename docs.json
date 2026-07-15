@@ -58,11 +58,6 @@
           "anchor": "Website",
           "href": "https://dataleap.ai",
           "icon": "globe"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://dataleap.ai/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -76,10 +71,6 @@
       {
         "label": "Website",
         "href": "https://dataleap.ai"
-      },
-      {
-        "label": "Blog",
-        "href": "https://dataleap.ai/blog"
       }
     ],
     "primary": {
