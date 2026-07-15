@@ -109,6 +109,21 @@ main .prose > .card-group:first-of-type {
       var(--dl-grid-line) 7px, var(--dl-grid-line) 8px);
   background-clip: padding-box;
 }
+/* Dark mode: light grid lines would glare — use a subtle dark line instead */
+:is(html.dark) main .prose > .card-group:first-of-type {
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 7px,
+      oklch(0.26 0.005 60) 7px, oklch(0.26 0.005 60) 8px),
+    repeating-linear-gradient(90deg, transparent, transparent 7px,
+      oklch(0.26 0.005 60) 7px, oklch(0.26 0.005 60) 8px);
+}
+/* Small screens: the 7px grid warps on mobile DPRs — drop the motif entirely */
+@media (max-width: 640px) {
+  main .prose > .card-group:first-of-type {
+    background-image: none;
+    padding: 0;
+  }
+}
 
 /* Videos in the series inherit the card radius for a consistent feel */
 main video {
@@ -126,33 +141,39 @@ main video {
   color: var(--dl-stone-800);
   line-height: 1.7;
 }
+/* Dark mode must NOT inherit the dark stone text — use light stone instead */
+:is(html.dark) .prose {
+  color: oklch(92.3% 0.003 48.717); /* stone-200 */
+}
 
-/* Breathing room between paragraphs, lists and quotes */
-.prose p,
-.prose ul,
-.prose ol,
-.prose blockquote {
+/* Breathing room between paragraphs, lists and quotes.
+   Mintlify marks component-internal text (card titles/descriptions, etc.)
+   with `not-prose` — those must keep their compact component spacing. */
+.prose p:not(.not-prose, .not-prose *),
+.prose ul:not(.not-prose, .not-prose *),
+.prose ol:not(.not-prose, .not-prose *),
+.prose blockquote:not(.not-prose, .not-prose *) {
   margin-top: 1.1rem;
   margin-bottom: 1.1rem;
 }
 
 /* Sections start with real air above the heading */
-.prose h2 {
+.prose h2:not(.not-prose, .not-prose *) {
   margin-top: 3rem;
   margin-bottom: 0.9rem;
 }
-.prose h3 {
+.prose h3:not(.not-prose, .not-prose *) {
   margin-top: 2.25rem;
   margin-bottom: 0.6rem;
 }
 
 /* Roomier list items with a soft stone marker */
-.prose li {
+.prose li:not(.not-prose, .not-prose *) {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
 }
 .prose li::marker {
-  color: var(--dl-stone-400);
+  color: oklch(70.9% 0.01 56.259); /* stone-400 — readable on light and dark */
 }
 
 /* Card groups read as distinct sections, not a wall */
