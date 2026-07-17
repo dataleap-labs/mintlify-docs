@@ -20,33 +20,55 @@
     }
   },
   "favicon": "/favicon.svg",
-  "appearance": {
-    "default": "light",
-    "strict": true
-  },
   "navigation": {
     "groups": [
       {
-        "group": "Get started",
+        "group": "Introduction",
         "pages": [
           "index",
-          "getting-started",
-          "create-your-first-agent"
+          "introduction/overview",
+          "introduction/what-is-dataleap",
+          "introduction/getting-started"
         ]
       },
       {
-        "group": "Build agents",
+        "group": "Build your own agent",
         "pages": [
-          "shape-agent-behavior",
-          "connect-apps",
-          "add-knowledge",
-          "use-templates"
+          "build/overview",
+          "build/your-first-agent",
+          "build/shape-agent-behavior",
+          "build/connect-your-tools",
+          "build/add-knowledge",
+          "build/triggers",
+          "build/versioning"
         ]
       },
       {
-        "group": "Operate agents",
+        "group": "Scale your craft",
         "pages": [
-          "usage-and-runs"
+          "scale/overview",
+          "scale/sub-agents-and-intelligence-levels",
+          "scale/skills",
+          "scale/programmatic-tool-calling"
+        ]
+      },
+      {
+        "group": "Sharing is Caring",
+        "pages": [
+          "share/overview",
+          "share/team-spaces",
+          "share/templates",
+          "share/locked-templates",
+          "share/when-to-share-what"
+        ]
+      },
+      {
+        "group": "Admin",
+        "pages": [
+          "admin/overview",
+          "admin/users-and-roles",
+          "admin/credits-and-usage",
+          "admin/connected-apps-management"
         ]
       },
       {
@@ -57,6 +79,12 @@
           "video-series/section-2",
           "video-series/section-3",
           "video-series/section-4"
+        ]
+      },
+      {
+        "group": "FAQ",
+        "pages": [
+          "faq"
         ]
       }
     ],
@@ -87,6 +115,15 @@
       "href": "https://app.dataleap.ai"
     }
   },
+  "redirects": [
+    { "source": "/getting-started", "destination": "/introduction/getting-started" },
+    { "source": "/create-your-first-agent", "destination": "/build/your-first-agent" },
+    { "source": "/shape-agent-behavior", "destination": "/build/shape-agent-behavior" },
+    { "source": "/connect-apps", "destination": "/build/connect-your-tools" },
+    { "source": "/add-knowledge", "destination": "/build/add-knowledge" },
+    { "source": "/use-templates", "destination": "/share/templates" },
+    { "source": "/usage-and-runs", "destination": "/admin/credits-and-usage" }
+  ],
   "contextual": {
     "options": [
       "copy",

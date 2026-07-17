@@ -1,0 +1,102 @@
+---
+title: "Skills"
+description: "A skill is a reusable part of an agent: define a standard once — your ICP, your pricing methodology, a report format — and every agent that needs it follows it."
+---
+
+<Frame caption="One skill, written once — a building block in every agent that needs it. Update the skill, and all three follow.">
+  <img className="block dark:hidden" src="/images/skill-shared-light.svg" alt="Diagram: three agents side by side — Lead Qualifier, Outreach Writer, Pipeline Report — each with the same ICP Definition skill as a building block in its workflow" />
+  <img className="hidden dark:block" src="/images/skill-shared-dark.svg" alt="Diagram: three agents side by side — Lead Qualifier, Outreach Writer, Pipeline Report — each with the same ICP Definition skill as a building block in its workflow" />
+</Frame>
+
+## What makes a good skill
+
+| Good skill | Example |
+|---|---|
+| **Encode knowledge** | Your Ideal Customer Profile — every agent qualifies leads the same way. |
+| **Standardize a methodology** | Your internal pricing methodology — defined once, applied identically by every agent that prices anything. |
+| **Define your data** | What each metric or field means, and what it's called in your systems — shared analytics language. |
+| **Standardize outputs** | How a report should be structured and worded. |
+| **Lock the design** | The look for documents and dashboards — always on-brand. |
+
+The signal that something should be a skill: you catch yourself typing the same definition or procedure into a second agent — "wait, I'm redoing this work."
+
+Inside, a skill is just clear instructions — here's a real one:
+
+<Frame caption="A skill from the inside: the ICP Scoring Methodology. Editable in chat or manually.">
+  <img src="/images/skill-example-icp.png" alt="An open skill showing the ICP Scoring Methodology with scoring criteria tables and an Edit dropdown offering Edit in Chat and Edit Manually" />
+</Frame>
+
+## Create a skill
+
+Two ways — out of an agent you already built, or from scratch:
+
+<Tabs>
+<Tab title="From an agent's chat">
+
+You built an agent and notice one part of it is reusable — just tell Dataleap: *"Create a skill out of the scoring logic for new candidates."* It drafts the skill from what you built, proposes name, description, and content, and saves once you confirm.
+
+<Frame caption="One sentence in the agent's chat, and the reusable part becomes a skill.">
+  <img src="/images/skills-create-in-chat.png" alt="A chat where the user asks to create a skill out of the scoring logic and Dataleap drafts the Candidate Scoring Model skill" />
+</Frame>
+
+</Tab>
+<Tab title="From the Skills section">
+
+Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **Import Markdown** (if the standard already exists as a document).
+
+<Frame caption="Add Skill: create in chat, write it manually, or import a Markdown file.">
+  <img src="/images/skills-add-skill-menu.png" alt="The Add Skill dropdown with the options Create in Chat, Create Manually, and Import Markdown" />
+</Frame>
+
+</Tab>
+</Tabs>
+
+<Tip>
+  There's no hard size limit on a skill — but every rule in it costs tokens on every run that loads it. Keep skills as lean as possible while still doing the job.
+</Tip>
+
+## Use a skill
+
+Agents don't guess which skills to use — you tell them. When building or refining an agent, reference the skill explicitly:
+
+> "When it comes to pricing, use the *Pricing Methodology* skill."
+
+From then on, that step of the workflow runs on the skill's definition. And when the methodology changes, you update the skill once — every agent using it follows.
+
+<Note>
+  Be proactive: Dataleap won't suggest skills on its own. Spotting the reusable part is your job; packaging and reusing it is one sentence.
+</Note>
+
+## Share a skill
+
+Skills have three levels of reach:
+
+- **Personal** — your own skills, visible only to you.
+- **Team** — share a skill into a [team space](/share/team-spaces) (it has its own **Skills** tab); every teammate's agents can use it.
+- **Org-wide** — publish it for the whole company. The classic case: company-wide metric definitions, so every agent anyone builds speaks the same data language.
+
+<Frame caption="The Skills section, grouped by reach: Personal, Team, and Org.">
+  <img src="/images/skills-overview.png" alt="The Skills section listing skills grouped into Personal, Team, and Org, with an Add Skill button and workspace filters" />
+</Frame>
+
+<Card title="Watch: Skills" icon="clapperboard" href="/video-series/section-3#skills" horizontal>
+  See how skills work in the product.
+</Card>
+
+<Note>
+  **Skills vs. knowledge:** knowledge files give one agent *context* (documents, facts — see [Add knowledge](/build/add-knowledge)); a skill teaches *procedure* and can be reused by many agents.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Programmatic tool calling" icon="code" href="/scale/programmatic-tool-calling">
+    Next: cut costs on deterministic workflows.
+  </Card>
+  <Card title="Team spaces" icon="users" href="/share/team-spaces">
+    Where team skills live.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681b4a1c4c0c990119a5b
+   https://www.notion.so/39422bd1f6b6817c9253dd69f4e7b0e8
+   Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): one definition, table, create/use/share flows */}

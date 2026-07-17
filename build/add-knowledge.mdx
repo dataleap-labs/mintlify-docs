@@ -1,0 +1,70 @@
+---
+title: "Add knowledge"
+description: "Give your agent context: upload reference files it can use while it works."
+---
+
+Knowledge is how you give an agent **context**. Upload the documents it should work from — playbooks, policies, product notes, reference material — and the agent uses them during its runs.
+
+## Upload files
+
+<Steps>
+<Step title="Open the agent">
+
+Go to **Agents** and open the agent you want to update.
+
+</Step>
+<Step title="Open Knowledge">
+
+In the side panel, click **Knowledge**.
+
+</Step>
+<Step title="Upload your files">
+
+Drag files into the uploader or click **Browse files**.
+
+</Step>
+<Step title="Wait for processing to finish">
+
+After the upload completes, the document will appear in the list for that agent.
+
+</Step>
+</Steps>
+
+## Supported files
+
+- `PDF`
+- `DOCX`
+- `PPT`
+- `PPTX`
+- `TXT`
+
+Each file can be up to `10 MB`.
+
+<Tip>
+  **File too big to upload?** Connect the app where the file already lives (e.g., SharePoint or OneDrive) and let the agent access it there — that works for much larger files than any upload limit.
+</Tip>
+
+## Manage uploaded documents
+
+From the document list, you can review the files attached to the agent, download a file, or delete one that is outdated.
+
+<Warning>
+  Keep the knowledge current. Outdated files can lead to outdated answers or actions.
+</Warning>
+
+<Note>
+  Knowledge is not the same as [skills](/scale/skills): knowledge gives an agent **context** (facts, documents, reference material), while a skill teaches agents a reusable **procedure**. If you catch yourself uploading the same "how we do X" document to several agents, that's a skill.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Triggers" icon="bolt" href="/build/triggers">
+    Next: make the agent run automatically.
+  </Card>
+  <Card title="Skills" icon="wand-magic-sparkles" href="/scale/skills">
+    Reusable procedures your agents share.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681b4a1c4c0c990119a5b
+   Simon's review (Jul 2026): knowledge = context framing */}

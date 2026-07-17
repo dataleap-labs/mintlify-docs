@@ -1,0 +1,67 @@
+---
+title: "Versioning"
+description: "Edit without fear: restore your agent to any previous version when a change misfires."
+---
+
+The scariest moment in agent building: you have an agent that works, and you need to change it. What if the edit breaks something that took days to get right?
+
+Versioning removes that fear. Every change to your agent creates a version — and you can restore any previous one at any time.
+
+## Two ways to restore
+
+**1. Directly in the chat.** Every message in the build conversation has a **Restore to this version** link — click it to bring the agent back to exactly that state.
+
+<Frame caption="Restore to this version — right where the change happened.">
+  <img src="/images/versioning-restore-chat.png" alt="The agent chat with Restore to this version links under each message" />
+</Frame>
+
+**2. Via the Versions tab.** Click **Workflow** in the top right and open the **Versions** tab — you'll see the full version history with timestamps and what changed, and can restore any prior version from there.
+
+<Frame caption="The Versions tab: the agent's full history, restorable at any point.">
+  <img src="/images/versioning-versions-tab.png" alt="The Versions tab showing the version history of an agent with restore options" />
+</Frame>
+
+## The safe experimentation loop
+
+<Steps>
+<Step title="Know your baseline">
+
+Your current working state is a version you can return to — that's what makes the next step risk-free.
+
+</Step>
+<Step title="Make the change">
+
+Rewrite instructions, swap tools, restructure the workflow — experiment freely.
+
+</Step>
+<Step title="Test against real examples">
+
+Run the changed agent on the same examples that worked before, so you know which version is better.
+
+</Step>
+<Step title="Keep it or roll back">
+
+If the new behavior wins, it becomes your new baseline. If not, restore the previous version and try differently.
+
+</Step>
+</Steps>
+
+Once an agent runs reliably, that state is never more than one restore away — which is what lets you keep improving a production agent without treating every edit as a risk.
+
+<Card title="Watch: Versioning" icon="clapperboard" href="/video-series/section-2#versioning" horizontal>
+  See how versioning works in the product.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Chapter 3: Scale your craft" icon="layer-group" href="/scale/overview">
+    Next chapter: sub-agents, skills, and cost control.
+  </Card>
+  <Card title="Shape agent behavior" icon="sliders" href="/build/shape-agent-behavior">
+    What to tighten when a version underperforms.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b68146a072ea5c65a544ec
+   https://www.notion.so/39522bd1f6b681a59355e70ec5695946
+   Product screenshots (Jul 2026): chat restore + Versions tab */}
