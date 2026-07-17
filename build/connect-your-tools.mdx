@@ -1,0 +1,72 @@
+---
+title: "Connect your tools"
+description: "Connections are the agent's arms — set up once per account, activated per workflow with exactly the permissions needed."
+---
+
+Connections are the agent's **arms** — they define what it can reach and act on in your systems. Connecting happens on two levels, and both live in the build conversation.
+
+## Level 1: Connect the tool to your account — once
+
+The first time a workflow needs a tool you've never connected, Dataleap tells you and prompts the sign-in right in the chat:
+
+> *"No existing Jira connection in your account, so I'll create a new one — this will prompt an OAuth authorization on your end."*
+
+You click **Connect**, sign in once, done. From then on, that connection exists for your whole account.
+
+<Frame caption="First-time connection: one click, one OAuth sign-in.">
+  <img src="/images/connections-first-connect.png" alt="Dataleap chat requesting a new Jira connection with a Connect button" />
+</Frame>
+
+<Info>
+  You can also set up connections ahead of time under **Settings** > **Connected Apps** — the same place where you reconnect an expired login or review what's connected.
+</Info>
+
+## Level 2: Activate it for the workflow — with exactly the permissions needed
+
+An account-level connection doesn't give every agent free rein. For each workflow, the agent requests the **specific tools** it needs from that connection — and you see every single permission before approving:
+
+<Frame caption="Every permission is visible — and the set is as small as the workflow allows.">
+  <img src="/images/connections-workflow-permissions.png" alt="The agent requests to activate connections: Gmail and Notion, each listing the exact tools requested, with an Approve All button" />
+</Frame>
+
+The gray labels are the permissions — *Create Draft*, *Create Label*, *Download Attachment*, and so on. Dataleap keeps this set **as small as possible**: enough for the workflow to run, and nothing beyond it. One click on **Approve All**, and the agent is equipped.
+
+## What this means in practice
+
+<Steps>
+<Step title="You describe the job">
+
+*"Give me a briefing before every meeting, based on my calendar and my emails."*
+
+</Step>
+<Step title="Dataleap names what it needs">
+
+*"For that I'll need access to your calendar and your email — please connect your Google Calendar and your Gmail."* New tools get the one-time account connection; known tools go straight to the permission request.
+
+</Step>
+<Step title="You approve">
+
+Review the requested permissions and click **Approve All**. Connections are reusable — the next agent that needs Gmail skips level 1 entirely.
+
+</Step>
+</Steps>
+
+Workspace-wide governance (reviewing, reconnecting, removing connections centrally) is an admin topic: see [Connected apps management](/admin/connected-apps-management).
+
+<Card title="Watch: Connecting your tools" icon="clapperboard" href="/video-series/section-2#connecting-your-tools" horizontal>
+  See the connection flow in action.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Add knowledge" icon="database" href="/build/add-knowledge">
+    Next: give the agent your reference material.
+  </Card>
+  <Card title="Apps & permissions" icon="plug-circle-check" href="/admin/connected-apps-management">
+    The admin view: tool-level permissions and governance.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681629720da20106c3dac
+   https://www.notion.so/39322bd1f6b6819fae50fe76049bb550
+   Simon's review (Jul 2026): two-level connection model, per-workflow permissions screenshot */}

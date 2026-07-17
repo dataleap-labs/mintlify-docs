@@ -1,0 +1,70 @@
+<svg viewBox="0 0 950 630" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- brain -->
+  <g stroke="#8B78F7" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 90 290 C 55 275 42 240 50 210 C 38 190 40 155 60 140 C 55 110 80 90 110 95 C 125 78 160 75 175 90 C 200 72 235 80 245 105 C 268 115 272 150 258 170 C 270 195 262 230 240 245 C 240 270 215 290 190 282 C 170 300 130 300 115 285 C 105 292 95 293 90 290 Z"/>
+    <path d="M 156 86 C 150 150 158 230 152 293" stroke-width="3"/>
+    <g stroke-width="2.5">
+      <path d="M 70 180 L 108 152 L 100 112"/>
+      <path d="M 108 152 L 148 172 L 140 232 L 92 242"/>
+      <path d="M 148 172 L 153 120"/>
+      <path d="M 62 235 L 92 242"/>
+      <path d="M 182 112 L 202 152 L 242 142"/>
+      <path d="M 202 152 L 196 202 L 236 212"/>
+      <path d="M 196 202 L 172 252"/>
+      <path d="M 220 258 L 196 202"/>
+    </g>
+  </g>
+  <!-- robot body -->
+  <g stroke="#B8AC9E" stroke-width="3.5">
+    <rect x="55" y="315" width="200" height="190" rx="38"/>
+    <rect x="78" y="505" width="154" height="88" rx="32"/>
+    <g transform="translate(172,372) rotate(-20.5)"><rect x="0" y="-13" width="270" height="26" rx="13"/></g>
+    <g transform="translate(172,372) rotate(10.5)"><rect x="0" y="-12" width="246" height="24" rx="12"/></g>
+    <circle cx="172" cy="372" r="23" fill="#161618"/>
+    <circle cx="432" cy="268" r="22" fill="#161618"/>
+    <circle cx="418" cy="417" r="20" fill="#161618"/>
+  </g>
+  <!-- connector lines -->
+  <g stroke="#B8AC9E" stroke-width="2.5">
+    <path d="M 450 250 C 505 195 545 138 605 130 L 686 128"/>
+    <path d="M 454 272 C 530 280 605 288 686 290"/>
+    <path d="M 436 422 C 505 432 545 456 605 464 L 686 465"/>
+  </g>
+  <circle cx="694" cy="128" r="6" fill="#B8AC9E"/>
+  <circle cx="694" cy="290" r="6" fill="#B8AC9E"/>
+  <circle cx="694" cy="465" r="6" fill="#B8AC9E"/>
+  <!-- icon cards -->
+  <g stroke="#57534E" stroke-width="2">
+    <rect x="725" y="58" width="150" height="140" rx="24"/>
+    <rect x="725" y="228" width="150" height="140" rx="24"/>
+    <rect x="725" y="398" width="150" height="140" rx="24"/>
+  </g>
+  <!-- chat bubble -->
+  <g stroke="#2DD4BF" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 781 95 h 40 a 16 16 0 0 1 16 16 v 16 a 16 16 0 0 1 -16 16 h -18 l -16 15 v -15 h -6 a 16 16 0 0 1 -16 -16 v -16 a 16 16 0 0 1 16 -16 Z"/>
+  </g>
+  <circle cx="786" cy="119" r="3" fill="#2DD4BF"/>
+  <circle cx="800" cy="119" r="3" fill="#2DD4BF"/>
+  <circle cx="814" cy="119" r="3" fill="#2DD4BF"/>
+  <!-- calendar -->
+  <g stroke="#2DD4BF" stroke-width="3.5" stroke-linecap="round">
+    <rect x="768" y="272" width="64" height="52" rx="8"/>
+    <line x1="782" y1="262" x2="782" y2="278"/>
+    <line x1="818" y1="262" x2="818" y2="278"/>
+  </g>
+  <g stroke="#2DD4BF" stroke-width="2.5">
+    <rect x="777" y="288" width="9" height="9" rx="1.5"/>
+    <rect x="795" y="288" width="9" height="9" rx="1.5"/>
+    <rect x="813" y="288" width="9" height="9" rx="1.5"/>
+    <rect x="777" y="304" width="9" height="9" rx="1.5"/>
+    <rect x="795" y="304" width="9" height="9" rx="1.5"/>
+    <rect x="813" y="304" width="9" height="9" rx="1.5"/>
+  </g>
+  <!-- database -->
+  <g stroke="#2DD4BF" stroke-width="3.5" stroke-linecap="round">
+    <ellipse cx="800" cy="428" rx="34" ry="12"/>
+    <path d="M 766 428 V 486 C 766 493 781 498 800 498 C 819 498 834 493 834 486 V 428"/>
+    <path d="M 766 448 C 766 455 781 460 800 460 C 819 460 834 455 834 448"/>
+    <path d="M 766 468 C 766 475 781 480 800 480 C 819 480 834 475 834 468"/>
+  </g>
+</svg>

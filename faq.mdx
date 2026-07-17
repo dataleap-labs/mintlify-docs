@@ -1,0 +1,69 @@
+---
+title: "FAQ"
+description: "The questions builders actually ask — with short answers and where to go deeper."
+---
+
+Real questions from Dataleap trainings, answered briefly. Each answer links to the page that goes deeper.
+
+<AccordionGroup>
+
+<Accordion title="How do I make my agents more cost-efficient?">
+
+Your costs split into **chat costs** (building — high at first, zero once the agent is done) and **run costs** (every execution). For run costs, the levers in order of impact: use [event triggers instead of schedules](/build/triggers), ask your agent *"Would [PTC](/scale/programmatic-tool-calling) make sense here?"* for data-heavy deterministic work, [dial the model tier down](/scale/sub-agents-and-intelligence-levels#model-tiers) once the agent is proven, and pre-filter data at the source. Full picture: [Credits & usage](/admin/credits-and-usage).
+
+</Accordion>
+
+<Accordion title="My agent times out or underperforms — what now?">
+
+Two things to try. If the workflow is **data-heavy and deterministic**, ask the agent *"Do you use [PTC](/scale/programmatic-tool-calling)?"* — batching the tool calls in a script often fixes both speed and cost. Otherwise, raise its [intelligence level](/scale/sub-agents-and-intelligence-levels#model-tiers) one tier and test again — complex workflows sometimes need a bigger context window. The reverse also holds: if it runs well but feels expensive, try a tier lower and check the results stay good.
+
+</Accordion>
+
+<Accordion title="How do I teach agents our data structure and metric names?">
+
+Two ways. Ad hoc: open the relevant page in your data tool (e.g., Snowflake), copy the URL into the chat, and add a short description of how the data is structured. Durable: create an [org-wide skill](/scale/skills#share-a-skill) that defines your metrics once — what each one means and what it's called in the data — and every agent anyone builds uses the same definitions.
+
+</Accordion>
+
+<Accordion title="What's the file upload limit — and how do I work with bigger files?">
+
+Uploads in the chat are capped at **5 MB**. For anything bigger, don't upload at all — just **link the file**: connect the app where it already lives (SharePoint, Google Drive, OneDrive, …) and let the agent access it there. That handles files of any size. For reference documents an agent should use permanently, see [Add knowledge](/build/add-knowledge).
+
+</Accordion>
+
+<Accordion title="Can agents read text from images or scanned documents?">
+
+Yes — OCR is a [built-in tool](/introduction/what-is-dataleap#anatomy-of-an-agent), along with web search, transcription of voice memos, image generation, and webhooks. No setup needed.
+
+</Accordion>
+
+<Accordion title="What happens to my agents when I'm on vacation — or leave the company?">
+
+Agents in your personal space depend on you and your credentials. For workflows others rely on, move them to a [team space](/share/team-spaces): they run on team-level credentials (ideally [service accounts](/share/team-spaces#connections-in-a-team)), everyone can see runs and history, and access survives when people leave — handover is built in.
+
+</Accordion>
+
+<Accordion title="How do we avoid two people building the same agent twice?">
+
+Share early and visibly: proven agents go into the [team space](/share/team-spaces) or become [templates](/share/templates) teammates can clone, and shared standards become [skills](/scale/skills). Many teams pair this with a short weekly or biweekly champions sync — who's building what, with clear ownership per workflow.
+
+</Accordion>
+
+<Accordion title="Do I have to set up sub-agents or programmatic tool calling myself?">
+
+No. Describe the problem — Dataleap architects the system for you, including [sub-agents](/scale/sub-agents-and-intelligence-levels) and [PTC](/scale/programmatic-tool-calling) where they help. Your job is a clear goal, not a system diagram. The one nudge worth knowing: if a deterministic, data-heavy agent feels slow or expensive, ask it *"Do you use PTC?"* — it will rethink its structure.
+
+</Accordion>
+
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Your first agent" icon="sparkles" href="/build/your-first-agent">
+    Ready to build? Start here.
+  </Card>
+  <Card title="Credits & usage" icon="chart-line" href="/admin/credits-and-usage">
+    All the cost levers in one place.
+  </Card>
+</CardGroup>
+
+{/* Sources: real Q&A from customer Level 2 workshops (Jul 2026 transcripts) */}

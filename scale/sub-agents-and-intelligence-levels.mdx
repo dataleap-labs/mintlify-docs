@@ -1,0 +1,87 @@
+---
+title: "Sub-agents & intelligence levels"
+description: "What sub-agents are (Dataleap handles them for you) — and how to pick the right model tier."
+---
+
+An agent isn't always just one agent — behind the scenes it can be a whole system: a main agent delegating parts of the job to **sub-agents**, running as one logical process.
+
+The important part: **this happens automatically**. Dataleap decides when a workflow benefits from sub-agents and architects them for you. There's nothing to set up, nothing to manage — this page just explains the concept so you recognize it when you see it.
+
+## What a sub-agent system looks like
+
+<Frame caption="One logical process, many agents underneath.">
+  <img className="block dark:hidden" src="/images/subagents-light.svg" alt="Diagram: a main agent delegating to three sub-agents — research, copywriting, and a scraper called fifty times" />
+  <img className="hidden dark:block" src="/images/subagents-dark.svg" alt="Diagram: a main agent delegating to three sub-agents — research, copywriting, and a scraper called fifty times" />
+</Frame>
+
+The main agent breaks the goal apart, delegates to sub-agents, and merges the results. Dataleap typically reaches for this when a workflow involves **batch processing** (the same task run many times), **heavy intermediate data** (a sub-agent digs through it and returns just a summary, so the main agent stays lean), or **distinct phases** that each need their own focused instructions.
+
+If your agent uses sub-agents, they appear under its **Tools** — you can look at each one, and that's all you ever need to do with them:
+
+<Frame caption="Sub-agents live in the agent's Tools tab.">
+  <img src="/images/subagents-tools-tab.png" alt="The Tools tab of an agent showing one sub-agent, the Candidate Scorer" />
+</Frame>
+
+A sub-agent belongs to its parent agent; for logic that several agents should share, that's what [skills](/scale/skills) are for.
+
+## Model tiers
+
+What you *can* adjust: the **intelligence level** — separately for the main workflow agent and for each sub-agent. Higher tiers are more capable and more expensive.
+
+<Frame caption="The intelligence selector — Expert, Pro, or Standard.">
+  <img src="/images/intelligence-selector-chat.png" alt="The intelligence selector in the chat bar with Expert, Pro, and Standard options" />
+</Frame>
+
+<Steps>
+<Step title="Build on Expert">
+
+The setup conversation runs on the most capable model — building benefits from the best judgment while the agent takes shape.
+
+</Step>
+<Step title="Run on Pro by default">
+
+Execution agents default to Pro. That's the right setting for ~90% of use cases — you rarely need to touch it.
+
+</Step>
+<Step title="Adjust by evidence">
+
+Two paths, depending on what you observe:
+
+- **The agent runs perfectly fine?** Try lowering the execution agent's level — same output, cheaper runs.
+- **The agent doesn't work right** — information goes missing, or runs time out? Level it up toward Expert and test again.
+
+</Step>
+</Steps>
+
+You set the level with the intelligence selector: in the chat bar for the setup conversation, in the **Workflow** tab for the main agent, and in a sub-agent's **Tools** tab:
+
+<Frame caption="Main agent: Intelligence selector in the Workflow tab.">
+  <img src="/images/intelligence-selector-workflow.png" alt="An agent's Workflow tab showing its triggers and the Intelligence dropdown set to Pro" />
+</Frame>
+
+<Frame caption="Sub-agent: its own Intelligence selector in the Tools tab.">
+  <img src="/images/intelligence-selector-subagent.png" alt="The Candidate Scorer sub-agent with its own Intelligence dropdown set to Pro" />
+</Frame>
+
+<Note>
+  Complex agents that pull from many sources may genuinely need a higher tier — a smaller context can't hold everything the workflow touches. And if the workflow is **data-heavy and deterministic**, the better fix is often [programmatic tool calling](/scale/programmatic-tool-calling) instead of a bigger model.
+</Note>
+
+<Card title="Watch: Sub-agents and intelligence levels" icon="clapperboard" href="/video-series/section-3#sub-agents-and-intelligence-levels" horizontal>
+  See how sub-agents and model tiers work in the product.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Skills" icon="wand-magic-sparkles" href="/scale/skills">
+    Next: share behavior across agents the right way.
+  </Card>
+  <Card title="Credits & usage" icon="chart-line" href="/admin/credits-and-usage">
+    How tier choice fits into overall spend control.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681409593d43cc58b2655
+   https://www.notion.so/39522bd1f6b681b88c21ef9e915090d1
+   https://www.notion.so/39322bd1f6b681f88985fafb88c4fbee
+   Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): sub-agents are automatic/theoretical */}

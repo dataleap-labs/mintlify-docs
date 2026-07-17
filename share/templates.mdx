@@ -1,0 +1,103 @@
+---
+title: "Templates"
+description: "Turn any agent into a template teammates can clone — and adapt to their own needs."
+---
+
+A template is the IKEA manual of your agent: others clone the skeleton, connect their own credentials, and adapt it freely. Your original stays untouched.
+
+## Open vs. locked at a glance
+
+| | **Open template** | **[Locked template](/share/locked-templates)** |
+|---|---|---|
+| Clone & run | ✅ | ✅ |
+| Adapt instructions | ✅ fully editable | ❌ only placeholders |
+| Owner updates reach existing clones | ❌ new deploys only | ✅ all clones, instantly |
+| Best for | letting others make it their own | standardizing one process at scale |
+
+This page covers open templates — the right choice for most use cases. For admin-controlled standardization, see [Locked templates](/share/locked-templates).
+
+## Create a template
+
+<Steps>
+<Step title="Click Share on your agent">
+
+From any agent, hit **Share** — a copy of your agent becomes the template, **credentials never included**.
+
+<Frame caption="Share as a Template: a link to a copy of your agent — no credentials included.">
+  <img src="/images/template-share-popover.png" alt="The Share popover on an agent offering Share as a Template with a Create Template button" />
+</Frame>
+
+</Step>
+<Step title="Choose the type">
+
+**Template** (people can clone, edit, and change anything) or **[Locked Template](/share/locked-templates)** (people can clone, but can't change the instructions — with placeholders for customizable fields).
+
+<Frame caption="Step 1: open Template or Locked Template.">
+  <img src="/images/template-wizard-type.png" alt="The template wizard's type step asking how this should be shared, with Template and Locked Template options" />
+</Frame>
+
+</Step>
+<Step title="Name it & guide setup">
+
+Name and description, plus a **setup prompt** that tells the AI how to walk each new user through setup — Dataleap generates all of it for you.
+
+<Frame caption="Step 2: name, description, and the auto-generated setup prompt.">
+  <img src="/images/template-wizard-about.png" alt="The template wizard's about step with name, description, and a setup prompt being generated" />
+</Frame>
+
+</Step>
+<Step title="Publish">
+
+You get a **template link**, and you can additionally publish to your **workspace library** or into specific **team spaces**.
+
+<Frame caption="Step 3: template link + publish to the library or team spaces.">
+  <img src="/images/template-wizard-publish.png" alt="The template wizard's publishing step showing the template link and a Publish to Library toggle with workspace and team options" />
+</Frame>
+
+</Step>
+</Steps>
+
+## Deploy from a template
+
+<Steps>
+<Step title="Open the library">
+
+**Templates** in the sidebar — or the **Templates** tab of a team space.
+
+</Step>
+<Step title="Review the workflow">
+
+Each template shows what it does step by step, and which apps it needs.
+
+</Step>
+<Step title="Clone it">
+
+Click **Deploy** — you get your own clone, connect your own credentials, and you're running in minutes. From there, adapt it like any agent you built yourself.
+
+</Step>
+</Steps>
+
+{/* TODO(simon): Screenshot der Template-Library (Sidebar > Templates oder Team-Space-Templates-Tab). */}
+
+## Good to know
+
+- **Templates share the skeleton, never your data.** The creator's credentials and content are always stripped — each clone runs with its own connections and context.
+- **A template stays linked to its source agent.** Improve your agent, and the template shows *unpublished changes* — click **Update** to publish. Existing clones keep their state; new deploys get the update.
+- **Don't publish half-baked agents** — everyone clones the flaws too. Share proven workflows.
+
+<Card title="Watch: Templates (open and locked)" icon="clapperboard" href="/video-series/section-4#templates-open-and-locked" horizontal>
+  See both template types in action.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Locked templates" icon="lock" href="/share/locked-templates">
+    Next: standardize one process at scale.
+  </Card>
+  <Card title="Your first agent" icon="sparkles" href="/build/your-first-agent">
+    Deployed a template? Refine it like any other agent.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681e89fb1ff11dfadc183
+   Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): split open/locked, share→steps flow */}

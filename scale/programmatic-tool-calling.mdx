@@ -1,0 +1,47 @@
+---
+title: "Programmatic tool calling"
+description: "Your agent writes a script that runs tool calls directly from code — instead of calling tools one by one."
+---
+
+Like [sub-agents](/scale/sub-agents-and-intelligence-levels), programmatic tool calling (PTC) is a concept to understand, not something to configure: **Dataleap applies it automatically** when a workflow is repetitive, data-heavy, and deterministic. This page explains what it does — and the one question worth asking.
+
+<Tip>
+  **The one thing you can do:** ask your agent, right in its chat — *"Would PTC make sense here?"* or *"Do you use PTC?"* It checks its own workflow, tells you honestly whether code would help, and restructures itself if it does. Worth asking whenever an agent feels slow or expensive on a repetitive job.
+</Tip>
+
+## What it does
+
+Without PTC, the model sits in the loop for every single tool call. With PTC, it writes one script that batches the calls — and only the clean summary ever touches the context:
+
+<Frame caption="Same workflow, two ways: 570 seconds and 200 credits — or 60 seconds and 40 credits.">
+  <img src="/images/ptc-comparison.png" alt="Comparison: one call at a time keeps the model in the loop for 17 round-trips costing 570 seconds and 200 credits, while one script with parallel calls finishes in 60 seconds for 40 credits" />
+</Frame>
+
+On deterministic workflows, PTC is tremendously cheaper — typically **30–80% fewer credits**, and much faster. Combined with the [model tier strategy](/scale/sub-agents-and-intelligence-levels#model-tiers), repetitive workflows cost a fraction of their naive version.
+
+## Where it helps — and where it doesn't
+
+| ✅ PTC pays off | ❌ Plain tool use is better |
+|---|---|
+| Repetitive, deterministic work — the same call over hundreds of rows | One-off calls, or a couple of steps that need reasoning |
+| Data-heavy loops where only the summary matters | Judgment-heavy flows — deciding based on what it finds |
+| Multi-step pipelines: fetch → transform → write | Highly variable flows where the path changes every run |
+
+That's also why Dataleap doesn't use PTC everywhere: code is rigid. It's fast and cheap on a fixed path, but a workflow that needs flexibility is better off reasoning step by step — and Dataleap makes that call for you.
+
+<Card title="Watch: Programmatic Tool Calling" icon="clapperboard" href="/video-series/section-3#programmatic-tool-calling" horizontal>
+  See programmatic tool calling in action.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Chapter 4: Sharing is Caring" icon="users" href="/share/overview">
+    Next chapter: bring your team along.
+  </Card>
+  <Card title="Credits & usage" icon="chart-line" href="/admin/credits-and-usage">
+    All the cost levers in one place.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681b88c21ef9e915090d1
+   Dataleap Workshop 2 deck (PTC slide, cropped) + Simon's review (Jul 2026): automatic concept, ask-the-agent as the one action */}

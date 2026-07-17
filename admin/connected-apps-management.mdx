@@ -1,0 +1,57 @@
+---
+title: "Apps & permissions"
+description: "The Controls side of the admin panel: tool-level permissions, approval workflows, a full audit trail, and custom MCP servers."
+---
+
+The **Controls** section of the admin panel governs what agents can reach — down to the individual tool.
+
+## Apps & Permissions
+
+Every integration (240+ apps) can be tuned per tool:
+
+- Tools are grouped into **read-only** and **write/delete** — so you see at a glance what's harmless and what acts in your systems.
+- Each tool can be **allowed or blocked** individually, and scoped to **everyone or specific groups**.
+- Whole apps can be moved to a **Restricted** section — usable only on request.
+
+<Frame caption="Per-app, per-tool control: read-only vs. write tools, allowed audiences, restricted apps.">
+  <img src="/images/admin-apps-permissions.png" alt="The Apps and Permissions page showing an app's read-only and write tools, each individually allowed or blocked, with a Restricted apps section" />
+</Frame>
+
+## Tool Requests
+
+When someone needs a restricted tool, they don't email IT — they request it in Dataleap, and admins **approve or reject** with one click. Every request keeps its status (open, accepted, rejected), so decisions are documented.
+
+<Frame caption="Access requests with a one-click approve/reject workflow.">
+  <img src="/images/admin-tool-requests.png" alt="The Tool Requests page listing user requests for tools with accepted status badges and approve and reject buttons" />
+</Frame>
+
+## App Activity
+
+The audit trail: **every tool call across the organization**, live — which integration, which tool, which agent, executed as whom, and whether it succeeded. Filterable by time range, integration, status, and user.
+
+<Frame caption="Every tool call in the org — filterable, with success/failure status.">
+  <img src="/images/admin-app-activity.png" alt="The App Activity page with an activity chart and a table of tool calls showing integration, timestamp, tool, agent, and success status" />
+</Frame>
+
+## MCP servers
+
+Beyond the built-in integrations, admins can add **custom MCP servers** (OAuth or bearer token) — internal tools become agent-usable, with synced tool lists and per-server enable/disable.
+
+<Frame caption="Custom MCP servers: bring your internal tools to your agents.">
+  <img src="/images/admin-mcp.png" alt="The MCP page listing custom MCP servers with their sync status, tool counts, connections, and enabled status" />
+</Frame>
+
+<Note>
+  Two governance layers from elsewhere complete the picture: the [org-wide system prompt](/admin/users-and-roles#organization-defaults) (rules every agent follows, regardless of tools) and [service accounts in team spaces](/share/team-spaces#connections-in-a-team) (scoped access that survives personnel changes).
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Connect your tools" icon="plug" href="/build/connect-your-tools">
+    The builder side: how agents get their connections.
+  </Card>
+  <Card title="FAQ" icon="circle-question" href="/faq">
+    The questions builders actually ask.
+  </Card>
+</CardGroup>
+
+{/* Sources: admin panel screenshots (Jul 17, 2026) — Apps & Permissions, Tool Requests, App Activity, MCP */}

@@ -1,0 +1,95 @@
+---
+title: "What is Dataleap"
+description: "Dataleap is an AI work automation platform. You build Agents — intelligent workflows that connect your tools and complete tasks automatically."
+---
+
+Dataleap is an AI work automation platform. You build **Agents** — intelligent workflows that connect your tools and complete tasks automatically.
+
+## Anatomy of an agent
+
+<Frame caption="An agent = intelligence orchestrating three kinds of capability.">
+  <img className="block dark:hidden" src="/images/agent-anatomy-light.svg" alt="Diagram: the LLM harness orchestrates built-in tools, connected apps, and a sandbox computer" />
+  <img className="hidden dark:block" src="/images/agent-anatomy-dark.svg" alt="Diagram: the LLM harness orchestrates built-in tools, connected apps, and a sandbox computer" />
+</Frame>
+
+Every agent combines the same three kinds of capability, orchestrated by the model:
+
+- **Built-in tools** — native capabilities every agent gets out of the box: web search, lead enrichment, transcription, reading text from images (OCR), image generation, webhooks.
+- **Connected apps** — your existing stack. Each connected app brings its own triggers and actions: Outlook, Teams, Excel, Salesforce, Snowflake, Jira, and many more.
+- **Sandbox computer** — a full computer at the agent's disposal for advanced operations: storing and transforming files, writing and running Python.
+
+## Mental model
+
+**Think of an agent as an AI employee.** Like a coworker, it has a job description (its instructions), the tools to do that job (its connections), and a reason to start working (its triggers). You onboard it, give it feedback, and over time trust it with more.
+
+**Brain, body, and arms.** Another way to picture it:
+
+<Frame>
+  <img className="block dark:hidden" src="/images/brain-body-arms-light.svg" alt="Illustration: a brain (the model and instructions), a robot body (the runtime), and arms reaching out to chat, calendar, and database tools" />
+  <img className="hidden dark:block" src="/images/brain-body-arms-dark.svg" alt="Illustration: a brain (the model and instructions), a robot body (the runtime), and arms reaching out to chat, calendar, and database tools" />
+</Frame>
+
+- The **brain** is the instructions and the model — how the agent thinks and decides.
+- The **body** is the sandbox and runtime — where the agent's work actually happens.
+- The **arms** are the integrations and tools — how the agent reaches into your systems to read and act.
+
+## Common agent shapes
+
+Agents come in recurring shapes — knowing them helps you reach for the right one instead of one giant prompt:
+
+| Shape | What it is |
+|---|---|
+| **Personal agent** | Automates your own daily and weekly work. Where everyone starts. |
+| **Team agent** | Lives in a [team space](/share/team-spaces) — the whole team can see, run, and edit it, on team credentials. |
+| **Chat interface agent** | An agent others talk to — ask questions, make requests (e.g., in a Teams channel). A hosted chat interface is on its way. |
+| **Business process agent** | Reimagines a whole process end-to-end, beyond one person's tasks. |
+| **Templated agent** | A shared starting point others deploy and adapt — see [Templates](/share/templates). |
+| **Admin-controlled agent** | One owner builds and maintains it; everyone else runs a copy. Ideal for standardizing at scale — see [locked templates](/share/locked-templates). |
+
+## How it works
+
+<Steps>
+<Step title="Create an agent">
+
+Describe the job in plain language.
+
+</Step>
+<Step title="Connect tools">
+
+Give it access to the systems it needs.
+
+</Step>
+<Step title="Set a trigger">
+
+Decide what should wake it up — and from then on, it runs on its own.
+
+</Step>
+</Steps>
+
+## The vision
+
+You start by building one agent for yourself. It rarely stops there: in every team, power users become **champions** who build agents the whole team profits from. Shared as team agents and templates, those agents get cloned and adapted by colleagues — until agents quietly run across the whole organization, governed with budgets and permissions. One agent today; the org compounds from there.
+
+<Card title="Watch: The Vision" icon="clapperboard" href="/video-series/section-1#the-vision" horizontal>
+  Where this journey leads — in two minutes.
+</Card>
+
+<Card title="Watch: Welcome to Dataleap" icon="clapperboard" href="/video-series/section-1" horizontal>
+  The product tour to go with this page.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Getting started" icon="rocket" href="/introduction/getting-started">
+    Next: set up your account and get to your first success.
+  </Card>
+  <Card title="Chapter 2: Build your own agent" icon="sparkles" href="/build/overview">
+    Ready to build? Jump straight to the build loop.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/38f22bd1f6b6817ab2fcce2528a1bc96?pvs=1
+   https://www.notion.so/39522bd1f6b681629720da20106c3dac
+   https://www.notion.so/39522bd1f6b681d9b5e1f8c10edac8d1
+   https://www.notion.so/39522bd1f6b6819ca2c0d01d31249757
+   Dataleap Workshop 2 deck (Foundations: anatomy, five agent types) */}

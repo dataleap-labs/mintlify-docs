@@ -1,0 +1,48 @@
+---
+title: "Shape agent behavior"
+description: "Make agent behavior predictable and safe through complete instructions and human checkpoints."
+---
+
+An agent behaves predictably when its instructions are complete and its risky actions have a human checkpoint. Both are shaped the same way you built the agent: by telling it in chat.
+
+## What instructions must contain
+
+Treat instructions as the agent's job description. Whether you're prompting or reviewing, make sure all four parts are covered:
+
+| Part | What it covers |
+|---|---|
+| **Job to be done** | The scope: what this agent is responsible for — and by implication, what it is not. |
+| **Inputs** | What the agent will receive: the messages, records, files, or events it works from. |
+| **Outputs** | The format, tone, and structure of what it should produce. Add an example if the format matters. |
+| **Constraints** | What the agent must not do: systems it shouldn't touch, decisions it shouldn't make alone, content it shouldn't produce. |
+
+If the agent behaves inconsistently, there's usually vague language in one of these four parts — describe the change in chat and the agent tightens its own instructions. (You can always read the current instructions in the **Workflow** view, top right.)
+
+## Human in the loop (HITL)
+
+**Safety rule: don't let an agent perform irreversible actions without a human review step.**
+
+The classic example: don't have the agent send emails from day one — have it **create drafts**. You review, adjust if needed, and hit send yourself. Once you trust the output, you can remove the checkpoint. The same pattern works for posting messages, updating records, or deleting anything.
+
+<Warning>
+  **Common mistake:** the agent fires without confirmation — it sends, posts, or changes something the moment it runs. Fix this with a HITL checkpoint: the agent drafts, a human approves, the agent completes.
+</Warning>
+
+One practical way to build approvals: have the agent set a field, status, or label, and let a human's change of that value trigger the next step. See [Triggers](/build/triggers).
+
+## One agent, one responsibility
+
+Give each agent one clear job — one chat window is one agent. If you're tempted to bolt a second, unrelated workflow onto a working agent, build a new agent instead.
+
+<CardGroup cols={2}>
+  <Card title="Connect your tools" icon="plug" href="/build/connect-your-tools">
+    Next: how connections work when Dataleap asks for them.
+  </Card>
+  <Card title="Triggers" icon="bolt" href="/build/triggers">
+    Build approval gates with trigger-based HITL.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   https://www.notion.so/39522bd1f6b681efa08ee49e6001f19c
+   Simon's review (Jul 2026): chat-first, drafts example, no sub-agent creation by users */}
