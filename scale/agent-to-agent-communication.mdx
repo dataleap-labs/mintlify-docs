@@ -1,0 +1,42 @@
+---
+title: "Agent-to-agent communication"
+description: "Let your agents find and call other agents in your workspace to work together on complex processes."
+---
+
+An agent no longer works alone. Your agents can now find and call other agents already in your workspace, work together to handle complex processes, and share the results.
+
+Instead of rebuilding logic another agent already has, one agent simply asks another to handle a specific task. The requesting agent specifies what it needs, the system finds the right agent, sends the task, and returns the answer.
+
+## How it works
+
+When an agent calls another agent, it sends a self-contained task description and waits for the result. The called agent runs independently and returns only what the requesting agent needs. This keeps workflows focused and prevents information overload.
+
+You see this in action in the **Runs** trace—look for where one agent calls another and what data flows between them.
+
+## Scope: who can reach whom
+
+Agent access is scoped by design:
+
+- **Team agents** can reach other agents in their own team
+- **Personal agents** can reach your personal agents plus every team you're in
+
+No access crosses a boundary you're not already a member of. This ensures agents stay within appropriate collaboration groups.
+
+## Built-in, no setup required
+
+Agent-to-agent communication is available to all agents automatically. There's no configuration to enable—your agents can call each other right away when your workflow needs it.
+
+## Different from sub-agents
+
+Sub-agents are private helpers that an agent builds for itself to handle specific tasks. Agent-to-agent communication is broader: your agent can reach independent, already-built agents that you or your teammates created. Sub-agents are visible only in their parent agent's **Tools** tab; agent-to-agent calls appear in the **Runs** trace as separate agents working together.
+
+## Building multi-agent processes
+
+Use agent-to-agent communication when:
+
+- You have distinct specialized agents that each handle one part of a larger process
+- One agent needs the result of another agent's work before it can continue
+- You want to reuse an existing agent instead of duplicating its instructions
+- You're standardizing how agents coordinate on recurring business processes
+
+This is how agent systems work at scale—agents working together in the background while presenting a single unified process to the user.
