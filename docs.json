@@ -48,6 +48,7 @@
         "pages": [
           "scale/overview",
           "scale/sub-agents-and-intelligence-levels",
+          "scale/agent-to-agent-communication",
           "scale/skills",
           "scale/programmatic-tool-calling"
         ]
