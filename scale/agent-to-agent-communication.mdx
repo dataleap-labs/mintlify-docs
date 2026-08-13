@@ -1,42 +1,45 @@
 ---
 title: "Agent-to-agent communication"
-description: "Let your agents find and call other agents in your workspace to work together on complex processes."
+description: "How an agent calls other agents you already have access to — and how to spot it in a run."
 ---
 
-An agent no longer works alone. Your agents can now find and call other agents already in your workspace, work together to handle complex processes, and share the results.
+An agent isn't limited to what it can do on its own. When another agent already handles part of a job well, an agent can **find and call that agent** — hand it a self-contained task, let it work, and use the result to keep going.
 
-Instead of rebuilding logic another agent already has, one agent simply asks another to handle a specific task. The requesting agent specifies what it needs, the system finds the right agent, sends the task, and returns the answer.
+Like [sub-agents](/scale/sub-agents-and-intelligence-levels), **this happens automatically**. Dataleap decides when calling another agent is the right move; there's nothing to set up or switch on. This page explains the concept so you recognize it when you see it in a run.
 
-## How it works
+## What it looks like
 
-When an agent calls another agent, it sends a self-contained task description and waits for the result. The called agent runs independently and returns only what the requesting agent needs. This keeps workflows focused and prevents information overload.
+<Frame caption="One agent calls another it has access to, then continues with the result.">
+  <img className="block dark:hidden" src="/images/agent-to-agent-light.svg" alt="Diagram: a requesting agent sends a self-contained task to a called agent, which runs on its own and returns a result" />
+  <img className="hidden dark:block" src="/images/agent-to-agent-dark.svg" alt="Diagram: a requesting agent sends a self-contained task to a called agent, which runs on its own and returns a result" />
+</Frame>
 
-You see this in action in the **Runs** trace—look for where one agent calls another and what data flows between them.
+The requesting agent sends a complete, standalone task. The called agent runs on its own and returns just the answer — so instead of rebuilding logic another agent already has, your agent reuses it. Dataleap typically reaches for this when a job spans **specialized agents that each own one part**, or when a **recurring process** should run the same way every time.
 
-## Scope: who can reach whom
+You can see it in the **Runs** trace: a **Called agent** step names the agent that was reached, so you can follow the hand-off between them.
 
-Agent access is scoped by design:
+## Who an agent can reach
 
-- **Team agents** can reach other agents in their own team
-- **Personal agents** can reach your personal agents plus every team you're in
+An agent only ever reaches agents you already have access to:
 
-No access crosses a boundary you're not already a member of. This ensures agents stay within appropriate collaboration groups.
+- **Team agents** reach other agents in the same team.
+- **Personal agents** reach your own agents, plus agents in every team you belong to.
 
-## Built-in, no setup required
-
-Agent-to-agent communication is available to all agents automatically. There's no configuration to enable—your agents can call each other right away when your workflow needs it.
+Nothing crosses a boundary you're not already on. For how teams and shared agents work, see [team spaces](/share/team-spaces).
 
 ## Different from sub-agents
 
-Sub-agents are private helpers that an agent builds for itself to handle specific tasks. Agent-to-agent communication is broader: your agent can reach independent, already-built agents that you or your teammates created. Sub-agents are visible only in their parent agent's **Tools** tab; agent-to-agent calls appear in the **Runs** trace as separate agents working together.
+Sub-agents are private helpers an agent builds for itself, and they stay inside that agent's **Tools** tab. Agent-to-agent communication is broader: an agent reaches **independent agents** that you or your teammates already built, and those calls appear in the **Runs** trace as separate agents — not tucked inside one agent's tools.
 
-## Building multi-agent processes
+<CardGroup cols={2}>
+  <Card title="Sub-agents & intelligence levels" icon="sitemap" href="/scale/sub-agents-and-intelligence-levels">
+    The other way an agent leans on another — private helpers it builds for itself.
+  </Card>
+  <Card title="Team spaces" icon="users" href="/share/team-spaces">
+    How teams and shared agents shape which agents an agent can reach.
+  </Card>
+</CardGroup>
 
-Use agent-to-agent communication when:
-
-- You have distinct specialized agents that each handle one part of a larger process
-- One agent needs the result of another agent's work before it can continue
-- You want to reuse an existing agent instead of duplicating its instructions
-- You're standardizing how agents coordinate on recurring business processes
-
-This is how agent systems work at scale—agents working together in the background while presenting a single unified process to the user.
+{/* Sources: agent-to-agent communication announcement, #feature-update-docs Slack.
+   Framing mirrors sub-agents — automatic/theoretical concept, recognized in the Runs trace, not user-configured.
+   TODO: add a Runs-trace screenshot (the "Called agent" step) when available — Simon supplies product PNGs. */}
