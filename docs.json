@@ -58,6 +58,7 @@
         "pages": [
           "share/overview",
           "share/team-spaces",
+          "share/use-only",
           "share/templates",
           "share/locked-templates",
           "share/when-to-share-what"
