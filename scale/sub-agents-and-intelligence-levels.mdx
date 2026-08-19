@@ -26,42 +26,44 @@ A sub-agent belongs to its parent agent; for logic that several agents should sh
 
 ## Model tiers
 
-What you *can* adjust: the **intelligence level** — separately for the main workflow agent and for each sub-agent. Higher tiers are more capable and more expensive.
+What you *can* adjust: the **preset** — separately for the main workflow agent and for each sub-agent. Higher tiers are more capable and more expensive.
 
-<Frame caption="The intelligence selector — Expert, Pro, or Standard.">
-  <img src="/images/intelligence-selector-chat.png" alt="The intelligence selector in the chat bar with Expert, Pro, and Standard options" />
+<Frame caption="The model selector — Expert, Pro, or Basic. Customize picks a specific model.">
+  <img src="/images/intelligence-selector-chat.png" alt="The model selector in the chat bar with Expert, Pro, and Basic options" />
 </Frame>
 
 <Steps>
 <Step title="Build on Expert">
 
-The setup conversation runs on the most capable model — building benefits from the best judgment while the agent takes shape.
+While the agent takes shape, prefer **Expert** — building benefits from the best judgment. Setup conversations can't use the **Basic** preset.
 
 </Step>
 <Step title="Run on Pro by default">
 
-Execution agents default to Pro. That's the right setting for ~90% of use cases — you rarely need to touch it.
+Execution agents default to **Pro**. That's the right setting for ~90% of use cases — you rarely need to touch it.
 
 </Step>
 <Step title="Adjust by evidence">
 
 Two paths, depending on what you observe:
 
-- **The agent runs perfectly fine?** Try lowering the execution agent's level — same output, cheaper runs.
-- **The agent doesn't work right** — information goes missing, or runs time out? Level it up toward Expert and test again.
+- **The agent runs perfectly fine?** Try lowering the execution agent's preset — same output, cheaper runs.
+- **The agent doesn't work right** — information goes missing, or runs time out? Level it up toward **Expert** and test again.
 
 </Step>
 </Steps>
 
-You set the level with the intelligence selector: in the chat bar for the setup conversation, in the **Workflow** tab for the main agent, and in a sub-agent's **Tools** tab:
+You set the preset with the model selector: in the chat bar for the setup conversation, in the **Workflow** tab for the main agent, and in a sub-agent's **Tools** tab:
 
-<Frame caption="Main agent: Intelligence selector in the Workflow tab.">
-  <img src="/images/intelligence-selector-workflow.png" alt="An agent's Workflow tab showing its triggers and the Intelligence dropdown set to Pro" />
+<Frame caption="Main agent: model selector in the Workflow tab.">
+  <img src="/images/intelligence-selector-workflow.png" alt="An agent's Workflow tab showing its triggers and the model selector set to Pro" />
 </Frame>
 
-<Frame caption="Sub-agent: its own Intelligence selector in the Tools tab.">
-  <img src="/images/intelligence-selector-subagent.png" alt="The Candidate Scorer sub-agent with its own Intelligence dropdown set to Pro" />
+<Frame caption="Sub-agent: its own model selector in the Tools tab.">
+  <img src="/images/intelligence-selector-subagent.png" alt="The Candidate Scorer sub-agent with its own model selector set to Pro" />
 </Frame>
+
+**Customize** lets you pick a specific model and a **Reasoning Level** instead of a preset. Which models appear depends on what an admin has enabled on **Models**. Admins also choose which model each preset uses — see [Models](/admin/models).
 
 <Note>
   Complex agents that pull from many sources may genuinely need a higher tier — a smaller context can't hold everything the workflow touches. And if the workflow is **data-heavy and deterministic**, the better fix is often [programmatic tool calling](/scale/programmatic-tool-calling) instead of a bigger model.
