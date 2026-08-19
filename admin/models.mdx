@@ -1,0 +1,55 @@
+---
+title: "Models"
+description: "Choose the default presets and which AI models members can use."
+---
+
+Admins set this on the **Models** page under **Controls** at `app.dataleap.ai/admin`. Only **Admins** can open it. Members pick from what you allow.
+
+The page has two jobs: what **Basic**, **Pro**, and **Expert** mean in your workspace, and which models members can choose.
+
+## Presets
+
+Most people pick a preset, not a specific model.
+
+| Preset | What it's for |
+| --- | --- |
+| **Basic** | Quick tasks and high volume |
+| **Pro** | Balanced performance — the default for running agents |
+| **Expert** | Complex, multi-step reasoning |
+
+You choose which model and **Reasoning Level** power each preset. A **Customized** badge appears when a preset no longer uses Dataleap's default. **Reset** puts it back.
+
+Preset changes apply to every member and agent using them. Agents keep their preset and switch models on their next new activity.
+
+You can't turn off a model that currently powers a preset. Change the preset first.
+
+## Model access
+
+**Model Access** is the list of models members can use. Turn a model on or off with its switch.
+
+Enabled models appear when someone opens **Customize** in the model selector. Disabled models do not.
+
+If you disable a model agents already use, their future runs may be blocked until someone changes that agent's model.
+
+Save from the bar at the bottom. If the change affects agents, Dataleap asks you to review first.
+
+## What members see
+
+In chat, **Workflow**, and a sub-agent's **Tools** tab, people pick **Basic**, **Pro**, or **Expert** — or **Customize** to choose a specific enabled model and its **Reasoning Level**.
+
+Which models appear under **Customize** is the list you enable here. Dataleap does not publish a fixed catalog in these docs; the list changes as models are added or retired.
+
+Setup conversations can't use the **Basic** preset. Building stays on **Pro** or **Expert**, or on a custom model.
+
+Some presets depend on your plan. **Expert** needs a paid plan. Models you enable under **Customize** are available to members on every plan.
+
+When to raise or lower a preset is covered on [Sub-agents & intelligence levels](/scale/sub-agents-and-intelligence-levels#model-tiers).
+
+<CardGroup cols={2}>
+  <Card title="Credits & usage" icon="chart-line" href="/admin/credits-and-usage">
+    How preset choice fits into overall spend.
+  </Card>
+  <Card title="Users, teams & organization" icon="user-gear" href="/admin/users-and-roles">
+    Who can open Admin in the first place.
+  </Card>
+</CardGroup>
