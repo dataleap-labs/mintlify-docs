@@ -7,9 +7,8 @@ Admins set this on the **Models** page under **Controls** at `app.dataleap.ai/ad
 
 The page has two jobs: what **Basic**, **Pro**, and **Expert** mean in your workspace, and which models members can choose.
 
-<Frame caption="How model access, presets, and Reasoning Level choices fit together.">
-  <img className="block dark:hidden" src="/images/models-settings-light.svg" alt="Diagram showing organization model settings connecting presets and Reasoning Level choices to enabled models in Customize" />
-  <img className="hidden dark:block" src="/images/models-settings-dark.svg" alt="Diagram showing organization model settings connecting presets and Reasoning Level choices to enabled models in Customize" />
+<Frame caption="The Models page — presets on top, Model Access below.">
+  <img src="/images/admin-models-page.png" alt="The Admin Models page showing Basic, Pro, and Expert presets with their model and Reasoning Level, and the Model Access list of providers" />
 </Frame>
 
 ## Presets
@@ -23,6 +22,10 @@ Most people pick a preset, not a specific model.
 | **Expert** | Complex, multi-step reasoning |
 
 You choose which model and **Reasoning Level** power each preset. The available levels depend on the model. When a model supports more than one, choose from **Minimal**, **Low**, **Medium**, **High**, **Extra high**, or **Max**. A **Customized** badge appears when a preset no longer uses Dataleap's default. **Reset** puts it back.
+
+<Frame caption="Pick the model and Reasoning Level behind a preset.">
+  <img src="/images/admin-models-presets.png" alt="A preset's model picker open, listing available models by provider with a Reasoning Level slider" />
+</Frame>
 
 Preset changes apply to every member and agent using them. Agents keep their preset and switch models on their next new activity.
 
@@ -41,6 +44,10 @@ Save from the bar at the bottom. If the change affects agents, Dataleap asks you
 ## What members see
 
 In chat, **Workflow**, and a sub-agent's **Tools** tab, people pick **Basic**, **Pro**, or **Expert** — or **Customize** to choose a specific enabled model and its **Reasoning Level**.
+
+<Frame caption="The model selector members see in chat.">
+  <img src="/images/admin-models-member-selector.png" alt="The member model selector showing Basic, Pro, Expert, and a Customize option" />
+</Frame>
 
 Which models appear under **Customize** is the list you enable here. Dataleap does not publish a fixed catalog in these docs; the list changes as models are added or retired.
 
