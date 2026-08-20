@@ -18,7 +18,7 @@
   <rect x="475" y="184" width="160" height="8" rx="4" fill="#c4b5fd"/>
   <circle cx="565" cy="188" r="13" fill="#7c3aed"/>
   <text x="475" y="228" fill="#78716c" font-family="Arial, sans-serif" font-size="14">Minimal · Low · Medium</text>
-  <text x="475" y="252" fill="#78716c" font-family="Arial, sans-serif" font-size="14">Extra high · Xhigh · Max</text>
+  <text x="475" y="252" fill="#78716c" font-family="Arial, sans-serif" font-size="14">High · Extra high · Max</text>
   <path d="M690 180h90" fill="none" stroke="#8b5cf6" stroke-width="3"/>
   <path d="m767 168 18 12-18 12" fill="none" stroke="#8b5cf6" stroke-width="3"/>
   <rect x="810" y="104" width="110" height="152" rx="16" fill="#ffffff" stroke="#d6d3d1" stroke-width="2"/>
