@@ -31,6 +31,25 @@ An account-level connection doesn't give every agent free rein. For each workflo
 
 The gray labels are the permissions — *Create Draft*, *Create Label*, *Download Attachment*, and so on. Dataleap keeps this set **as small as possible**: enough for the workflow to run, and nothing beyond it. One click on **Approve All**, and the agent is equipped.
 
+## Which Slack connection to use
+
+Slack is the one app you can connect twice: once with your personal Slack account, and once org-wide on behalf of your whole organization. Both can show up under **Connected Apps**, and they have different capabilities.
+
+| | Personal connection | Org-wide connection |
+|---|---|---|
+| Default for | your personal agents | agents in a team space |
+| Runs as | you | the organization's Slack bot |
+| Best for | searching messages, reading and writing private channels and DMs, acting as you | most day-to-day Slack work: sending and reading messages, managing channels, reacting |
+| Can't do | — | search messages, or read private channels and DMs the bot hasn't been added to |
+
+If your agent can't find or read a private channel or DM, it's probably using the org-wide connection. Ask it in the chat:
+
+> *"Please switch from the org-wide Slack connection to my personal Slack connection."*
+
+<Note>
+  Your admin may have installed Slack without user permissions — in that case personal connections aren't available, and the org-wide connection is your only option.
+</Note>
+
 ## What this means in practice
 
 <Steps>
@@ -69,4 +88,7 @@ Workspace-wide governance (reviewing, reconnecting, removing connections central
 {/* Sources:
    https://www.notion.so/39522bd1f6b681629720da20106c3dac
    https://www.notion.so/39322bd1f6b6819fae50fe76049bb550
-   Simon's review (Jul 2026): two-level connection model, per-workflow permissions screenshot */}
+   Simon's review (Jul 2026): two-level connection model, per-workflow permissions screenshot
+   Slack connection guidance (Aug 2026): verified against product source — org-wide and team Slack
+   connections are installed bot-only, so they cannot search messages or reach private channels and
+   DMs the bot has not been added to; personal connections act as the signed-in user */}
