@@ -19,13 +19,15 @@ This page covers open templates — the right choice for most use cases. For adm
 ## Create a template
 
 <Steps>
-<Step title="Click Share on your agent">
+<Step title="Open Share, then the Template tab">
 
-From any agent, hit **Share** — a copy of your agent becomes the template, **credentials never included**.
+From any agent, click **Share**. The dialog opens on the **Share** tab, where you [give people access to the agent itself](/share/use-only). Switch to the **Template** tab and click **Create Template** — the template is a copy of your agent, **credentials never included**.
 
-<Frame caption="Share as a Template: a link to a copy of your agent — no credentials included.">
-  <img src="/images/template-share-popover.png" alt="The Share popover on an agent offering Share as a Template with a Create Template button" />
-</Frame>
+<Note>
+  **Create Template** stays disabled until your agent has instructions.
+</Note>
+
+{/* TODO(simon): Screenshot needed — Share dialog, Template tab. The previous image (/images/template-share-popover.png) showed the Share popover as it looked before Use only shipped. */}
 
 </Step>
 <Step title="Choose the type">
@@ -39,7 +41,7 @@ From any agent, hit **Share** — a copy of your agent becomes the template, **c
 </Step>
 <Step title="Name it & guide setup">
 
-Name and description, plus a **setup prompt** that tells the AI how to walk each new user through setup — Dataleap generates all of it for you.
+**Name** and **Description**, plus a **Setup Prompt** that tells the AI how to guide users through setup — Dataleap generates all of it for you, and **Regenerate** gives you a fresh version of any field.
 
 <Frame caption="Step 2: name, description, and the auto-generated setup prompt.">
   <img src="/images/template-wizard-about.png" alt="The template wizard's about step with name, description, and a setup prompt being generated" />
@@ -48,7 +50,7 @@ Name and description, plus a **setup prompt** that tells the AI how to walk each
 </Step>
 <Step title="Publish">
 
-You get a **template link**, and you can additionally publish to your **workspace library** or into specific **team spaces**.
+You get a **Template Link** you can share directly. Turn on **Publish to Library** to also list the template for your whole organization or for a single team.
 
 <Frame caption="Step 3: template link + publish to the library or team spaces.">
   <img src="/images/template-wizard-publish.png" alt="The template wizard's publishing step showing the template link and a Publish to Library toggle with workspace and team options" />
@@ -82,7 +84,7 @@ Click **Deploy** — you get your own clone, connect your own credentials, and y
 ## Good to know
 
 - **Templates share the skeleton, never your data.** The creator's credentials and content are always stripped — each clone runs with its own connections and context.
-- **A template stays linked to its source agent.** Improve your agent, and the template shows *unpublished changes* — click **Update** to publish. Existing clones keep their state; new deploys get the update.
+- **A template stays linked to its source agent.** Improve your agent, and the template has pending changes to publish — open **Manage Template** from the **Template** tab, then click **Update**. Existing clones keep their state; new deploys get the update.
 - **Don't publish half-baked agents** — everyone clones the flaws too. Share proven workflows.
 
 <Card title="Watch: Templates (open and locked)" icon="clapperboard" href="/video-series/section-4#templates-open-and-locked" horizontal>
