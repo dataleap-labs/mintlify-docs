@@ -47,6 +47,7 @@
         "group": "Scale your craft",
         "pages": [
           "scale/overview",
+          "scale/dashboards",
           "scale/sub-agents-and-intelligence-levels",
           "scale/agent-to-agent-communication",
           "scale/skills",
