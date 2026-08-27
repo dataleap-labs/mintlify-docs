@@ -1,0 +1,92 @@
+---
+title: "Build a dashboard"
+description: "Ask your agent for a dashboard and get a page you can open, share, and download. The same request also covers reports, maps, and calculators."
+---
+
+Ask your agent for a dashboard and it builds you a page: the numbers, charts, and tables you asked for, in a browser tab you can send to someone else. The same request also produces reports, maps, and calculators — underneath they are all the same thing, a single page your agent writes for you.
+
+You don't switch this on. When your request is better answered by a page than by a chat message, your agent builds one.
+
+<Frame caption="One request in chat becomes a page you can open, share, and download">
+  <img className="block dark:hidden" src="/images/dashboards-light.svg" alt="Three stages: you ask in chat, your agent builds one page, you open it, share it, and download it" />
+  <img className="hidden dark:block" src="/images/dashboards-dark.svg" alt="Three stages: you ask in chat, your agent builds one page, you open it, share it, and download it" />
+</Frame>
+
+## Before you start
+
+Your agent can only chart data it can reach. Give it a source first: a [connected app](/build/connect-your-tools), [knowledge](/build/add-knowledge) you uploaded, or figures you paste straight into the chat.
+
+## Ask for one
+
+Describe the result and who it is for. Your agent chooses the layout.
+
+- "Build me a dashboard of this quarter's pipeline, broken down by owner."
+- "Turn last month's support tickets into a one-page report for the team meeting."
+- "Put our office locations on a map I can send to a new starter."
+
+If the first version isn't right, say so in the chat. Ask for a different breakdown, fewer charts, or a shorter summary, and your agent builds it again.
+
+Your agent can put any of this on the page:
+
+| You want | What you get |
+|---|---|
+| Headline numbers | Large figures with the comparison or trend next to them |
+| Detail | Sortable tables of the underlying rows |
+| Charts | Charts chosen to fit the data you gave it |
+| Places | An interactive map you can pan and zoom |
+| Process | Flow and sequence diagrams |
+| Long-form output | Reports, simple forms, and calculators |
+
+## Open your dashboard
+
+When the page is ready, your agent posts a card in the chat showing a preview of the page, the filename, and the file size.
+
+- Click **Open page** to open the dashboard in a new browser tab.
+- Click the download button on the card to save the file to your computer.
+- If something went wrong, the card shows **Retry** instead of a preview.
+
+On the dashboard's own page, the header holds three actions:
+
+| Action | What it does |
+|---|---|
+| **Share** | Chooses who else can open the page. You only see it if you can manage the file. |
+| **Full screen** | Opens the dashboard full screen. |
+| **Download** | Saves the page to your computer. |
+
+## The figures are a snapshot
+
+<Note>
+  A dashboard holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and it can't reach your connected apps while you're looking at it. For current figures, ask your agent again — or put the request on a [trigger](/build/triggers) so a fresh dashboard arrives on a schedule.
+</Note>
+
+## Share your dashboard
+
+Sharing a dashboard shares the page, not the agent behind it. People who open it see the result and nothing else: not your instructions, not your connected apps, not the chat it came from.
+
+Click **Share** in the page header, then decide who gets in.
+
+To invite named people, type into the people field and leave the role as **Can view**. View is the only role a dashboard has — nobody you invite can change the page. You can add a whole team or your organization from the same field.
+
+Under **General access**, pick one:
+
+| Setting | Who can open the page |
+|---|---|
+| **Only people invited** | Only the people, teams, and organizations you added. |
+| **Anyone with the link** | Anyone who has the link. Download is switched off for them. |
+
+Then copy the link and send it.
+
+<Warning>
+  There's no library of dashboards to browse. The link is how you get back to a page, so keep it — or ask your agent to build the dashboard again.
+</Warning>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="When to share what" icon="share-nodes" href="/share/when-to-share-what">
+    Pick between sharing a dashboard, a template, and the agent itself.
+  </Card>
+  <Card title="Triggers" icon="bolt" href="/build/triggers">
+    Run the request on a schedule so the dashboard rebuilds itself.
+  </Card>
+</CardGroup>
