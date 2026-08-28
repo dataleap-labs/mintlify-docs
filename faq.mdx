@@ -1,21 +1,39 @@
 ---
 title: "FAQ"
-description: "The questions builders actually ask — with short answers and where to go deeper."
+description: "The questions builders and admins actually ask — with short answers and where to go deeper."
 ---
 
-Real questions from Dataleap trainings, answered briefly. Each answer links to the page that goes deeper.
+Real questions from Dataleap trainings and customer conversations, answered briefly. Each answer links to the page that goes deeper.
+
+## Building and improving
 
 <AccordionGroup>
-
-<Accordion title="How do I make my agents more cost-efficient?">
-
-Your costs split into **chat costs** (building — high at first, zero once the agent is done) and **run costs** (every execution). For run costs, the levers in order of impact: use [event triggers instead of schedules](/build/triggers), ask your agent *"Would [PTC](/scale/programmatic-tool-calling) make sense here?"* for data-heavy deterministic work, [dial the model tier down](/scale/sub-agents-and-intelligence-levels#model-tiers) once the agent is proven, and pre-filter data at the source. Full picture: [Credits & usage](/admin/credits-and-usage).
-
-</Accordion>
 
 <Accordion title="My agent times out or underperforms — what now?">
 
 Two things to try. If the workflow is **data-heavy and deterministic**, ask the agent *"Do you use [PTC](/scale/programmatic-tool-calling)?"* — batching the tool calls in a script often fixes both speed and cost. Otherwise, raise its [preset](/scale/sub-agents-and-intelligence-levels#model-tiers) one tier and test again — complex workflows sometimes need a bigger context window. The reverse also holds: if it runs well but feels expensive, try a tier lower and check the results stay good.
+
+</Accordion>
+
+<Accordion title="How do we know an agent is actually good — and how do we improve it?">
+
+Judge it on real work, not on a benchmark. Run it against examples where you already know the right answer, and read the result in **Runs** — every execution with its status, output, duration, and cost.
+
+When you change something, [versioning](/build/versioning) keeps the working state one restore away: run the new version on the same examples, compare, and keep whichever wins. If the output drifts, tighten its [instructions](/build/shape-agent-behavior) before you reach for a bigger model.
+
+</Accordion>
+
+<Accordion title="An agent ran for hours. How do I check the result in minutes?">
+
+Start with the run, not with the work. Open **Runs** on the agent — each execution shows its status, output, duration, and cost, so you see what came back before you check anything else.
+
+If the result is mostly numbers, ask for a [dashboard](/scale/dashboards) and scan one page instead of a wall of text. To confirm what the agent actually touched in your systems, admins have every tool call in [App Activity](/admin/connected-apps-management).
+
+</Accordion>
+
+<Accordion title="Do I have to set up sub-agents or programmatic tool calling myself?">
+
+No. Describe the problem — Dataleap architects the system for you, including [sub-agents](/scale/sub-agents-and-intelligence-levels) and [PTC](/scale/programmatic-tool-calling) where they help. Your job is a clear goal, not a system diagram. The one nudge worth knowing: if a deterministic, data-heavy agent feels slow or expensive, ask it *"Do you use PTC?"* — it will rethink its structure.
 
 </Accordion>
 
@@ -27,7 +45,15 @@ Two ways. Ad hoc: open the relevant page in your data tool (e.g., Snowflake), co
 
 <Accordion title="What's the file upload limit — and how do I work with bigger files?">
 
-Uploads in the chat are capped at **5 MB**. For anything bigger, don't upload at all — just **link the file**: connect the app where it already lives (SharePoint, Google Drive, OneDrive, …) and let the agent access it there. That handles files of any size. For reference documents an agent should use permanently, see [Add knowledge](/build/add-knowledge).
+Uploads are capped at **50 MB** — the same limit for a chat attachment and a [Knowledge](/build/add-knowledge) document. For anything bigger, don't upload at all — just **link the file**: connect the app where it already lives (SharePoint, Google Drive, OneDrive, …) and let the agent access it there. That handles files of any size. For reference documents an agent should use permanently, see [Add knowledge](/build/add-knowledge).
+
+</Accordion>
+
+<Accordion title="Knowledge or a skill — which one do I use?">
+
+[Knowledge](/build/add-knowledge) is context for one agent: the documents and facts it should work from. A [skill](/scale/skills) is a procedure or standard — your pricing method, your report format — that many agents follow, and that you update in one place.
+
+Rule of thumb: a document is knowledge, a rule that should hold everywhere is a skill.
 
 </Accordion>
 
@@ -37,9 +63,65 @@ Yes — OCR is a [built-in tool](/introduction/what-is-dataleap#anatomy-of-an-ag
 
 </Accordion>
 
-<Accordion title="What happens to my agents when I'm on vacation — or leave the company?">
+<Accordion title="I copied an agent. Will it start running on its own?">
 
-Agents in your personal space depend on you and your credentials. For workflows others rely on, move them to a [team space](/share/team-spaces): they run on team-level credentials (ideally [service accounts](/share/team-spaces#connections-in-a-team)), everyone can see runs and history, and access survives when people leave — handover is built in.
+No. A copy carries the original's [triggers](/build/triggers), but they arrive **disabled**. Reconfigure them for the copy's job before you switch them on — otherwise the copy fires alongside the original.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Spend and control
+
+<AccordionGroup>
+
+<Accordion title="How do I make my agents more cost-efficient?">
+
+Your costs split into **chat costs** (building — high at first, zero once the agent is done) and **run costs** (every execution). For run costs, the levers in order of impact: use [event triggers instead of schedules](/build/triggers), ask your agent *"Would [PTC](/scale/programmatic-tool-calling) make sense here?"* for data-heavy deterministic work, [dial the model tier down](/scale/sub-agents-and-intelligence-levels#model-tiers) once the agent is proven, and pre-filter data at the source. Full picture: [Credits & usage](/admin/credits-and-usage).
+
+</Accordion>
+
+<Accordion title="Can we cap what people spend?">
+
+Yes, and the caps that actually stop a run are the weekly ones. Admins set a **weekly member budget** per person — resolved user → team → org default, most specific wins — and a **weekly team-agent budget** shared by every agent on a team. Both are hard caps, which is also your answer to a run that goes off the rails.
+
+The monthly organization figures on the same page are for monitoring: passing one doesn't block anything. [Credits & usage](/admin/credits-and-usage) has both, plus the levers that make agents need fewer credits in the first place.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Sharing and ownership
+
+<AccordionGroup>
+
+<Accordion title="How do colleagues use an agent they didn't build?">
+
+Three ways, depending on how much they should be able to change:
+
+| They should | Share it as |
+|---|---|
+| Talk to it, never edit it | [Use only](/share/use-only) — their conversations show up in your **Runs** |
+| Clone it and adapt their copy | [Template](/share/templates) |
+| Run the identical process, unchanged | [Locked template](/share/locked-templates) — only the owner edits, and updates reach every clone |
+
+[When to share what](/share/when-to-share-what) is the full decision table.
+
+</Accordion>
+
+<Accordion title="Who owns an agent after it's shared?">
+
+Whoever holds the space it lives in. An agent in your personal space stays yours; **Copy to team** gives the [team](/share/team-spaces) its own copy while your original stays unchanged.
+
+A [locked template](/share/locked-templates) stays with its owner — clones follow the owner's updates, but each clone runs on its user's own connections and credentials. Admins can see the owner of every agent in the per-agent list under [Analytics](/admin/credits-and-usage).
+
+</Accordion>
+
+<Accordion title="How do teams manage and distribute their own skills?">
+
+Every [skill](/scale/skills) has a reach: personal, team, or org-wide. A team space has its own **Skills** tab, so a business unit maintains its own standards without touching anyone else's, and publishes org-wide only what genuinely applies to everyone.
+
+Distribution is the same mechanism: change the skill once, and every agent that uses it follows from the next run.
 
 </Accordion>
 
@@ -49,9 +131,45 @@ Share early and visibly: proven agents go into the [team space](/share/team-spac
 
 </Accordion>
 
-<Accordion title="Do I have to set up sub-agents or programmatic tool calling myself?">
+<Accordion title="What happens to my agents when I'm on vacation — or leave the company?">
 
-No. Describe the problem — Dataleap architects the system for you, including [sub-agents](/scale/sub-agents-and-intelligence-levels) and [PTC](/scale/programmatic-tool-calling) where they help. Your job is a clear goal, not a system diagram. The one nudge worth knowing: if a deterministic, data-heavy agent feels slow or expensive, ask it *"Do you use PTC?"* — it will rethink its structure.
+Agents in your personal space depend on you and your credentials. For workflows others rely on, move them to a [team space](/share/team-spaces): they run on team-level credentials (ideally [service accounts](/share/team-spaces#connections-in-a-team)), everyone can see runs and history, and access survives when people leave — handover is built in.
+
+</Accordion>
+
+<Accordion title="Where do I find a dashboard again later?">
+
+Through its link. There is no library of dashboards to browse, so keep the link — or the chat it came from. If other people need it, [share the page](/scale/dashboards#share-your-dashboard) instead of sending the file around.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Data and governance
+
+<AccordionGroup>
+
+<Accordion title="How do we let people build freely without risking core systems?">
+
+Put the guardrails on the tools, not on the people. Admins allow or block [each tool of each app](/admin/connected-apps-management) — they are grouped into read-only and write, so it is visible which ones can act in your systems. Whole apps can be moved to **Restricted**, usable only on request, and those requests are approved or rejected in one click.
+
+Two layers underneath: the [org-wide system prompt](/admin/users-and-roles#organization-defaults) applies rules like PII handling to every agent automatically, and team agents run on [team connections](/share/team-spaces#connections-in-a-team) — use service accounts there, never personal logins. Every tool call in the organization lands in **App Activity**.
+
+</Accordion>
+
+<Accordion title="Can we switch off skill or dashboard creation?">
+
+There is no on/off switch for either, and neither reaches your systems on its own: a skill is written instructions, and a dashboard is a page built from data the agent could already read.
+
+What you do govern is the access underneath — which [tools agents can use](/admin/connected-apps-management), who a [skill](/scale/skills) is shared with, and who can open a [dashboard](/scale/dashboards#share-your-dashboard).
+
+</Accordion>
+
+<Accordion title="Who can see what my agent did?">
+
+You see every execution of your own agent in **Runs**, including the conversations of people you gave **Use only** access. In a [team space](/share/team-spaces), the whole team sees the runs and history of team agents — that is what makes handover work.
+
+Admins see it organization-wide: every tool call in [App Activity](/admin/connected-apps-management), and cost and run counts per agent in Analytics.
 
 </Accordion>
 
@@ -66,4 +184,4 @@ No. Describe the problem — Dataleap architects the system for you, including [
   </Card>
 </CardGroup>
 
-{/* Sources: real Q&A from customer Level 2 workshops (Jul 2026 transcripts) */}
+{/* Sources: real Q&A from customer Level 2 workshops (Jul 2026 transcripts); enterprise question list reviewed Aug 2026 */}
