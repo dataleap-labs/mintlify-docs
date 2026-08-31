@@ -1,9 +1,15 @@
 ---
 title: "Connect your tools"
-description: "Connections are the agent's arms — set up once per account, activated per workflow with exactly the permissions needed."
+description: "Connections are the agent's arms — add an app once per account, activate it per workflow, and disconnect it when you no longer want the access."
 ---
 
 Connections are the agent's **arms** — they define what it can reach and act on in your systems. Connecting happens on two levels, and both live in the build conversation.
+
+## Before you start
+
+- An account with the app you want to connect, and permission to sign in to it.
+- You sign in with your own account, so an agent using that connection reaches exactly what you can reach — no more. [Team connections](/share/team-spaces#connections-in-a-team) are the exception: they belong to the team, not to you.
+- The app has to be available in your organization. An admin can block an app or mark it **Restricted**, and a restricted app is usable on request. See [Apps & permissions](/admin/connected-apps-management).
 
 ## Level 1: Connect the tool to your account — once
 
@@ -20,6 +26,31 @@ You click **Connect**, sign in once, done. From then on, that connection exists 
 <Info>
   You can also set up connections ahead of time under **Settings** > **Connected Apps** — the same place where you reconnect an expired login or review what's connected.
 </Info>
+
+### Add an app yourself
+
+<Steps>
+<Step title="Open Connected Apps">
+
+Go to **Settings** > **Connected Apps**. Personal and team connections are listed separately.
+
+</Step>
+<Step title="Pick the app">
+
+Click **Add Apps**, search the list, and select the app you want. Selecting it shows what the app can do before you commit to anything.
+
+</Step>
+<Step title="Sign in and approve the access">
+
+Click **Connect**. The app's own sign-in opens in a new window and asks you to confirm the access Dataleap requested. Approving it there finishes the connection; declining leaves nothing behind.
+
+</Step>
+<Step title="Check what you connected">
+
+The app now appears in **Connected Apps** with the account it uses. Expand the row to see which agents use it.
+
+</Step>
+</Steps>
 
 ## Level 2: Activate it for the workflow — with exactly the permissions needed
 
@@ -70,6 +101,60 @@ Review the requested permissions and click **Approve All**. Connections are reus
 </Step>
 </Steps>
 
+## What you can ask for once it's connected
+
+- **Work in the chat.** Describe the job and the agent uses the tools it has. You never call a tool by name.
+- **Let the app start the run.** Some apps can trigger an agent when something happens in them — a new message, a finished recording, an updated record. See [Triggers](/build/triggers).
+- **The app's own rules still apply.** Your agent inherits them: anything that needs a particular plan, licence, or setting in that app stays unavailable until it is enabled there, and the app's own rate limits count against your agent too.
+
+## Troubleshooting
+
+| What you run into | What to do |
+|---|---|
+| The app you need isn't in the list | It may not be supported yet, or an admin may have blocked it. Use **Request App** to send the name and what you need it for. |
+| A tool says it has been restricted by your admin | Send a request with a short reason. An admin accepts or rejects it, and the decision comes back to you. |
+| The sign-in stopped working | Connect the app again — the dialog shows **Reconnect** instead of **Connect**. Nothing else about the agent changes. |
+| The agent is using the wrong account | Check the account shown next to the app in **Connected Apps**. Disconnect it, then connect again with the account you meant. |
+| An agent stopped running after you disconnected an app | Disconnecting switches off the agents that used it. Connect the app again, then switch those agents back on. |
+| The agent can't see a private Slack channel or DM | It is using the org-wide connection. Ask it in the chat to switch to your personal one. |
+
+## Disconnect an app
+
+Disconnecting removes Dataleap's access to that account. It does not change or delete anything inside the app itself.
+
+<Steps>
+<Step title="Find the connection">
+
+Go to **Settings** > **Connected Apps** and find the app. The row shows the account it uses and how many agents use it.
+
+</Step>
+<Step title="Choose Disconnect">
+
+Open the row's menu and click **Disconnect**.
+
+</Step>
+<Step title="Decide what happens to the agents">
+
+The dialog lists every agent that will be affected. **Deactivate affected agents** is selected by default, so those agents are switched off rather than left to fail mid-run. Clear it only if you are reconnecting straight away.
+
+</Step>
+<Step title="Confirm">
+
+Click **Disconnect App**.
+
+</Step>
+</Steps>
+
+After you disconnect:
+
+- The connection and the sign-in stored behind it are deleted, so no agent can reach that account through Dataleap.
+- Agents that used it lose that capability. If you left **Deactivate affected agents** selected, they stay switched off until you turn them back on.
+- If the connection belonged to a team, it stops being available to everyone in that team.
+
+<Warning>
+  Disconnecting ends the access from Dataleap's side. Many apps also keep their own list of connected or authorized apps — if you want the authorization gone on both ends, open that list in the app and remove Dataleap there too.
+</Warning>
+
 Workspace-wide governance (reviewing, reconnecting, removing connections centrally) is an admin topic: see [Connected apps management](/admin/connected-apps-management).
 
 <Card title="Watch: Connecting your tools" icon="clapperboard" href="/video-series/section-2#connecting-your-tools" horizontal>
@@ -91,4 +176,10 @@ Workspace-wide governance (reviewing, reconnecting, removing connections central
    Simon's review (Jul 2026): two-level connection model, per-workflow permissions screenshot
    Slack connection guidance (Aug 2026): verified against product source — org-wide and team Slack
    connections are installed bot-only, so they cannot search messages or reach private channels and
-   DMs the bot has not been added to; personal connections act as the signed-in user */}
+   DMs the bot has not been added to; personal connections act as the signed-in user
+   Add / use / disconnect sections (Aug 2026): verified against product source — Settings > Connected Apps
+   (Add Apps, per-app row with account label and agents, row menu > Disconnect), the disconnect dialog
+   (affected agents, Deactivate affected agents checked by default, Disconnect App), Reconnect label,
+   restricted-tool request flow, and Request App form. Disconnect deletes the connection and its stored
+   credentials; whether an app still lists Dataleap on its own authorized-apps page is not knowable from
+   our code, hence the Warning wording */}
