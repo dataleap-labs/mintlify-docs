@@ -1,35 +1,83 @@
 ---
-title: "Connect your tools"
-description: "Connections are the agent's arms — set up once per account, activated per workflow with exactly the permissions needed."
+title: "Connect, use, and disconnect apps"
+description: "Connect external apps to Dataleap, approve access for agents, troubleshoot connection issues, and remove access."
 ---
 
-Connections are the agent's **arms** — they define what it can reach and act on in your systems. Connecting happens on two levels, and both live in the build conversation.
+Connected apps give your agents access to external tools and data. You connect an app once, then approve the specific tools an agent needs before it runs.
 
-## Level 1: Connect the tool to your account — once
+<Info>
+  You need a Dataleap account, access to `https://app.dataleap.ai`, and an account or credentials for the app you want to connect. Your workspace admin may restrict some apps or tools.
+</Info>
 
-The first time a workflow needs a tool you've never connected, Dataleap tells you and prompts the sign-in right in the chat:
+## Connect an app
 
-> *"No existing Jira connection in your account, so I'll create a new one — this will prompt an OAuth authorization on your end."*
+You can connect an app while building an agent or from **Settings** > **Connected Apps**.
 
-You click **Connect**, sign in once, done. From then on, that connection exists for your whole account.
+### Connect from settings
 
-<Frame caption="First-time connection: one click, one OAuth sign-in.">
+<Steps>
+  <Step title="Open Connected Apps">
+    Open `https://app.dataleap.ai`, open **Settings**, and select **Connected Apps**.
+  </Step>
+
+  <Step title="Choose where to save the connection">
+    Select **Personal** for a connection that belongs to you. If your workspace has teams, select a team to create a Team Connection. Team members may be able to use it from agents owned by that team, depending on your organization settings.
+  </Step>
+
+  <Step title="Find the app">
+    Click **Add Apps**, search for the app, and select it. Review its description, available tools, available triggers, and any credit notice before connecting.
+  </Step>
+
+  <Step title="Start the connection">
+    Click **Connect**. The setup screen depends on the app:
+
+    - OAuth apps open an authorization window. Sign in to the provider, review the requested access, and approve it.
+    - Some apps ask for credentials or other configuration in a Dataleap dialog. Enter the requested details and submit the form.
+    - Apps that do not require authorization connect immediately.
+  </Step>
+
+  <Step title="Confirm the connection">
+    Finish the provider or configuration screen and return to Dataleap. The app appears in **Connected Apps**. If the app is already connected, Dataleap may reuse the existing connection.
+  </Step>
+</Steps>
+
+<Frame caption="You can connect an app when an agent asks for it while you build a workflow.">
   <img src="/images/connections-first-connect.png" alt="Dataleap chat requesting a new Jira connection with a Connect button" />
 </Frame>
 
-<Info>
-  You can also set up connections ahead of time under **Settings** > **Connected Apps** — the same place where you reconnect an expired login or review what's connected.
-</Info>
+### Connect from an agent
 
-## Level 2: Activate it for the workflow — with exactly the permissions needed
+When an agent needs an app that is not connected, describe the task in the agent's chat. Dataleap identifies the app it needs and shows a **Connect** action. Select it, complete the authorization or configuration screen, and return to the chat.
 
-An account-level connection doesn't give every agent free rein. For each workflow, the agent requests the **specific tools** it needs from that connection — and you see every single permission before approving:
+Connecting an app to your account does not automatically give every agent access to every tool. The agent asks for access separately when it needs to use the connection.
 
-<Frame caption="Every permission is visible — and the set is as small as the workflow allows.">
+## Use a connected app
+
+An app's available actions depend on the app, the connection type, your account's access, and your workspace's policies.
+
+<Steps>
+  <Step title="Describe what you want the agent to do">
+    Ask the agent to use the connected app. For example: *"Find the open Jira issues assigned to me and summarize the blockers."*
+  </Step>
+
+  <Step title="Review the requested tools">
+    When the agent shows **Activate connections**, expand each app to review the tools it wants to add or remove. Tool names and descriptions appear in the list. Some tools may use additional credits.
+  </Step>
+
+  <Step title="Approve access">
+    Click **Approve All** to activate the requested connections and let the agent continue. The approval applies to that agent's workflow. Dataleap asks again if the agent later needs a different set of tools.
+  </Step>
+</Steps>
+
+<Frame caption="Review the requested tools before activating a connection for an agent.">
   <img src="/images/connections-workflow-permissions.png" alt="The agent requests to activate connections: Gmail and Notion, each listing the exact tools requested, with an Approve All button" />
 </Frame>
 
-The gray labels are the permissions — *Create Draft*, *Create Label*, *Download Attachment*, and so on. Dataleap keeps this set **as small as possible**: enough for the workflow to run, and nothing beyond it. One click on **Approve All**, and the agent is equipped.
+### Personal and team connections
+
+- A **Personal** connection runs with the account you authorized and is intended for your agents.
+- A Team Connection is saved for a team. Its availability depends on the team's use scope and organization settings.
+- If the same app appears more than once, check the account and team labels before approving access. They may refer to different accounts or credentials.
 
 ## Which Slack connection to use
 
@@ -50,38 +98,67 @@ If your agent can't find or read a private channel or DM, it's probably using th
   Your admin may have installed Slack without user permissions — in that case personal connections aren't available, and the org-wide connection is your only option.
 </Note>
 
-## What this means in practice
+For more detail about workspace-wide app and tool governance, see [Apps & permissions](/admin/connected-apps-management).
+
+## Disconnect and deauthorize an app
+
+Disconnect an app when you no longer want Dataleap to use the connection. If the app is used by agents, review the affected agents before confirming.
+
+<Warning>
+  Disconnecting removes the saved connection from Dataleap and removes that connection from the agents that use it. It does not delete the underlying records or data in the external app.
+</Warning>
 
 <Steps>
-<Step title="You describe the job">
+  <Step title="Open the connection list">
+    Open **Settings** > **Connected Apps** and find the app. Use **Search** if needed.
+  </Step>
 
-*"Give me a briefing before every meeting, based on my calendar and my emails."*
+  <Step title="Open the disconnect dialog">
+    Open the app's actions menu and select **Disconnect**.
+  </Step>
 
-</Step>
-<Step title="Dataleap names what it needs">
+  <Step title="Review the impact">
+    Review the account label, team information, and the list of agents that use the connection. Team Connections may be unavailable to other team members after you disconnect them.
+  </Step>
 
-*"For that I'll need access to your calendar and your email — please connect your Google Calendar and your Gmail."* New tools get the one-time account connection; known tools go straight to the permission request.
+  <Step title="Choose what happens to affected agents">
+    **Deactivate affected agents** is selected by default. Leave it selected unless you have already replaced the connection and are ready to update the affected agents.
 
-</Step>
-<Step title="You approve">
+    Clear the option only if you intentionally want the agents to remain enabled while you replace or reconfigure their connection. An enabled agent without a usable connection may fail when it runs or may wait for a new connection.
+  </Step>
 
-Review the requested permissions and click **Approve All**. Connections are reusable — the next agent that needs Gmail skips level 1 entirely.
-
-</Step>
+  <Step title="Confirm the disconnect">
+    Click **Disconnect App**. Dataleap removes the connection, removes its access from affected agents, and notifies those agents. If deactivation was selected, affected agents are also disabled.
+  </Step>
 </Steps>
 
-Workspace-wide governance (reviewing, reconnecting, removing connections centrally) is an admin topic: see [Connected apps management](/admin/connected-apps-management).
+For supported managed integrations, Dataleap also removes the managed provider connection. Some providers keep a separate authorization record. If the provider still lists Dataleap under **Authorized apps**, **Connected applications**, or a similar setting, remove Dataleap there to complete provider-side deauthorization.
+
+Disconnecting a Team Connection affects every team member or team agent that depends on that connection. Coordinate with the team before removing it.
+
+## Troubleshoot connection issues
+
+| Problem | What to do |
+|---|---|
+| The app does not appear in the list | Clear the search, check whether you are browsing **Personal** or a team, and confirm that your workspace admin has not restricted the app. |
+| The authorization window does not open | Allow popups for `https://app.dataleap.ai`, then select **Connect** again. |
+| You closed the authorization window | Start the connection again and complete the provider flow before closing the window. |
+| Dataleap says the credentials are invalid | Sign in to the intended provider account and verify the requested credentials or configuration. Then retry the connection. |
+| The app connected but is not listed | Reopen **Settings** > **Connected Apps** and refresh the page. If it is still missing, try connecting again. |
+| A requested tool is unavailable | Expand the connection request to see which tools are unavailable. Your workspace admin may have blocked them, or the provider account may not grant the required access. |
+| An agent cannot use a connection after it was disconnected | Connect or authorize the app again, approve the requested tools in the agent, and re-enable the agent if it was deactivated. |
+| A team connection or team option is missing | Confirm that you belong to the team and that your organization allows Team Connections. Contact your workspace admin if you need access. |
+| The connection has expired or access was revoked | Follow the agent's **Reconnect** prompt and complete authorization again. If the provider still shows Dataleap as authorized, check the provider's authorized-app settings. |
+
+If these steps do not resolve the issue, [contact Dataleap](https://www.dataleap.ai/contact-us) and include the app name, the step that failed, and the exact error message. Do not include passwords, access tokens, or other secrets.
 
 <Card title="Watch: Connecting your tools" icon="clapperboard" href="/video-series/section-2#connecting-your-tools" horizontal>
   See the connection flow in action.
 </Card>
 
 <CardGroup cols={2}>
-  <Card title="Add knowledge" icon="database" href="/build/add-knowledge">
-    Next: give the agent your reference material.
-  </Card>
   <Card title="Apps & permissions" icon="plug-circle-check" href="/admin/connected-apps-management">
-    The admin view: tool-level permissions and governance.
+    See how admins control app and tool access across a workspace.
   </Card>
 </CardGroup>
 
