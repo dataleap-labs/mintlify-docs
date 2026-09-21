@@ -42,18 +42,37 @@ Filters are the ones worth asking for by name. The page carries its own code, so
 
 A dashboard can carry an action: a button a reader presses to ask one of your agents to do some work. A "Refresh report" button that rebuilds the figures is the common case, but it can be any request you would otherwise type into a chat.
 
+<Frame caption="A reader presses the button, and the agent behind the dashboard picks up the work.">
+  <img className="block dark:hidden" src="/images/dashboard-action-light.svg" alt="Diagram: a dashboard with a Refresh report button hands a request to the agent behind it, which runs with its own instructions, connected apps, and credits, and then rebuilds the page or files the work" />
+  <img className="hidden dark:block" src="/images/dashboard-action-dark.svg" alt="Diagram: a dashboard with a Refresh report button hands a request to the agent behind it, which runs with its own instructions, connected apps, and credits, and then rebuilds the page or files the work" />
+</Frame>
+
 Ask for it explicitly, and name the agent that should do the work:
 
 - "Add a Refresh report button to this dashboard that asks my Pipeline Reporter agent to rebuild it."
 
 Your agent adds an action only when you ask for one in those terms. Asking for a dashboard, or for filters and other controls, never gets you one on its own.
 
-**Only people who manage the agent behind the dashboard can use it.** Sharing the page doesn't share the action: **Can view** access, **Anyone with the link**, and [use-only](/share/use-only) access to the agent are all deliberately not enough. Everyone else still gets the page, the figures, and the filters, but the button won't start anything for them.
+### What to use a button for
+
+A button can carry a little context with the request — the filter someone has selected, the row they picked, or a short note they typed — so the agent knows what to act on.
+
+| Ask for | What pressing it does |
+|---|---|
+| A **Refresh report** button | The agent rebuilds the page with current figures. Give it a moment, then reload. |
+| A rebuild for a different period or region | The button sends the choice along with the request, so the agent rebuilds for last quarter, or for another region, instead of the default. |
+| A **Look into this** button next to each row | The agent digs into the one deal, ticket, or account that was picked. |
+| A **Report a problem** button on a team's own dashboard | The agent files what was typed as a ticket in the tracker it's connected to. |
+| A **Send to the team** button | The agent posts the current summary wherever your team reads it. |
+
+What a button can achieve depends on the agent you name. It's a way to ask, not a new set of powers: if that agent can't reach your tracker, a button won't file the ticket.
+
+**Only people who manage the agent behind the dashboard can use it.** Sharing the page doesn't share the action: **Can view** access, **Anyone with the link**, and [use-only](/share/use-only) access to the agent are all deliberately not enough. Everyone else still gets the page, the figures, and the filters, but the button won't start anything for them. So a dashboard isn't the way to collect reports from a whole company — most of the people you want to hear from can't press the button. Keep actions for a team that already manages the agent.
 
 **The run starts straight away.** There's no second confirmation step, so ask for a button label that says plainly what pressing it will do. The agent you named then runs the way it always does, with its own instructions, its own connected apps, and its own [credits](/admin/credits-and-usage).
 
 <Note>
-  The button confirms that your request was sent, not that the work is finished. If you asked for a rebuild, give the agent time and then reload the page. The same address shows the new version.
+  The button confirms that your request was sent, not that the work is finished. If you asked for a rebuild, give the agent time and then reload the page — the same address shows the new version. If you want a short answer back on the page rather than just a confirmation, ask for that when you ask for the button.
 </Note>
 
 ## What it can't do
@@ -62,7 +81,7 @@ Your agent adds an action only when you ask for one in those terms. Asking for a
   **A dashboard is a snapshot.** It holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and the page itself can't reach your connected apps while you're looking at it. For current figures, ask your agent again, add a button that runs the agent for you, or put the request on a [trigger](/build/triggers) so it rebuilds on a schedule.
 </Note>
 
-There's still nothing on the page to fill in and send. Filters change what a reader sees, and a dashboard can't collect answers or save what someone types into it. Anything that reaches a connected app goes through an agent you asked for, never through the page on its own.
+The page itself still stores nothing and sends nothing. There's no database behind a dashboard, so whatever someone types into it is gone when they reload, and the page makes no network calls of its own. An action doesn't change that. It hands the request to an agent, and the agent is what saves it, files it, or writes it into a connected app.
 
 ## Share your dashboard
 
