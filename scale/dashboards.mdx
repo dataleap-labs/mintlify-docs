@@ -38,13 +38,31 @@ If the first version isn't right, say so in the chat and your agent builds it ag
 
 Filters are the ones worth asking for by name. The page carries its own code, so a filter, a toggle between two views, or a search box over a long table keeps working for everyone you send the page to — no account and no set-up on their side. That turns a dashboard from something people look at into something they can ask their own follow-up question of.
 
+## Ask for a button that runs an agent
+
+A dashboard can carry an action: a button a reader presses to ask one of your agents to do some work. A "Refresh report" button that rebuilds the figures is the common case, but it can be any request you would otherwise type into a chat.
+
+Ask for it explicitly, and name the agent that should do the work:
+
+- "Add a Refresh report button to this dashboard that asks my Pipeline Reporter agent to rebuild it."
+
+Your agent adds an action only when you ask for one in those terms. Asking for a dashboard, or for filters and other controls, never gets you one on its own.
+
+**Only people who manage the agent behind the dashboard can use it.** Sharing the page doesn't share the action: **Can view** access, **Anyone with the link**, and [use-only](/share/use-only) access to the agent are all deliberately not enough. Everyone else still gets the page, the figures, and the filters, but the button won't start anything for them.
+
+**The run starts straight away.** There's no second confirmation step, so ask for a button label that says plainly what pressing it will do. The agent you named then runs the way it always does, with its own instructions, its own connected apps, and its own [credits](/admin/credits-and-usage).
+
+<Note>
+  The button confirms that your request was sent, not that the work is finished. If you asked for a rebuild, give the agent time and then reload the page. The same address shows the new version.
+</Note>
+
 ## What it can't do
 
 <Note>
-  **A dashboard is a snapshot.** It holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and it can't reach your connected apps while you're looking at it. For current figures, ask your agent again — or put the request on a [trigger](/build/triggers) so it rebuilds on a schedule.
+  **A dashboard is a snapshot.** It holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and the page itself can't reach your connected apps while you're looking at it. For current figures, ask your agent again, add a button that runs the agent for you, or put the request on a [trigger](/build/triggers) so it rebuilds on a schedule.
 </Note>
 
-Filters change what a reader sees, and that's all. A dashboard can't collect answers from readers or write anything back into a connected app.
+There's still nothing on the page to fill in and send. Filters change what a reader sees, and a dashboard can't collect answers or save what someone types into it. Anything that reaches a connected app goes through an agent you asked for, never through the page on its own.
 
 ## Share your dashboard
 
