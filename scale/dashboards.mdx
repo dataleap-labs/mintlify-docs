@@ -42,9 +42,9 @@ Filters are the ones worth asking for by name. The page carries its own code, so
 
 A dashboard can carry an action: a button a reader presses to ask one of your agents to do some work. A "Refresh report" button that rebuilds the figures is the common case, but it can be any request you would otherwise type into a chat.
 
-<Frame caption="Press the button, the agent behind the page does the work, and the page comes back updated.">
-  <img className="block dark:hidden" src="/images/dashboard-action-light.svg" alt="Diagram: pressing a Refresh report button on a dashboard sends the request to the agent you named, which can be the agent that built the page; it runs with its own instructions, connected apps and credits, and the same page comes back updated" />
-  <img className="hidden dark:block" src="/images/dashboard-action-dark.svg" alt="Diagram: pressing a Refresh report button on a dashboard sends the request to the agent you named, which can be the agent that built the page; it runs with its own instructions, connected apps and credits, and the same page comes back updated" />
+<Frame caption="A reader presses the button, and the agent behind the dashboard picks up the work.">
+  <img className="block dark:hidden" src="/images/dashboard-action-light.svg" alt="Diagram: a dashboard with a Refresh report button hands a request to the agent behind it, which runs with its own instructions, connected apps, and credits, and then rebuilds the page or files the work" />
+  <img className="hidden dark:block" src="/images/dashboard-action-dark.svg" alt="Diagram: a dashboard with a Refresh report button hands a request to the agent behind it, which runs with its own instructions, connected apps, and credits, and then rebuilds the page or files the work" />
 </Frame>
 
 Ask for it explicitly, and name the agent that should do the work:
@@ -55,6 +55,11 @@ Ask for it explicitly, and name the agent that should do the work:
 Your agent adds an action only when you ask for one in those terms. Asking for a dashboard, or for filters and other controls, never gets you one on its own.
 
 The agent you name can be the one that built the dashboard. For a refresh button that's usually what you want: the agent that made the page is the one that can make it again.
+
+<Frame caption="A refresh button sends the work straight back to the agent that built the page.">
+  <img className="block dark:hidden" src="/images/dashboard-loop-light.svg" alt="Diagram: a loop between a dashboard and the agent that built it, where you press the button on the page and the same agent rebuilds that page" />
+  <img className="hidden dark:block" src="/images/dashboard-loop-dark.svg" alt="Diagram: a loop between a dashboard and the agent that built it, where you press the button on the page and the same agent rebuilds that page" />
+</Frame>
 
 ### What to use a button for
 
@@ -75,7 +80,7 @@ What a button can achieve depends on the agent you name. It's a way to ask, not 
 **The run starts straight away.** There's no second confirmation step, so ask for a button label that says plainly what pressing it will do. The agent you named then runs the way it always does, with its own instructions, its own connected apps, and its own [credits](/admin/credits-and-usage).
 
 <Note>
-  The button confirms that your request was sent, not that the work is finished. If you asked for a rebuild, give the agent time and then reload the page — the same address shows the new version. If you want a short answer back on the page rather than just a confirmation, ask for that when you ask for the button.
+  The button confirms that your request was sent, not that the work is finished. If you asked for a rebuild, give the agent time and then reload the page — the same address shows the new version. Your agent may also stop and ask for more information. The dashboard can't answer that, so open the agent in Dataleap and carry on the conversation there. If you want a short answer back on the page rather than just a confirmation, ask for that when you ask for the button.
 </Note>
 
 ## What it can't do
