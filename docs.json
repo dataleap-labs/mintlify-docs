@@ -72,7 +72,8 @@
           "admin/users-and-roles",
           "admin/credits-and-usage",
           "admin/models",
-          "admin/connected-apps-management"
+          "admin/connected-apps-management",
+          "admin/slack-apps"
         ]
       },
       {
