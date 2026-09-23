@@ -1,0 +1,131 @@
+---
+title: "Slack apps"
+description: "Install the Dataleap Slack app for your organization, or add a custom Slack app that runs under your own bot name, scopes, and credentials."
+---
+
+**Admin** > **Slack** lists every Slack app your organization can use: the Dataleap Slack app, installed once for the whole organization, and any custom Slack app you added yourself. A custom app runs in your Slack workspace under your own bot name, your own scopes, and your own credentials.
+
+<Info>
+  You need admin access to `app.dataleap.ai/admin`. You also create the custom app yourself at `api.slack.com`, so you need an account that is allowed to create apps in your Slack workspace.
+</Info>
+
+## Which Slack app you need
+
+| | Dataleap Slack app | Custom Slack app |
+|---|---|---|
+| Runs as | the shared Dataleap bot | your own bot, with the name and description you choose |
+| How many | one per organization | as many as you need, each with its own permissions |
+| Private channels | the bot never reads them, even when it is a member | the bot works in the private channels it is invited to, unless you restrict it |
+| DMs and group DMs | the bot doesn't read them | the bot reads and answers them |
+| Personal Slack accounts | members can connect their own Slack account through it, if you install it with user scopes | not available — a custom app is bot-only |
+| Only with your own app | — | searching public channels while the agent answers a Slack message, and suggested prompts in Slack's AI assistant view |
+
+What a bot can reach comes from the scopes you grant it and the channels someone invites it to. Who may use the app at all is a separate decision you make in **Apps & Permissions** — so a bot that works in a private channel such as `#hiring-pipeline` can be limited to the team that owns that channel.
+
+## Install the Dataleap Slack app
+
+The Dataleap Slack app is listed on **Admin** > **Slack** as a **Workspace app**. Until someone installs it, its card reads **Not installed** and members cannot use Slack tools at all.
+
+<Steps>
+  <Step title="Choose scopes">
+    Click **Configure scopes & install** and pick a preset — **Restrictive**, bot-only core messaging and read scopes, or **Recommended**, bot and user scopes for most workflows — then add or remove individual scopes. **Live tool preview** shows which tools each scope unlocks.
+  </Step>
+
+  <Step title="Install it">
+    Click **Install Slack** and authorize the app in your Slack workspace. The card then reads **Installed**, with either **Default permissions** or **Custom permissions**.
+  </Step>
+</Steps>
+
+<Note>
+  Both presets grant the bot the same scopes. They differ only in **user scopes**, and that decides one thing: whether members can connect their own personal Slack account. Install without them and **Granted scopes** reads **Personal connections disabled** — so searching messages, and reading private channels and DMs, stays out of reach through this app. Your own Slack app is the other way to reach private channels and DMs.
+</Note>
+
+**Granted scopes** on the card lists what Slack actually granted, split into **Bot scopes** and **User scopes**.
+
+## Why add your own app
+
+The Dataleap Slack app is installed once for your whole organization and deliberately stays out of everything that is not a public channel. Your own app is how you get past that, and how you put your own name on the bot:
+
+- **Work where the shared bot cannot.** Your bot reads and answers in DMs, in group DMs, and in the private channels someone invites it to.
+- **Your bot, your name.** Members @mention a bot you named and described, instead of a shared one.
+- **Only the permissions the job needs.** You choose the scopes, so the bot carries no access it has no use for.
+- **More than one.** Add a separate app per team or per use case, each with its own permissions.
+
+## Add a custom Slack app
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="https://res.cloudinary.com/b3hnpbxu/video/upload/v1790152502/Slack_create_custom_app.mp4"
+></video>
+
+Watch the whole setup, or follow the steps below.
+
+<Steps>
+  <Step title="Name it">
+    On **Admin** > **Slack**, click **Add custom app**. Enter a **Bot name** — this is what members @mention — and an **App name**, which is what Slack shows in its app directory. A **Description** is optional and also shown in Slack. Click **Continue to scopes**.
+  </Step>
+
+  <Step title="Choose scopes">
+    Pick a preset — **Restrictive** for public channels and DMs only, or **Recommended**, which unlocks every Slack bot tool — then add or remove individual scopes. The live preview shows which tools each scope unlocks. Click **Continue**.
+  </Step>
+
+  <Step title="Create the app in Slack">
+    Click **Copy manifest**. In Slack, open `api.slack.com/apps`, choose **Create New App** > **From an app manifest**, pick the workspace the bot should live in, and paste the manifest. When Slack has created the app, open **Basic Information** and copy the Client ID, Client Secret, and Signing Secret. Back in Dataleap, click **I created the app**.
+  </Step>
+
+  <Step title="Paste credentials, then connect">
+    Enter the three values and click **Save credentials**. Secrets are stored encrypted and never shown again. Then click **Connect to Slack** and authorize the app in the Slack window that opens. The app's card shows **Installed** when it is live.
+  </Step>
+</Steps>
+
+<Note>
+  You can stop after any step with **Finish later**. The app stays on the Slack page as a draft, and **Continue setup** picks up where you left off.
+</Note>
+
+## Decide who can use it
+
+Each custom app has its own entry in **Apps & Permissions**, named after its bot — **Slack (bot name)** — listing only the tools its scopes unlock. Open it from the app's card with **Open in Apps & Permissions**.
+
+From there it behaves like any other app: allow or block each tool, and override that for a team or a single member. If your organization blocks apps by default, a new custom app starts blocked until you allow it.
+
+Members don't connect a custom app themselves. Once it is installed and allowed, their agents activate its tools like any other connection.
+
+## Keep a bot out of private channels
+
+Every app card has a **Restrict bot access to private channels** switch.
+
+- On a custom app the switch is off when you create the app. Turn it on and the bot can neither read nor post in private channels, even when it is a member, and private-channel triggers stop firing. DMs and group DMs with the bot keep working.
+- On the Dataleap Slack app the switch is always on and can't be changed. Its bot never reads private channels — members use their personal Slack connection for that.
+
+<Warning>
+  A bot that is allowed into private channels can read everything in the channels it is invited to. Decide who may use the app in **Apps & Permissions** before anyone invites it to a sensitive channel.
+</Warning>
+
+## Change scopes later
+
+How you change scopes depends on which app it is.
+
+**The Dataleap Slack app.** Click **Edit scopes** on the card, adjust the selection, and click **Update scopes**. You authorize the app in Slack again, and the new scopes apply once you do.
+
+**A custom Slack app.** Scopes are baked into the manifest, so changing them takes three steps: click **Edit scopes** on the app's card and save, update the manifest in Slack, then connect the app again. Until you reconnect, the app keeps the scopes it was installed with.
+
+<Warning>
+  Adding scopes to the Dataleap Slack app is easy; taking them away is not. Slack's OAuth cannot revoke individual scopes, so Dataleap asks you to **Uninstall Slack to remove scopes** and reinstall with the smaller selection. The dialog tells you how many connections and agents will be revoked, and asks you to type `uninstall-slack` to confirm.
+</Warning>
+
+## Uninstall or delete an app
+
+- **Uninstall** stops the bot in Slack and keeps the app and its credentials. Agents that use the bot resume when you connect it again.
+- **Delete app** removes the app and its credentials from Dataleap.
+- Uninstalling the Dataleap Slack app removes Slack tools for everyone in the organization. Custom apps keep working.
+
+<CardGroup cols={2}>
+  <Card title="Apps & permissions" icon="plug-circle-check" href="/admin/connected-apps-management">
+    Tool-level permissions, approval workflows, and the audit trail.
+  </Card>
+
+  <Card title="Connect your tools" icon="plug" href="/build/connect-your-tools">
+    The builder side: which Slack connection an agent uses, and why.
+  </Card>
+</CardGroup>
