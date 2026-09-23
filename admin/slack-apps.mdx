@@ -40,7 +40,7 @@ The Dataleap Slack app is listed on **Admin** > **Slack** as a **Workspace app**
   Both presets grant the bot the same scopes. They differ only in **user scopes**, and that decides one thing: whether members can connect their own personal Slack account. Install without them and **Granted scopes** reads **Personal connections disabled** — so searching messages, and reading private channels and DMs, stays out of reach through this app. Your own Slack app is the other way to reach private channels and DMs.
 </Note>
 
-To change scopes later, click **Edit scopes** on the card, adjust them, and click **Update scopes**. **Granted scopes** lists what Slack actually granted, split into **Bot scopes** and **User scopes**.
+**Granted scopes** on the card lists what Slack actually granted, split into **Bot scopes** and **User scopes**.
 
 ## Why add your own app
 
@@ -104,7 +104,15 @@ Every app card has a **Restrict bot access to private channels** switch.
 
 ## Change scopes later
 
-Scopes are baked into the manifest, so changing them takes three steps: click **Edit scopes** on the app's card and save, update the manifest in Slack, then connect the app again. Until you reconnect, the app keeps the scopes it was installed with.
+How you change scopes depends on which app it is.
+
+**The Dataleap Slack app.** Click **Edit scopes** on the card, adjust the selection, and click **Update scopes**. You authorize the app in Slack again, and the new scopes apply once you do.
+
+**A custom Slack app.** Scopes are baked into the manifest, so changing them takes three steps: click **Edit scopes** on the app's card and save, update the manifest in Slack, then connect the app again. Until you reconnect, the app keeps the scopes it was installed with.
+
+<Warning>
+  Adding scopes to the Dataleap Slack app is easy; taking them away is not. Slack's OAuth cannot revoke individual scopes, so Dataleap asks you to **Uninstall Slack to remove scopes** and reinstall with the smaller selection. The dialog tells you how many connections and agents will be revoked, and asks you to type `uninstall-slack` to confirm.
+</Warning>
 
 ## Uninstall or delete an app
 
