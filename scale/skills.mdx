@@ -44,10 +44,10 @@ Which agent you use decides who else gets it. Create a skill through a personal 
 </Tab>
 <Tab title="From the Skills section">
 
-Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **Import Markdown** (if the standard already exists as a document).
+Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **Import Skill** (if the standard already exists as a file).
 
-<Frame caption="Add Skill: create in chat, write it manually, or import a Markdown file.">
-  <img src="/images/skills-add-skill-menu.png" alt="The Add Skill dropdown with the options Create in Chat, Create Manually, and Import Markdown" />
+<Frame caption="Add Skill: create in chat, write it manually, or import a skill file.">
+  <img src="/images/skills-add-skill-menu.png" alt="The Add Skill dropdown with the options Create in Chat, Create Manually, and Import Skill" />
 </Frame>
 
 </Tab>
@@ -56,6 +56,36 @@ Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **
 <Tip>
   There's no hard size limit on a skill — but every rule in it costs tokens on every run that loads it. Keep skills as lean as possible while still doing the job.
 </Tip>
+
+## Import and export skills
+
+A skill doesn't have to start in Dataleap, and it doesn't have to stay there. Bring one in from a file, or take one out as a file — so a standard you already wrote somewhere else moves across without retyping.
+
+### Import a skill
+
+In the **Skills** section, click **Add Skill** and choose **Import Skill**. Drag a file onto the dialog, or click **Browse files**. Dataleap takes `.md`, `.zip`, and `.skill` files up to 30 MB — including an Agent Skills ZIP exported from another platform.
+
+Nothing is saved yet. **Review Skill Import** shows what was found in the file — **Name**, **Description**, **Bundled Files**, and the **Instructions** — and lets you fix the name or description before anything is created. Skill names have to be unique, so if you already have one with that name, rename it here. Click **Import Skill** to save, or **Cancel** to drop it.
+
+### Export a skill
+
+Open the skill, open its actions menu, and choose **Export**. You get a ZIP of the skill — its instructions and any bundled files — to archive, hand to someone outside your team, or load into another tool that reads the Agent Skills format.
+
+### Replace a skill's contents
+
+When a skill's source of truth lives outside Dataleap, you don't have to delete it and import a new copy. Open the skill's actions menu, choose **Replace Contents**, and upload the new file. You get the same review step first, and you need edit access to the skill.
+
+<Warning>
+  Replacing is a swap, not a merge: the upload becomes the skill's entire contents, and bundled files that aren't in the upload are removed. The review step lists exactly which files would go. Use **Export** first if you want a backup.
+</Warning>
+
+## Bundled files
+
+A skill can carry files alongside its instructions — a reference table, a template, a script for the agent to run. They're listed under **Bundled Files** on the skill's page, each with its path and size.
+
+- Download any bundled file.
+- Edit markdown files in place if you have edit access — changes save to the skill.
+- Other text files open read-only. Anything else is download-only.
 
 ## Use a skill
 
