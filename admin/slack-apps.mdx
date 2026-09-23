@@ -26,10 +26,30 @@ The Dataleap Slack app is installed once for your whole organization and deliber
 | How many | one per organization | as many as you need, each with its own permissions |
 | Private channels | the bot never reads them, even when it is a member | the bot works in the private channels it is invited to, unless you restrict it |
 | DMs and group DMs | the bot doesn't read them | the bot reads and answers them |
-| Personal Slack accounts | members can connect their own Slack account through it | not available — a custom app is bot-only |
+| Personal Slack accounts | members can connect their own Slack account through it, if you install it with user scopes | not available — a custom app is bot-only |
 | Only with your own app | — | searching public channels while the agent answers a Slack message, and suggested prompts in Slack's AI assistant view |
 
 What a bot can reach comes from the scopes you grant it and the channels someone invites it to. Who may use the app at all is a separate decision you make in **Apps & Permissions** — so a bot that works in a private channel such as `#hiring-pipeline` can be limited to the team that owns that channel.
+
+## Install the Dataleap Slack app
+
+The Dataleap Slack app is listed on **Admin** > **Slack** as a **Workspace app**. Until someone installs it, its card reads **Not installed** and members cannot use Slack tools at all.
+
+<Steps>
+  <Step title="Choose scopes">
+    Click **Configure scopes & install** and pick a preset — **Restrictive**, bot-only core messaging and read scopes, or **Recommended**, bot and user scopes for most workflows — then add or remove individual scopes. **Live tool preview** shows which tools each scope unlocks.
+  </Step>
+
+  <Step title="Install it">
+    Click **Install Slack** and authorize the app in your Slack workspace. The card then reads **Installed**, with either **Default permissions** or **Custom permissions**.
+  </Step>
+</Steps>
+
+<Note>
+  Both presets grant the bot the same scopes. They differ only in **user scopes**, and that decides one thing: whether members can connect their own personal Slack account. Install without them and **Granted scopes** reads **Personal connections disabled** — so searching messages, and reading private channels and DMs, stays out of reach through this app. Your own Slack app is the other way to reach private channels and DMs.
+</Note>
+
+To change scopes later, click **Edit scopes** on the card, adjust them, and click **Update scopes**. **Granted scopes** lists what Slack actually granted, split into **Bot scopes** and **User scopes**.
 
 ## Add a custom Slack app
 
