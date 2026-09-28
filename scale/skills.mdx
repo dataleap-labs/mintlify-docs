@@ -37,6 +37,8 @@ You built an agent and notice one part of it is reusable — just tell Dataleap:
 
 Which agent you use decides who else gets it. Create a skill through a personal agent and it stays private to you. Create one through a [team agent](/share/team-spaces) and it is still yours, but it is shared with that agent's team as **Can edit** in the same step — so the agent can use it from your next message, and a teammate can ask that same agent to refine it.
 
+A skill built this way isn't limited to instructions. Ask for a script, a template, or a long reference document alongside them and the agent packs those in as [bundled files](#bundled-files) — the same way you later ask it to change them.
+
 <Frame caption="One sentence in the agent's chat, and the reusable part becomes a skill.">
   <img src="/images/skills-create-in-chat.png" alt="A chat where the user asks to create a skill out of the scoring logic and Dataleap drafts the Candidate Scoring Model skill" />
 </Frame>
@@ -82,17 +84,23 @@ Go over one and the upload is refused with a message naming the limit, so nothin
 
 Open the skill, open its actions menu, and choose **Export**. You get a ZIP of the skill — its instructions and any bundled files — to archive, hand to someone outside your team, or load into another tool that reads the Agent Skills format.
 
-### Replace a skill's contents
+### Replace a skill's contents with an upload
 
-When a skill's source of truth lives outside Dataleap, you don't have to delete it and import a new copy. Open the skill's actions menu, choose **Replace Contents**, and upload the new file. You get the same review step first, and you need edit access to the skill.
+When a skill's source of truth lives outside Dataleap, you don't have to delete it and import a new copy. Open the skill, click **Edit**, and choose **Upload**. **Upload Skill Content** accepts the same files as an import, and you need edit access to the skill.
+
+<Frame caption="Edit: rewrite the skill here, take it to chat, or upload a file that replaces it.">
+  <img src="/images/skills-upload-menu.svg" alt="The Edit dropdown on a skill page with the options Edit, Edit in Chat, and Upload" />
+</Frame>
+
+One upload replaces the whole skill — the instructions and the bundled files together — so you review it first, under **Replace Skill Contents**. That step names every bundled file the skill has but your upload doesn't, and those files go when you confirm. Click **Replace Contents** to apply it.
 
 <Warning>
-  Replacing is a swap, not a merge: the upload becomes the skill's entire contents, and bundled files that aren't in the upload are removed. The review step lists exactly which files would go. Use **Export** first if you want a backup.
+  Replacing is a swap, not a merge: your upload becomes the skill's entire contents, and bundled files missing from it are removed. Use **Export** first if you want a backup.
 </Warning>
 
 ## Bundled files
 
-A skill can carry files alongside its instructions, which keeps the instructions themselves short. They're listed under **Bundled Files** on the skill's page, each with its path and size. The agent groups them into three folders:
+A skill can carry files alongside its instructions, which keeps the instructions themselves short. On the skill's page they sit behind **Other Files**, a row giving the number of files and their total size; open it to see each file's path and size. The agent groups them into three folders:
 
 | Folder | What belongs there |
 |---|---|
@@ -104,7 +112,7 @@ On the skill's page you can download any bundled file, and edit the markdown one
 
 ### Add or change bundled files from chat
 
-You can't add or remove a file from the skill's page — that happens in chat. Ask the agent that owns the skill:
+The skill's page lets you edit a bundled markdown file, but not add or remove one. To change which files a skill carries, either replace the lot with an [upload](#replace-a-skills-contents-with-an-upload), or ask the agent in chat:
 
 > "Add this report template to the *Pricing Methodology* skill, and point the instructions at it."
 
