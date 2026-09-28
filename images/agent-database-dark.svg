@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-label="Three runs of one agent write into a single database, which a person opens in a read-only viewer">
+<rect width="760" height="300" fill="#1c1917"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#A5B4FC"/></marker></defs>
+<rect x="24" y="30" width="140" height="56" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="94.0" y="63.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#f5f5f4">Run 1</text>
+<path d="M164 58.0 H250 V150.0" fill="none" stroke="#A5B4FC" stroke-width="2" stroke-linejoin="round"/>
+<rect x="24" y="122" width="140" height="56" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="94.0" y="155.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#f5f5f4">Run 2</text>
+<path d="M164 150.0 H250 V150.0" fill="none" stroke="#A5B4FC" stroke-width="2" stroke-linejoin="round"/>
+<rect x="24" y="214" width="140" height="56" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="94.0" y="247.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#f5f5f4">Run 3</text>
+<path d="M164 242.0 H250 V150.0" fill="none" stroke="#A5B4FC" stroke-width="2" stroke-linejoin="round"/>
+<path d="M250 150.0 H300" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="300" y="84" width="176" height="132" rx="14" fill="#312E81" stroke="#A5B4FC" stroke-width="2"/>
+<ellipse cx="388.0" cy="122" rx="34" ry="11" fill="none" stroke="#A5B4FC" stroke-width="2"/>
+<path d="M354.0 122 V146" fill="none" stroke="#A5B4FC" stroke-width="2"/>
+<path d="M422.0 122 V146" fill="none" stroke="#A5B4FC" stroke-width="2"/>
+<path d="M354.0 146 A34 11 0 0 0 422.0 146" fill="none" stroke="#A5B4FC" stroke-width="2"/>
+<text x="388.0" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Database</text>
+<text x="388.0" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">one per agent</text>
+<path d="M476 150.0 H576" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="576" y="102" width="160" height="96" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="656.0" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">View data</text>
+<text x="656.0" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">read only</text>
+</svg>
