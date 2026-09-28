@@ -37,6 +37,8 @@ You built an agent and notice one part of it is reusable — just tell Dataleap:
 
 Which agent you use decides who else gets it. Create a skill through a personal agent and it stays private to you. Create one through a [team agent](/share/team-spaces) and it is still yours, but it is shared with that agent's team as **Can edit** in the same step — so the agent can use it from your next message, and a teammate can ask that same agent to refine it.
 
+A skill built this way isn't limited to instructions. Ask for a script, a template, or a long reference document alongside them and the agent packs those in as [bundled files](#bundled-files) — the same way you later ask it to change them.
+
 <Frame caption="One sentence in the agent's chat, and the reusable part becomes a skill.">
   <img src="/images/skills-create-in-chat.png" alt="A chat where the user asks to create a skill out of the scoring logic and Dataleap drafts the Candidate Scoring Model skill" />
 </Frame>
@@ -44,18 +46,81 @@ Which agent you use decides who else gets it. Create a skill through a personal 
 </Tab>
 <Tab title="From the Skills section">
 
-Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **Import Markdown** (if the standard already exists as a document).
+Click **Add Skill** and pick how: **Create in Chat**, **Create Manually**, or **Import Skill** (if the standard already exists as a file).
 
-<Frame caption="Add Skill: create in chat, write it manually, or import a Markdown file.">
-  <img src="/images/skills-add-skill-menu.png" alt="The Add Skill dropdown with the options Create in Chat, Create Manually, and Import Markdown" />
+<Frame caption="Add Skill: create in chat, write it manually, or import a skill file.">
+  <img src="/images/skills-add-skill-menu.svg" alt="The Add Skill dropdown with the options Create in Chat, Create Manually, and Import Skill" />
 </Frame>
 
 </Tab>
 </Tabs>
 
 <Tip>
-  There's no hard size limit on a skill — but every rule in it costs tokens on every run that loads it. Keep skills as lean as possible while still doing the job.
+  A skill's instructions can be up to 256 KB, but that is far more than you want: every rule in a skill costs tokens on every run that loads it. Keep the instructions as lean as they can be while still doing the job, and move long reference material into a [bundled file](#bundled-files) the agent only reads when it needs it.
 </Tip>
+
+## Import and export skills
+
+A skill doesn't have to start in Dataleap, and it doesn't have to stay there. Bring one in from a file, or take one out as a file — so a standard you already wrote somewhere else moves across without retyping.
+
+### Import a skill
+
+In the **Skills** section, click **Add Skill** and choose **Import Skill**. Drag a file onto the dialog, or click **Browse files**. Dataleap takes `.md`, `.zip`, and `.skill` files up to 30 MB — including an Agent Skills ZIP exported from another platform.
+
+Nothing is saved yet. **Review Skill Import** shows what was found in the file — **Name**, **Description**, **Bundled Files**, and the **Instructions** — and lets you fix the name or description before anything is created. Skill names have to be unique, so if you already have one with that name, rename it here. Click **Import Skill** to save, or **Cancel** to drop it.
+
+These limits apply to what you upload:
+
+| Limit | Maximum |
+|---|---|
+| Upload size | 30 MB, both as sent and unpacked |
+| Files in one bundle | 100, counting the skill's own instructions file |
+| Any single bundled file | 25 MB |
+| The skill's instructions | 256 KB |
+
+Go over one and the upload is refused with a message naming the limit, so nothing half-imports.
+
+### Export a skill
+
+Open the skill, open its actions menu, and choose **Export**. You get a ZIP of the skill — its instructions and any bundled files — to archive, hand to someone outside your team, or load into another tool that reads the Agent Skills format.
+
+### Replace a skill's contents with an upload
+
+When a skill's source of truth lives outside Dataleap, you don't have to delete it and import a new copy. Open the skill, click **Edit**, and choose **Upload**. **Upload Skill Content** accepts the same files as an import, and you need edit access to the skill.
+
+<Frame caption="Edit: rewrite the skill here, take it to chat, or upload a file that replaces it.">
+  <img src="/images/skills-upload-menu.svg" alt="The Edit dropdown on a skill page with the options Edit, Edit in Chat, and Upload" />
+</Frame>
+
+One upload replaces the whole skill — the instructions and the bundled files together — so you review it first, under **Replace Skill Contents**. That step names every bundled file the skill has but your upload doesn't, and those files go when you confirm. Click **Replace Contents** to apply it.
+
+<Warning>
+  Replacing is a swap, not a merge: your upload becomes the skill's entire contents, and bundled files missing from it are removed. Use **Export** first if you want a backup.
+</Warning>
+
+## Bundled files
+
+A skill can carry files alongside its instructions, which keeps the instructions themselves short. On the skill's page they sit behind **Other Files**, a row giving the number of files and their total size; open it to see each file's path and size. The agent groups them into three folders:
+
+| Folder | What belongs there |
+|---|---|
+| `scripts/` | Helpers the agent runs instead of working the same logic out again. |
+| `references/` | Longer documentation the agent reads only when it needs it. |
+| `assets/` | Templates and files the workflow uses. |
+
+On the skill's page you can download any bundled file, and edit the markdown ones in place if you have edit access. Other text files open read-only, and anything else is download-only.
+
+### Add or change bundled files from chat
+
+The skill's page lets you edit a bundled markdown file, but not add or remove one. To change which files a skill carries, either replace the lot with an [upload](#replace-a-skills-contents-with-an-upload), or ask the agent in chat:
+
+> "Add this report template to the *Pricing Methodology* skill, and point the instructions at it."
+
+The agent stages the files, then shows you the name, description, the full instructions, and the resulting list of bundled files, and waits for you to approve before saving.
+
+<Warning>
+  Read that file list before you approve. The set you approve becomes the skill's bundled files, so a file missing from the list is a file the skill loses.
+</Warning>
 
 ## Use a skill
 
