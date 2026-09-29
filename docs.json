@@ -39,6 +39,7 @@
           "build/shape-agent-behavior",
           "build/connect-your-tools",
           "build/add-knowledge",
+          "build/agent-database",
           "build/triggers",
           "build/versioning"
         ]
