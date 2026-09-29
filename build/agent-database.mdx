@@ -23,19 +23,25 @@ You don't switch this on and there is nothing to set up. Ask your agent to keep 
 
 ## Ask your agent to keep something
 
-Say what should be remembered and why. Your agent works out the tables it needs.
+Say what should be remembered and why. Your agent works out the tables it needs. Use these prompts as a starting point:
 
-- "Keep a record of every invoice you process, so you never process the same one twice."
-- "Track the weekly totals you report, so you can show me the trend later."
-- "Remember which candidates you have already contacted."
+| You want to                          | Ask your agent                                                                              |
+| ------------------------------------ | ------------------------------------------------------------------------------------------- |
+| Never handle the same item twice     | "Keep a record of every invoice you process, so you never process the same one twice."      |
+| Follow a number over time            | "Save the weekly totals you report, so you can show me the trend later."                    |
+| Remember who you've already reached  | "Remember which candidates you've already contacted, and when."                             |
+| Compare against earlier runs         | "Compare this week's totals with the last four weeks you saved."                            |
+| See what's stored                    | "What have you saved so far? List your tables and what each one holds."                     |
+| Fix a wrong entry                    | "Remove the duplicate entry for invoice 1042 from your records."                            |
+| Start fresh                          | "Clear the weekly totals and start tracking again from today."                              |
 
-Your agent reads that data back on later runs, which is what makes "compare this week against the last four weeks" a question it can actually answer.
+Your agent reads that data back on later runs, so a comparison like the one above draws on real history instead of starting from zero.
 
 ## Open the data yourself
 
 <Steps>
   <Step title="Open the Database tab">
-    On the agent, open the **Database** tab. It lists the tables your agent has saved under **Tables saved by this agent**, each with a row count.
+    Click **Workflow** in the top right and open the **Database** tab. It lists the tables your agent has saved under **Tables saved by this agent**, each with a row count.
 
     If you see **No database yet**, your agent hasn't stored anything — it creates its database the first time it saves data.
   </Step>
