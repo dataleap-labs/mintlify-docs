@@ -43,6 +43,40 @@ If you disable a model agents already use, their future runs may be blocked unti
 
 Save from the bar at the bottom. Dataleap asks you to review first whenever you change a preset, or turn off a model that agents already use.
 
+## When Dataleap retires a model
+
+Sometimes Dataleap stops supporting a model, for example when its provider stops serving it. Agents on that model don't break. On a set switch date, Dataleap moves them to a successor model for you.
+
+### Before the switch date
+
+- The model shows a **Retiring** badge in **Model Access**. Hover it to see the switch date and the successor.
+- Nobody can newly pick the model. It disappears from **Customize** for new choices, you can't turn it on if it's off, and you can't choose it for a preset.
+- Agents already on the model keep running on it until the switch.
+- The owners of affected agents and your organization's admins get an email with the switch date and the successor. There's nothing they need to do.
+
+### On the switch date
+
+- Every agent and sub-agent on the model moves to the successor. An agent on a preset stays on that preset.
+- Each one keeps its **Reasoning Level** if the successor has it. If not, it runs at the nearest level the successor supports.
+- Presets that used the model move to the successor too.
+- In **Model Access**, the successor is turned on and the retiring model is turned off.
+
+<Note>
+  If a provider stops serving a model without warning, Dataleap may switch agents right away and send the email afterwards.
+</Note>
+
+### Choose a different successor
+
+When a retirement is scheduled, a **Scheduled retirements** section appears between the presets and **Model Access**. Each row shows the retiring model, its switch date, and how many agents use it.
+
+<Frame caption="Scheduled retirements: upcoming switches with a Successor menu, and switches that already happened.">
+  <img src="/images/admin-models-retirements.svg" alt="The Scheduled retirements section on the Models page. Two rows have already switched and show Moved to with the successor. One upcoming row shows its switch date, the number of agents, and a Successor menu marked Recommended by Dataleap." />
+</Frame>
+
+The **Successor** menu starts on Dataleap's choice, marked **Recommended**. To move your organization's agents somewhere else, pick another model. Your choice saves right away and isn't part of **Save changes**. **Reset** goes back to Dataleap's recommendation.
+
+You can change the successor until the switch date. After the switch, the row shows where agents moved. Earlier retirements are listed under **Past retirements**.
+
 ## What members see
 
 In chat, **Workflow**, and a sub-agent's **Tools** tab, people pick **Basic**, **Pro**, or **Expert** — or **Customize** to choose a specific enabled model and its **Reasoning Level**.
@@ -51,7 +85,7 @@ In chat, **Workflow**, and a sub-agent's **Tools** tab, people pick **Basic**, *
   <img src="/images/admin-models-member-selector.png" alt="The member model selector showing Basic, Pro, Expert, and a Customize option" />
 </Frame>
 
-Which models appear under **Customize** is the list you enable here. Dataleap does not publish a fixed catalog in these docs; the list changes as models are added or retired.
+Which models appear under **Customize** is the list you enable here. Dataleap does not publish a fixed catalog in these docs; the list changes as models are added or [retired](#when-dataleap-retires-a-model).
 
 Setup conversations can't use the **Basic** preset. Building stays on **Pro** or **Expert**, or on a custom model.
 
