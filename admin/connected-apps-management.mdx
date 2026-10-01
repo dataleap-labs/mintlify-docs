@@ -1,6 +1,6 @@
 ---
 title: "Apps & permissions"
-description: "The Controls side of the admin panel: tool-level permissions, approval workflows, a full audit trail, and custom MCP servers."
+description: "The Controls side of the admin panel: tool-level permissions, approval workflows, a full audit trail, and custom integrations for your own MCP servers and APIs."
 ---
 
 The **Controls** section of the admin panel governs what agents can reach — down to the individual tool.
@@ -33,13 +33,40 @@ The audit trail: **every tool call across the organization**, live — which int
   <img src="/images/admin-app-activity.png" alt="The App Activity page with an activity chart and a table of tool calls showing integration, timestamp, tool, agent, and success status" />
 </Frame>
 
-## MCP servers
+## Custom integrations
 
-Beyond the built-in integrations, admins can add **custom MCP servers** (OAuth or bearer token) — internal tools become agent-usable, with synced tool lists and per-server enable/disable.
+Beyond the built-in integrations, admins can bring their own tools to agents on the **Custom integrations** page. It has two sections: **MCP servers** and **APIs**.
+
+### MCP servers
+
+Add **custom MCP servers** (OAuth or bearer token) with **Add MCP server**. Internal tools become agent-usable, with synced tool lists and per-server enable/disable.
 
 <Frame caption="Custom MCP servers: bring your internal tools to your agents.">
-  <img src="/images/admin-mcp.png" alt="The MCP page listing custom MCP servers with their sync status, tool counts, connections, and enabled status" />
+  <img src="/images/admin-mcp.png" alt="A list of custom MCP servers with their sync status, tool counts, connections, and enabled status" />
 </Frame>
+
+### APIs
+
+If your organization has its own HTTP API with an OpenAPI spec, you can turn it into agent tools without building an MCP server first. Click **Add API** and work through four steps:
+
+<Steps>
+  <Step title="Spec">
+    Enter the **Spec URL**, or choose **Paste spec** and paste it in, then click **Load spec**. Swagger 2.0, OpenAPI 3.0, and OpenAPI 3.1 work, as JSON or YAML. A pasted spec isn't stored, so you paste it again whenever you resync.
+  </Step>
+  <Step title="Connection">
+    Pick a **Credential type**: **OAuth2 client credentials**, **API key in a header**, **API key in a query parameter**, **Basic authentication**, or **Bearer token**. Enter one credential for the whole organization, list the **Allowed hosts** agents may call, and test it. The secret is write-only: you can replace it later, but nobody can view it again.
+  </Step>
+  <Step title="Tools">
+    Choose which operations agents may call. Describe what agents should do with the API and click **Suggest with AI** for a proposed selection with names and descriptions, or pick operations yourself. Check each tool's name, description, and read or write mode before you continue.
+  </Step>
+  <Step title="Review">
+    Give the API a **Name**, a **Description**, and optional **Notes for agents**, such as how paging works or where IDs come from. Then click **Create API integration**.
+  </Step>
+</Steps>
+
+Members never see the credential. When an agent needs the API, they connect through a **Connect** dialog that asks for no secret, because your admins manage it. From then on its tools follow the same rules as any other app: **Apps & Permissions**, **Tool Requests**, and **App Activity** all apply.
+
+Your organization looks after its custom integrations, not Dataleap. When one of their tools fails, members are told to ask their workspace admins. Each API has its own page with **Tools**, **Connection**, and **Settings** tabs, where you edit tools, test or replace the credential, and check the spec for changes.
 
 <Note>
   Two governance layers from elsewhere complete the picture: the [org-wide system prompt](/admin/users-and-roles#organization-defaults) (rules every agent follows, regardless of tools) and [service accounts in team spaces](/share/team-spaces#connections-in-a-team) (scoped access that survives personnel changes).
