@@ -11,11 +11,28 @@ Invite people, assign roles, and manage access:
 
 - **Roles:** every member is an **Admin** or a **Member** — switchable per person.
 - **Team admins:** members can additionally administer specific teams (shown per user).
-- **Invite Members** handles new joiners; pending requests and invites have their own tabs.
+- **Invite Members** handles new joiners. Access requests and invites that haven't been accepted yet have their own tabs: **Pending requests** and **Pending invites**.
 
 <Frame caption="Members: roles, team-admin rights, invites — one list.">
   <img src="/images/admin-members.png" alt="The Members page of the admin panel showing users with Admin or Member roles, team admin badges, and an Invite Members button" />
 </Frame>
+
+### Follow up on a pending invite
+
+The **Pending invites** tab lists everyone who has been invited but hasn't joined yet, with their role and when the invite was last sent. Each invite shows a status:
+
+| Status | What it means |
+|---|---|
+| **Pending** | The invitation still works. The person hasn't accepted it yet. |
+| **Expired** | The invitation ran out before the person accepted it. |
+| **Needs recovery** | The invitation can no longer be used. |
+
+Hover over an invite to see its actions:
+
+- **Send again** sends the invitation again. For an **Expired** or **Needs recovery** invite, you confirm first and the person gets a new invitation. Their role stays the same.
+- **Cancel** withdraws the invite.
+
+You can also invite the same email again with **Invite Members**. If the earlier invitation has expired or can no longer be used, Dataleap sends a new one. You only get an error if the person has already joined, or if their invite is still **Pending** — use **Send again** for that.
 
 ## Teams
 
