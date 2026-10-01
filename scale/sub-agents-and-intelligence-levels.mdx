@@ -57,6 +57,8 @@ You set the preset with the model selector — in the chat bar for the setup con
 
 **Customize** lets you pick a specific model and a **Reasoning Level** instead of a preset. Which models appear depends on what an admin has enabled on **Models**. Admins also choose which model each preset uses — see [Models](/admin/models).
 
+If a model you picked under **Customize** is being retired, the model selector shows a **Retiring** badge. Hover it to see which model the agent switches to, and when. You don't need to do anything: on that date the agent moves to the new model on its own. Afterwards, hovering the selector shows which model it was updated from. An agent on **Basic**, **Pro**, or **Expert** stays on that preset. See [When Dataleap retires a model](/admin/models#when-dataleap-retires-a-model).
+
 <Note>
   Complex agents that pull from many sources may genuinely need a higher tier — a smaller context can't hold everything the workflow touches. And if the workflow is **data-heavy and deterministic**, the better fix is often [programmatic tool calling](/scale/programmatic-tool-calling) instead of a bigger model.
 </Note>
