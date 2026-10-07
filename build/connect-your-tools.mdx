@@ -1,6 +1,6 @@
 ---
 title: "Connect, use, and disconnect apps"
-description: "Connect external apps to Dataleap, approve access for agents, troubleshoot connection issues, and remove access."
+description: "Connect external apps to Dataleap, approve access for agents, troubleshoot connection issues, remove access, and delete your data."
 ---
 
 Connected apps give your agents access to external tools and data. You connect an app once, then approve the specific tools an agent needs before it runs.
@@ -136,6 +136,26 @@ For supported managed integrations, Dataleap also removes the managed provider c
 
 Disconnecting a Team Connection affects every team member or team agent that depends on that connection. Coordinate with the team before removing it.
 
+## Delete your data
+
+To remove Dataleap's access to an app and delete the data Dataleap received from it, follow these steps.
+
+<Steps>
+  <Step title="Disconnect the app in Dataleap">
+    Follow [Disconnect and deauthorize an app](#disconnect-and-deauthorize-an-app). Dataleap deletes the saved connection and its credentials, and your agents stop using the app.
+  </Step>
+
+  <Step title="Remove Dataleap in the app's settings">
+    In the app, remove Dataleap from its list of authorized or connected apps. This revokes Dataleap's access at the source and stops new data, such as new leads, from reaching Dataleap.
+
+    For example, for Meta Ads, open Facebook and go to **Settings & privacy** > **Settings** > **Business integrations**, find **Dataleap**, and click **Remove**.
+  </Step>
+
+  <Step title="Ask us to delete data already collected">
+    Disconnecting an app or deleting an agent keeps your run history, including data that came from the app, such as lead answers. To delete it, email [privacy@dataleap.ai](mailto:privacy@dataleap.ai) with your account email and organization name. We'll confirm when the deletion is done.
+  </Step>
+</Steps>
+
 ## Troubleshoot connection issues
 
 | Problem | What to do |
@@ -168,4 +188,6 @@ If these steps do not resolve the issue, [contact Dataleap](https://www.dataleap
    Simon's review (Jul 2026): two-level connection model, per-workflow permissions screenshot
    Slack connection guidance (Aug 2026): verified against product source — org-wide and team Slack
    connections are installed bot-only, so they cannot search messages or reach private channels and
-   DMs the bot has not been added to; personal connections act as the signed-in user */}
+   DMs the bot has not been added to; personal connections act as the signed-in user
+   Delete your data (Oct 2026): the #delete-your-data anchor is the data deletion instructions URL
+   registered in the Meta app for App Review — do not rename the heading */}
