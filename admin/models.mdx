@@ -27,11 +27,33 @@ When the **Always use Dataleap's recommended models** setting below is off, you 
   <img src="/images/admin-models-presets.png" alt="A preset's model picker open, listing available models by provider with a Reasoning Level slider" />
 </Frame>
 
-With that setting off, a preset change applies to agents created after you save it. An existing agent stays on its preset and keeps the model and **Reasoning Level** it had when it was created.
-
-Picking a different preset on an existing agent gives you that preset as it was when the agent was created, not the model you just saved. To move an existing agent to another model, open its model selector, choose **Customize**, and pick the model.
+With that setting off, a preset change applies to new choices only: agents created after you save it, and agents someone switches to that preset afterwards. Agents already on the preset keep the model and **Reasoning Level** they run on now. Choosing the same preset again in an agent's model selector doesn't move it.
 
 You can't turn off a model that currently powers a preset. Change the preset first.
+
+### Move agents off older models
+
+When agents on a preset still run an older model, the preset card shows a line such as **3 agents on older models**, with an **Update** link.
+
+<Steps>
+  <Step title="Open the list">
+    Select **Update**. You see the model new agents on that preset already use, and how many existing agents still run an older one.
+  </Step>
+  <Step title="Choose what to move">
+    Select **Sync all 3 agents** to move every one of them. To move one older model at a time, open **Show models** and select **Migrate** next to it.
+  </Step>
+  <Step title="Confirm">
+    Check the review and select **Migrate selections**. The move saves right away, separately from any other unsaved changes on the page.
+  </Step>
+</Steps>
+
+Moved agents stay on their preset. The count includes archived agents.
+
+You can also move agents while you change a preset. When you save, the review lists each older model under **Also migrate agents on older models**. Tick the ones that should move along with the change.
+
+To move a single agent instead, its owner can pick a specific model with **Customize** in its model selector.
+
+While **Always use Dataleap's recommended models** is on, the preset cards don't show this line, because agents on each preset move automatically.
 
 ### Always use Dataleap's recommended models
 
@@ -57,9 +79,16 @@ Turning it off moves no agents. Each preset keeps its current model until you ch
 
 Enabled models appear when someone opens **Customize** in the model selector. Disabled models do not.
 
-If you disable a model agents already use, their future runs may be blocked until someone changes that agent's model.
-
 Save from the bar at the bottom. Dataleap asks you to review first whenever you change a preset, or turn off a model that agents already use.
+
+### Turn off a model agents use
+
+If agents use a model, turning it off moves them to another model when you save, so their runs keep working. Below the model's switch, you see how many agents move and where they go:
+
+- Agents on a preset move to that preset's current model. They stay on their preset.
+- Agents set to that model with **Customize** need a replacement. In the **Custom** row, pick a model and **Reasoning Level**. The row shows **Replacement required** until you do, and you can't save without it.
+
+Confirm the review with **Disable and migrate**. Sub-agents and archived agents move too. Turning the model back on later doesn't move anyone back.
 
 ## When Dataleap retires a model
 
