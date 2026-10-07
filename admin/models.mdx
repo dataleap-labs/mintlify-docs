@@ -21,17 +21,35 @@ Most people pick a preset, not a specific model.
 | **Pro** | Balanced performance — the default for running agents |
 | **Expert** | Complex, multi-step reasoning |
 
-You choose which model and **Reasoning Level** power each preset. The available levels depend on the model. When a model supports more than one, choose from **Minimal**, **Low**, **Medium**, **High**, **Extra high**, or **Max**. A **Customized** badge appears when a preset no longer uses Dataleap's default. **Reset** puts it back.
+When the **Always use Dataleap's recommended models** setting below is off, you choose which model and **Reasoning Level** power each preset. The available levels depend on the model. When a model supports more than one, choose from **Minimal**, **Low**, **Medium**, **High**, **Extra high**, or **Max**. A **Customized** badge appears when a preset no longer uses Dataleap's default. **Use default** puts it back.
 
 <Frame caption="Pick the model and Reasoning Level behind a preset.">
   <img src="/images/admin-models-presets.png" alt="A preset's model picker open, listing available models by provider with a Reasoning Level slider" />
 </Frame>
 
-A preset change applies to agents created after you save it. An existing agent stays on its preset and keeps the model and **Reasoning Level** it had when it was created.
+With that setting off, a preset change applies to agents created after you save it. An existing agent stays on its preset and keeps the model and **Reasoning Level** it had when it was created.
 
 Picking a different preset on an existing agent gives you that preset as it was when the agent was created, not the model you just saved. To move an existing agent to another model, open its model selector, choose **Customize**, and pick the model.
 
 You can't turn off a model that currently powers a preset. Change the preset first.
+
+### Always use Dataleap's recommended models
+
+Above the presets is a checkbox, **Always use Dataleap's recommended models**. It decides whether Dataleap or you pick the models behind **Basic**, **Pro**, and **Expert**.
+
+<Frame caption="With the setting on, the preset pickers are locked. Hover over one to see why.">
+  <img src="/images/admin-models-recommended.svg" alt="The Always use Dataleap's recommended models checkbox, ticked, above the Basic, Pro, and Expert preset cards. Hovering over the locked Pro picker shows: Turn off Always use Dataleap's recommended models to choose your own models." />
+</Frame>
+
+While it's on:
+
+- Each preset uses the model and **Reasoning Level** Dataleap recommends. The preset pickers are locked. To choose your own models, turn the setting off.
+- When Dataleap changes a recommendation, agents and sub-agents on that preset move to the new model, including archived agents. Your organization's admins get an email listing what moved.
+- Agents set to a specific model through **Customize** stay on it.
+
+Turning it on resets every customized preset to Dataleap's recommendation. When you save, agents on each preset that still run an older model move to the recommended one. A review lists the presets that reset and the agents that move before you confirm. When agents move, the confirm button reads **Save and move agents**.
+
+Turning it off moves no agents. Each preset keeps its current model until you change it.
 
 ## Model access
 
