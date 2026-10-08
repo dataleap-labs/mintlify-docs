@@ -42,7 +42,7 @@ The **Analytics** page answers "what's actually happening":
 
 ## Export cost and usage (admin)
 
-Your organization's cost and usage figures can also leave Dataleap — into a finance tool, a data warehouse, a scheduled reporting job, or an agent that reports on spend. You get them with an API key from **Admin** > **API Keys**. The same kind of key can also feed [App Activity](/admin/connected-apps-management#app-activity) into a security tool.
+Your organization's cost and usage figures can also leave Dataleap — into a finance tool, a data warehouse, a scheduled reporting job, or an agent that reports on spend. You get them with an API key from **Workspace Settings** > **API Keys**. The same kind of key can also feed [App Activity](/admin/connected-apps-management#app-activity) into a security tool.
 
 <Info>
   **API Keys** is only available to admins in organizations on an Enterprise plan, including an Enterprise trial. Other members and plans don't see it.
@@ -52,7 +52,7 @@ Your organization's cost and usage figures can also leave Dataleap — into a fi
 
 <Steps>
   <Step title="Start a new key">
-    In the admin panel, open **API Keys** under **Controls** and click **Create key**.
+    Open **Workspace Settings** from your profile menu, choose **API Keys** under **Controls**, and click **Create key**.
   </Step>
   <Step title="Name it and choose its scopes">
     Give the key a **Name** that identifies its owner, such as the tool or team that will use it. Under **Scopes**, tick at least one. A key can carry both.
@@ -69,6 +69,10 @@ Your organization's cost and usage figures can also leave Dataleap — into a fi
     Click **Create key**, then copy the key before you click **Done**. Dataleap shows it only once. If you lose it, create a new key and revoke the old one.
   </Step>
 </Steps>
+
+<Frame caption="The Create an API key dialog with both scopes ticked.">
+  <img src="/images/admin-create-api-key.svg" width="496" alt="The Create an API key dialog with a Name field, the Cost and usage · Read and App activity · Read scopes both ticked, Expiration set to Never, and Cancel and Create key buttons" />
+</Frame>
 
 <Warning>
   Treat the key like a password. Anyone who has it can read whatever its scopes allow, including member names and email addresses.
@@ -88,7 +92,9 @@ Every active key comes with ready-made agent instructions. They explain how to r
 
 You can copy them in four places: under **Setting up an agent?** right after you create the key, with the copy icon on the key's row, with **Copy agent instructions** in the row's actions menu, or with **Copy instructions** in the key's details.
 
-The instructions don't contain your key — only a placeholder where the key goes. They can be copied only while the key is active.
+The instructions don't contain your key — only a placeholder where the key goes. Don't paste the key into the chat. When the agent needs it, it gives you a form to enter it in.
+
+The instructions can be copied only while the key is active.
 
 ### Keep track of keys and revoke them
 
