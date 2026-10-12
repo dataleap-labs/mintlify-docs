@@ -95,6 +95,19 @@ Once the agent is running, feedback happens in the same chat: when a result isn'
   **Train it, don't judge it.** The first version might disappoint you — that's normal. A new coworker needs time to learn your preferences; your agent is no different. Every correction you give is saved permanently and compounds on every run after: the agent that struggled last week can be excellent this week because of your input. And unlike your best team members, it never forgets a rule and has never once called in sick.
 </Note>
 
+### Check how a run went
+
+Every run in the agent's **Runs** list shows one of four statuses. Open a run to see its status spelled out next to **Status**.
+
+| Status | In the **Runs** list | What it means | What to do |
+| --- | --- | --- | --- |
+| **Success** | Green check | The run did its job. A run that correctly found nothing to do — no new emails, no matching records — is a success too. | Nothing. |
+| **Degraded** | Yellow warning | The main result arrived and is usable, but a smaller part fell short: an FYI wasn't sent, optional details are missing, or a few non-critical items were skipped. | Read the reason. If that part matters to you, tell the agent in chat. |
+| **Failed** | Red cross | The main result is missing or wrong. For example, a connection or permission problem blocked the work, the run stopped early, the agent only said it couldn't do the job, something went to the wrong place or went out twice, or the agent reported results that didn't happen. | Open the run and read the reason, then fix the cause — reconnect an app, for example — or tell the agent in chat what it should have done. |
+| **Completed** | Grey check | The run finished, but it has no status yet. | If you need to know now, look at the output yourself. |
+
+A **Degraded** or **Failed** run comes with a one-line reason, such as *A connection, permission or quota problem blocked the work.* You see it in the **Runs** list and when you open the run.
+
 <Card title="Watch: Your first agent" icon="clapperboard" href="/video-series/section-2#your-first-agent" horizontal>
   See the build flow in action.
 </Card>
