@@ -95,6 +95,21 @@ Once the agent is running, feedback happens in the same chat: when a result isn'
   **Train it, don't judge it.** The first version might disappoint you — that's normal. A new coworker needs time to learn your preferences; your agent is no different. Every correction you give is saved permanently and compounds on every run after: the agent that struggled last week can be excellent this week because of your input. And unlike your best team members, it never forgets a rule and has never once called in sick.
 </Note>
 
+### Check how a run went
+
+Every run in the agent's **Runs** list shows how it went. Dataleap decides this on its own once the run finishes. It checks the run against your instructions and against what the agent's tools actually returned, not against the agent's own summary. So a run the agent called done can still show **Failed**.
+
+| Status | What it means |
+| --- | --- |
+| **Success** | The run did what it was there to do. A run that correctly found nothing to do counts as a success too. |
+| **Degraded** | The main result was delivered, but a non-essential part fell short. |
+| **Failed** | The main result is missing or wrong, the run did something it shouldn't have, or the run stopped on an error. |
+| **Completed** | The run finished, but there's no verdict yet. The check is still running, or it couldn't finish. |
+
+A **Degraded** or **Failed** run comes with a one-line reason, such as *A connection, permission or quota problem blocked the work.* You see it in the **Runs** list and when you open the run. Use it as your starting point when you tell the agent in chat what went wrong and what it should have done.
+
+Chats with the agent, including a colleague's [Use only](/share/use-only) conversations, don't get this check. Runs from before Dataleap started checking keep the status the agent reported about itself.
+
 <Card title="Watch: Your first agent" icon="clapperboard" href="/video-series/section-2#your-first-agent" horizontal>
   See the build flow in action.
 </Card>
