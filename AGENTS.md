@@ -18,7 +18,7 @@
 ## Terminology
 
 - Use "agent" for the thing a user creates and runs
-- Use "Connected Apps" for the product area and UI label; use "connected app" in normal prose
+- Use "Integrations" for the product area and UI label (**Settings** > **Integrations**, **Integrations & Permissions**, **Integration Activity**); use "integration" in normal prose. Do not write "Connected Apps" or "connected app" — the product renamed them in October 2026. Use "app" only for the third-party product itself, such as its own settings page
 - Use "template" for a reusable starting point from the **Templates** area
 - Use "run" for a single execution of an agent
 - Use "knowledge" for uploaded reference files attached to an agent
@@ -36,8 +36,8 @@
 - Bold for UI elements: Click **Settings**
 - Code formatting for file names, commands, paths, and code references
 - Start with the user's goal, then explain how to do it
-- Prefer task-based page titles and headings such as "Connect apps" or "Inspect a run"
-- Match UI capitalization exactly for product labels such as **New Agent**, **Agents**, **Templates**, **Usage**, **Connected Apps**, **Knowledge**, **Workflow**, **Runs**, and **Settings**
+- Prefer task-based page titles and headings such as "Connect integrations" or "Inspect a run"
+- Match UI capitalization exactly for product labels such as **New Agent**, **Agents**, **Templates**, **Usage**, **Integrations**, **Knowledge**, **Workflow**, **Runs**, and **Settings**
 - Prefer concrete product actions over abstract feature descriptions
 - Avoid marketing language, hype, and claims that are not visible in the product
 - Add prerequisites near the top when a task depends on setup or permissions
