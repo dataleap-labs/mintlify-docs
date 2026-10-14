@@ -1,19 +1,19 @@
 ---
-title: "Apps & permissions"
+title: "Integrations & permissions"
 description: "The Controls side of the admin panel: tool-level permissions, approval workflows, a full audit trail, and custom integrations for your own MCP servers and APIs."
 ---
 
 The **Controls** section of the admin panel governs what agents can reach — down to the individual tool.
 
-## Apps & Permissions
+## Integrations & Permissions
 
-Every integration (240+ apps) can be tuned per tool:
+Every integration (240+) can be tuned per tool:
 
 - Tools are grouped into **read-only** and **write/delete** — so you see at a glance what's harmless and what acts in your systems.
 - Each tool can be **allowed or blocked** individually, and scoped to **everyone or specific groups**.
-- Whole apps can be moved to a **Restricted** section — usable only on request.
+- Whole integrations can be moved to a **Restricted** section — usable only on request.
 
-<Frame caption="Per-app, per-tool control: read-only vs. write tools, allowed audiences, restricted apps.">
+<Frame caption="Per-integration, per-tool control: read-only vs. write tools, allowed audiences, restricted integrations.">
   <img src="/images/admin-apps-permissions.png" alt="The Apps and Permissions page showing an app's read-only and write tools, each individually allowed or blocked, with a Restricted apps section" />
 </Frame>
 
@@ -25,11 +25,11 @@ When someone needs a restricted tool, they don't email IT — they request it in
   <img src="/images/admin-tool-requests.png" alt="The Tool Requests page listing user requests for tools with accepted status badges and approve and reject buttons" />
 </Frame>
 
-## App Activity
+## Integration Activity
 
 The audit trail: **every tool call across the organization**, live — which integration, which tool, which agent, executed as whom, and whether it succeeded. Filterable by time range, integration, status, and user.
 
-Your security team can also pull this record into its own tools, such as a SIEM. Create an API key with the **App activity · Read** scope, as described in [Create a key](/admin/credits-and-usage#create-a-key). The key reads each tool call as metadata only, never the tool's input or output.
+Your security team can also pull this record into its own tools, such as a SIEM. Create an API key with the **Integration activity · Read** scope, as described in [Create a key](/admin/credits-and-usage#create-a-key). The key reads each tool call as metadata only, never the tool's input or output.
 
 <Frame caption="Every tool call in the org — filterable, with success/failure status.">
   <img src="/images/admin-app-activity.png" alt="The App Activity page with an activity chart and a table of tool calls showing integration, timestamp, tool, agent, and success status" />
@@ -66,7 +66,7 @@ If your organization has its own HTTP API with an OpenAPI spec, you can turn it 
   </Step>
 </Steps>
 
-Members never see the credential. When an agent needs the API, they connect through a **Connect** dialog that asks for no secret, because your admins manage it. From then on its tools follow the same rules as any other app: **Apps & Permissions**, **Tool Requests**, and **App Activity** all apply.
+Members never see the credential. When an agent needs the API, they connect through a **Connect** dialog that asks for no secret, because your admins manage it. From then on its tools follow the same rules as any other integration: **Integrations & Permissions**, **Tool Requests**, and **Integration Activity** all apply.
 
 Your organization looks after its custom integrations, not Dataleap. When one of their tools fails, members are told to ask their workspace admins. Each API has its own page with **Tools**, **Connection**, and **Settings** tabs, where you edit tools, test or replace the credential, and check the spec for changes.
 
