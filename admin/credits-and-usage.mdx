@@ -42,7 +42,7 @@ The **Analytics** page answers "what's actually happening":
 
 ## Export cost and usage (admin)
 
-Your organization's cost and usage figures can also leave Dataleap — into a finance tool, a data warehouse, a scheduled reporting job, or an agent that reports on spend. You get them with an API key from **Workspace Settings** > **API Keys**. The same kind of key can also feed [App Activity](/admin/connected-apps-management#app-activity) into a security tool.
+Your organization's cost and usage figures can also leave Dataleap — into a finance tool, a data warehouse, a scheduled reporting job, or an agent that reports on spend. You get them with an API key from **Workspace Settings** > **API Keys**. The same kind of key can also feed [Integration Activity](/admin/connected-apps-management#integration-activity) into a security tool.
 
 <Info>
   **API Keys** is only available to admins in organizations on an Enterprise plan, including an Enterprise trial. Other members and plans don't see it.
@@ -60,7 +60,7 @@ Your organization's cost and usage figures can also leave Dataleap — into a fi
     | Scope | What the key can read |
     |---|---|
     | **Cost and usage · Read** | Your organization's cost and usage data. |
-    | **App activity · Read** | The [App Activity](/admin/connected-apps-management#app-activity) record, for a security tool such as a SIEM. It never includes a tool's input or output. |
+    | **Integration activity · Read** | The [Integration Activity](/admin/connected-apps-management#integration-activity) record, for a security tool such as a SIEM. It never includes a tool's input or output. |
   </Step>
   <Step title="Set an expiry">
     Under **Expiration**, pick **Never**, **30 days**, **90 days**, **1 year**, or **Custom** to choose a date. A key with an expiry stops working at the end of that day. A key set to **Never** keeps working until you revoke it.
@@ -84,7 +84,7 @@ With **Cost and usage · Read**, the key reads a daily report of your organizati
 
 Each row shows token usage, charged tool calls, and the cost in your organization's currency, split into model, Dataleap, and tool cost. The cost is consumption only: it leaves out platform fees, budgets, allowances, taxes, and invoice adjustments.
 
-With **App activity · Read**, the key reads the same tool calls you see on the **App Activity** page, up to 31 days at a time: who caused each call, which agent, app, and tool were involved, when it ran, and whether it succeeded. Each event links back to that event on the **App Activity** page. The key never reads what a tool was sent or what it returned.
+With **Integration activity · Read**, the key reads the same tool calls you see on the **Integration Activity** page, up to 31 days at a time: who caused each call, which agent, integration, and tool were involved, when it ran, and whether it succeeded. Each event links back to that event on the **Integration Activity** page. The key never reads what a tool was sent or what it returned.
 
 ### Let an agent use the key
 
@@ -119,7 +119,7 @@ Outside the admin panel, everyone sees their own picture: **Usage** in the sideb
 | Pre-filter at the source | Filter in the source system (e.g., a Snowflake view or an email filter) so the agent reads less data. |
 
 <CardGroup cols={2}>
-  <Card title="Apps & permissions" icon="plug-circle-check" href="/admin/connected-apps-management">
+  <Card title="Integrations & permissions" icon="plug-circle-check" href="/admin/connected-apps-management">
     Next: govern which tools agents can reach.
   </Card>
   <Card title="Triggers" icon="bolt" href="/build/triggers">
