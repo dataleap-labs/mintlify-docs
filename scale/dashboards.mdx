@@ -75,7 +75,7 @@ Each button sends your agent a message. Most of the time that message is fixed: 
 
 What a button can achieve depends on the agent you name. It's a way to ask, not a new set of powers: if that agent can't reach your tracker, a button won't file the ticket.
 
-**Only people who manage the agent behind the dashboard can use it.** Sharing the page doesn't share the action: **Can view** access, **Anyone with the link**, and [use-only](/share/use-only) access to the agent are all deliberately not enough. Everyone else still gets the page, the figures, and the filters, but the button won't start anything for them. So a dashboard isn't the way to collect reports from a whole company — most of the people you want to hear from can't press the button. Keep actions for a team that already manages the agent.
+**Only people who manage the agent behind the dashboard can use it.** Sharing the page doesn't share the action: **Can view** access, **Anyone with the link**, and [use-only](/share/use-only) access to the agent are all deliberately not enough. Everyone else still gets the page, the figures, and the filters, but the button won't start anything for them. So a dashboard isn't the way to collect reports from a whole company — most of the people you want to hear from can't press the button. Keep actions for a team that already manages the agent. For buttons that everyone you share with can press, build an [app](/scale/apps) instead.
 
 **The run starts straight away.** There's no second confirmation step, so ask for a button label that says plainly what pressing it will do. The agent you named then runs the way it always does, with its own instructions, its own integrations, and its own [credits](/admin/credits-and-usage).
 
@@ -86,10 +86,10 @@ What a button can achieve depends on the agent you name. It's a way to ask, not 
 ## What it can't do
 
 <Note>
-  **A dashboard is a snapshot.** It holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and the page itself can't reach your integrations while you're looking at it. For current figures, ask your agent again, add a button that runs the agent for you, or put the request on a [trigger](/build/triggers) so it rebuilds on a schedule.
+  **A dashboard is a snapshot.** It holds the data your agent had at the moment it built the page. It doesn't refresh on its own, and the page itself can't reach your integrations while you're looking at it. For current figures, ask your agent again, add a button that runs the agent for you, or put the request on a [trigger](/build/triggers) so it rebuilds on a schedule. If people should always see current figures, build an [app](/scale/apps) instead.
 </Note>
 
-The page itself still stores nothing and sends nothing. There's no database behind a dashboard, so whatever someone types into it is gone when they reload, and the page makes no network calls of its own. An action doesn't change that. It hands the request to an agent, and the agent is what saves it, files it, or writes it into a tool you've connected.
+The page itself still stores nothing and sends nothing. There's no database behind a dashboard, so whatever someone types into it is gone when they reload, and the page makes no network calls of its own. An action doesn't change that. It hands the request to an agent, and the agent is what saves it, files it, or writes it into a tool you've connected. If what people type in should be saved, build an [app](/scale/apps): it saves entries in the agent's database.
 
 ## Share your dashboard
 
@@ -127,6 +127,9 @@ A dashboard page keeps one address. Ask your agent to rebuild it and that same a
 ## Related
 
 <CardGroup cols={2}>
+  <Card title="Build an app" icon="window-maximize" href="/scale/apps">
+    When the page should stay current, save what people enter, or have buttons everyone can press.
+  </Card>
   <Card title="When to share what" icon="share-nodes" href="/share/when-to-share-what">
     Pick between sharing a dashboard, a template, and the agent itself.
   </Card>
