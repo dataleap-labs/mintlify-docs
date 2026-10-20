@@ -10,7 +10,7 @@ This file adds the working context from the docs rebuild (July 2026).
 - Simon has reviewed ALL chapters page by page (Jul 2026), including admin (rewritten from real admin-panel screenshots) and FAQ.
 - Ch4 decisions: templates split into `share/templates.mdx` (open) + `share/locked-templates.mdx`; NO "sharing by copying" anti-pattern anywhere; no trigger-copy warning on team-spaces (canonical stays on triggers page); team-spaces kept short and purpose-first.
 - Chapter overview pages list ONLY their own chapter's pages (no cross-chapter cards); cards are title + one sentence, no bullets.
-- Admin chapter reflects the real admin panel (app.dataleap.ai/admin): Organization (org-wide system prompt), Members/Teams, Budgets (hard weekly caps, user→team→org-default resolution), Analytics (per-agent list with AI summaries), Apps & Permissions (tool-level allow/deny), Tool Requests, App Activity, MCP servers.
+- Admin chapter reflects the real admin panel (app.dataleap.ai/admin): Organization (org-wide system prompt), Members/Teams, Budgets (hard weekly caps, user→team→org-default resolution), Analytics (per-agent list with AI summaries), Integrations & Permissions (tool-level allow/deny), Tool Requests, Integration Activity, MCP servers. (Renamed from Apps & Permissions / App Activity in Oct 2026.)
 - Chat upload limit is 5 MB (FAQ); Knowledge panel limit 10 MB (add-knowledge).
 
 ## Structure & storyline
@@ -21,7 +21,7 @@ Chapter overview pages are titled "Chapter N: <Name>" with NO sidebarTitle — M
 
 ## Voice & product truths (from Simon's reviews — do not regress)
 
-- **Chat-first everywhere.** Users build, refine, connect, and give feedback in the agent's chat. Never write click-path instructions for things the chat does (the exception: genuinely UI-based flows like the Skills section, Settings > Connected Apps overview, Versions tab).
+- **Chat-first everywhere.** Users build, refine, connect, and give feedback in the agent's chat. Never write click-path instructions for things the chat does (the exception: genuinely UI-based flows like the Skills section, Settings > Integrations overview, Versions tab).
 - **Sub-agents and PTC are theoretical concepts.** Dataleap applies them automatically; users can't create/skip them. The ONE user action: ask the agent "Would PTC make sense here?" / adjust intelligence levels.
 - **Model tiers (updated Oct 2026):** Pro or Expert to build (setup starts on Pro; Basic is not available for setup) / Basic is the run default. Adjust by evidence, two paths: runs fine → stay on Basic (or lower a raised preset); misses info/times out → raise to Pro, then Expert.
 - **Connections have two levels:** account-level connect (once, OAuth) + per-workflow permission activation (visible labels, as-small-as-possible set, Approve All). Dataleap handles minimal access — don't preach pruning to builders (admin page covers governance).

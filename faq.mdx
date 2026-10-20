@@ -27,7 +27,7 @@ When you change something, [versioning](/build/versioning) keeps the working sta
 
 Start with the run, not with the work. Open **Runs** on the agent — each execution shows its [status](/build/your-first-agent#check-how-a-run-went), output, duration, and cost, so you see what came back before you check anything else. A **Degraded** or **Failed** run also tells you in one line what fell short.
 
-If the result is mostly numbers, ask for a [dashboard](/scale/dashboards) and scan one page instead of a wall of text. To confirm what the agent actually touched in your systems, admins have every tool call in [App Activity](/admin/connected-apps-management).
+If the result is mostly numbers, ask for a [dashboard](/scale/dashboards) and scan one page instead of a wall of text. To confirm what the agent actually touched in your systems, admins have every tool call in [Integration Activity](/admin/connected-apps-management).
 
 </Accordion>
 
@@ -151,9 +151,9 @@ Through its link. There is no library of dashboards to browse, so keep the link 
 
 <Accordion title="How do we let people build freely without risking core systems?">
 
-Put the guardrails on the tools, not on the people. Admins allow or block [each tool of each app](/admin/connected-apps-management) — they are grouped into read-only and write, so it is visible which ones can act in your systems. Whole apps can be moved to **Restricted**, usable only on request, and those requests are approved or rejected in one click.
+Put the guardrails on the tools, not on the people. Admins allow or block [each tool of each integration](/admin/connected-apps-management) — they are grouped into read-only and write, so it is visible which ones can act in your systems. Whole integrations can be moved to **Restricted**, usable only on request, and those requests are approved or rejected in one click.
 
-Two layers underneath: the [org-wide system prompt](/admin/users-and-roles#organization-defaults) applies rules like PII handling to every agent automatically, and team agents run on [team connections](/share/team-spaces#connections-in-a-team) — use service accounts there, never personal logins. Every tool call in the organization lands in **App Activity**.
+Two layers underneath: the [org-wide system prompt](/admin/users-and-roles#organization-defaults) applies rules like PII handling to every agent automatically, and team agents run on [team connections](/share/team-spaces#connections-in-a-team) — use service accounts there, never personal logins. Every tool call in the organization lands in **Integration Activity**.
 
 </Accordion>
 
@@ -169,7 +169,7 @@ What you do govern is the access underneath — which [tools agents can use](/ad
 
 You see every execution of your own agent in **Runs**, including the conversations of people you gave **Use only** access. In a [team space](/share/team-spaces), the whole team sees the runs and history of team agents — that is what makes handover work.
 
-Admins see it organization-wide: every tool call in [App Activity](/admin/connected-apps-management), and cost and run counts per agent in Analytics.
+Admins see it organization-wide: every tool call in [Integration Activity](/admin/connected-apps-management), and cost and run counts per agent in Analytics.
 
 </Accordion>
 
