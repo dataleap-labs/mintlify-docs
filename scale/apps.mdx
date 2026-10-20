@@ -3,9 +3,16 @@ title: "Build an app"
 description: "Ask your agent to build a web app on top of its data, integrations, and agents, then share it with the people who should use it."
 ---
 
-Ask your agent for an app and it builds you a small web app: a tracker, a review queue, a request form, or a dashboard that always shows current figures. The app lives at its own address. It reads and saves data in the agent's [database](/build/agent-database), works with the agent's [integrations](/build/connect-your-tools), and can ask agents to do work.
+Ask your agent for an app and it builds you a small web app: a tracker, a review queue, a request form, or a dashboard that always shows current figures. You build it in chat. The people you share it with open it in their browser.
 
-You build and change an app in the agent's chat. The people you share it with just open it in their browser. They never see the agent's chat or instructions.
+## What an app can do
+
+- **Show current data.** It reads from the agent's [database](/build/agent-database) and [integrations](/build/connect-your-tools) whenever someone opens it.
+- **Save what people enter.** Forms and edits are stored in the agent's database.
+- **Take action in your tools.** A button can update a record or send something through the agent's integrations.
+- **Ask an agent to do work.** A button can start a run of this agent or another one. See [Add a button that runs an agent](#add-a-button-that-runs-an-agent).
+- **Be shared without the agent.** People use the app without seeing the agent's chat, instructions, or integrations.
+- **Keep one address.** New versions replace the old one at the same address, so the link you sent keeps working.
 
 <Frame caption="An app sits between the people who use it and the agent behind it.">
   <img className="block dark:hidden" src="/images/apps-overview-light.svg" alt="Diagram: people you share an app with open it at its own address; the app reads and saves rows in the agent's database, uses the agent's integrations for current data and real actions, and has buttons that ask agents to run" />
@@ -26,7 +33,6 @@ Pick a dashboard for a page that is finished once it's built, such as last month
 
 ## Before you start
 
-- **Apps are for Workflow agents.** An agent created in **Chat** mode has no **App** tab.
 - **Your agent can only show what it can reach.** For live data from a tool, [connect the integration](/build/connect-your-tools) first. Anything people enter in the app is saved in the agent's database, so there is nothing to set up for that.
 - **One app per agent.** Your agent builds new requests into the app it already has. It replaces the app only when you confirm, and the old address stops working straight away.
 
@@ -42,7 +48,7 @@ You can also click **Workflow** in the top right of the agent, open the **App** 
 
 Your agent asks questions only when the answer changes what it builds. Details such as names, labels, or thresholds become clearly marked placeholders, and your agent lists them when it reports back, so you can send the real values afterwards.
 
-When the app is ready, your agent posts a card in the chat showing the app's name and its version, such as **App · v1**. Click **Open preview** to open it in the agent's sidebar, or open it in a new tab.
+When the app is ready, your agent posts a card in the chat showing the app's name and its version, such as **App · v1**. Click **Open preview** to open it in the agent's sidebar, or open it in a new tab. The app's address also shows below the chat box, next to **App:**.
 
 ## Change it and publish new versions
 
@@ -53,6 +59,10 @@ Ask for changes in the same chat. Your agent edits the app, checks it, and publi
 </Warning>
 
 To see the app on the agent, click **Workflow** in the top right and open the **App** tab. It shows the app with a toolbar above it:
+
+<Frame caption="The App tab's toolbar: the published version, the app's name, Reload, Open in new tab, Analytics, and Share.">
+  <img src="/images/app-tab-toolbar.svg" alt="The App tab selected in an agent's side panel, with a toolbar showing a v2 badge, the app name Conference radar, Reload, Open in new tab, and Analytics icons, and a Share button" />
+</Frame>
 
 | You see | What it means |
 |---|---|
@@ -66,6 +76,20 @@ To see the app on the agent, click **Workflow** in the top right and open the **
 | **Share** | Chooses who can open the app. See [Share your app](#share-your-app). |
 
 To go back to an earlier version, ask your agent, for example: "Restore the app to v2." It publishes the old version again as a new one. Restoring changes only the app. The agent's database keeps its current data.
+
+## Add a button that runs an agent
+
+An app can carry a button that asks an agent to do some work: rebuild a report, look into the row someone picked, or file what they typed as a ticket. Ask for it in those words, and name the agent:
+
+- "Add a Refresh button that asks you to update the figures."
+- "Add a Look into this button to each row that asks my Account Research agent to dig into that account."
+
+Your agent adds a button like this only when you ask for one. Asking for an app, a form, or filters never gets you one on its own.
+
+- **Everyone who can open the app can press it.** That's the difference from a [dashboard button](/scale/dashboards#ask-for-a-button-that-runs-an-agent), which works only for people who manage the agent.
+- **It runs only when someone presses it.** An app never starts an agent on its own, for example when the page loads.
+- **The app shows how it went.** Your agent builds the button to show that the work is running. A quick answer can come straight back to the page, and the app says plainly if the agent needs more information or the run didn't finish.
+- **The agent you name pays for its run** and works the way it always does, with its own instructions and integrations. The app can call this agent, or any agent this agent [can reach](/scale/agent-to-agent-communication#who-an-agent-can-reach).
 
 ## Share your app
 
@@ -111,7 +135,7 @@ Opening the app in the agent's sidebar doesn't count as a page view.
 
 ## Costs and limits
 
-- **The agent's owner pays.** When the app uses an integration that costs credits, the agent's owner pays, not the person using the app. A team agent's app is paid from the team. When a button asks an agent to run, that agent pays for its run, the same as any other run. See [Credits and usage](/admin/credits-and-usage).
+- **The agent's owner pays.** When the app uses an integration that costs credits, the agent's owner pays, not the person using the app. A team agent's app is paid from the team. In usage, these costs count as chat costs. When a button asks an agent to run, that agent pays for its run, the same as any other run. See [Credits and usage](/admin/credits-and-usage#chat-costs-vs-run-costs).
 - **Copies and templates don't include the app.** A copy of the agent, or an agent deployed from a [template](/share/templates), starts without one.
 - **Disabling the agent keeps the app working.** Archiving the agent stops the app.
 - **Admins see what the app does.** The integration calls an app makes show in [Integration Activity](/admin/connected-apps-management#integration-activity).
