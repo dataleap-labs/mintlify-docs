@@ -1,0 +1,181 @@
+---
+title: "Build an app"
+description: "Ask your agent to build a web app on top of its data, integrations, and agents, then share it with the people who should use it."
+---
+
+Ask your agent for an app and it builds you a small web app: a tracker, a review queue, a request form, or a dashboard that always shows current figures. You build it in chat. The people you share it with open it in their browser.
+
+<Frame caption="An app that tracks events worth attending, open on its calendar view">
+  <img src="/images/apps-example-events.svg" alt="An app called Conference radar with three headline figures, Ranked shortlist and Event calendar tabs, and a month calendar for October 2026" />
+</Frame>
+
+<Frame caption="A candidate research app with tabs, filters, and buttons that ask its agent for more work. Personal details are blurred.">
+  <img src="/images/apps-example-candidates.svg" alt="An app called Campus talent with Refresh and Research next 10 buttons, four headline figures, tabs for candidate groups, search and filter fields, and a table of candidates with blurred names" />
+</Frame>
+
+## What an app can do
+
+- **Show current data.** It reads from the agent's [database](/build/agent-database) and [integrations](/build/connect-your-tools) whenever someone opens it.
+- **Save what people enter.** Forms and edits are stored in the agent's database.
+- **Take action in your tools.** A button can update a record or send something through the agent's integrations.
+- **Ask an agent to do work.** A button can start a run of this agent or another one. See [Add a button that runs an agent](#add-a-button-that-runs-an-agent).
+- **Be shared without the agent.** People use the app without seeing the agent's chat, instructions, or integrations.
+- **Keep one address.** New versions replace the old one at the same address, so the link you sent keeps working.
+
+<Frame caption="An app sits between the people who use it and the agent behind it.">
+  <img className="block dark:hidden" src="/images/apps-overview-light.svg" alt="Diagram: people you share an app with open it at its own address; the app reads and saves rows in the agent's database, uses the agent's integrations for current data and real actions, and has buttons that ask agents to run" />
+  <img className="hidden dark:block" src="/images/apps-overview-dark.svg" alt="Diagram: people you share an app with open it at its own address; the app reads and saves rows in the agent's database, uses the agent's integrations for current data and real actions, and has buttons that ask agents to run" />
+</Frame>
+
+## App or dashboard?
+
+Both give you a page you can send to someone. The difference is whether the page keeps working with your data after your agent has built it.
+
+|  | [Dashboard](/scale/dashboards) | App |
+|---|---|---|
+| Data | A snapshot from the moment your agent built the page | Current: read from the agent's database and integrations whenever someone opens it |
+| What people type in | Gone when they reload | Saved in the agent's database |
+| Buttons that run an agent | Work only for people who manage the agent | Work for everyone you share the app with |
+
+Pick a dashboard for a page that is finished once it's built, such as last month's report. Pick an app for a place people come back to, where the data changes or where they take action.
+
+## Before you start
+
+- **Your agent can only show what it can reach.** For live data from a tool, [connect the integration](/build/connect-your-tools) first. Anything people enter in the app is saved in the agent's database, so there is nothing to set up for that.
+- **One app per agent.** Your agent builds new requests into the app it already has. It replaces the app only when you confirm, and the old address stops working straight away.
+
+## Ask for one
+
+Describe what people should do with the app and who it is for.
+
+- "Build an app where the support team sees open tickets by priority and can mark one as handled."
+- "Build a laptop request form that saves each request and gives me a list I can approve from."
+- "Turn the weekly pipeline numbers you save into an app the sales team can open any time."
+
+You can also click **Workflow** in the top right of the agent, open the **App** tab, and click **Ask the agent to build one**. Your agent may suggest an app on its own when your workflow would benefit from one.
+
+Your agent asks questions only when the answer changes what it builds. Details such as names, labels, or thresholds become clearly marked placeholders, and your agent lists them when it reports back, so you can send the real values afterwards.
+
+When the app is ready, your agent posts a card in the chat showing the app's name and its version, such as **App · v1**. Click **Open preview** to open it in the agent's sidebar, or open it in a new tab. The app's address also shows below the chat box, next to **App:**.
+
+## Change it and publish new versions
+
+Ask for changes in the same chat. Your agent edits the app, checks it, and publishes a new version: **v2**, **v3**, and so on.
+
+<Warning>
+  **Everyone sees changes while they are being made.** As soon as your agent starts editing, everyone who opens the app sees the work in progress, not just you. When the agent publishes, everyone moves to the new version. If a draft gets no changes for 30 minutes, the app goes back to its last published version.
+</Warning>
+
+To see the app on the agent, click **Workflow** in the top right and open the **App** tab. It shows the app with a toolbar above it:
+
+<Frame caption="An app open in the App tab. The toolbar above it shows the published version, the app's name, Reload, Open in new tab, Analytics, and Share.">
+  <img src="/images/app-tab-toolbar.svg" alt="The App tab selected in an agent's side panel. A toolbar shows a v2 badge, the app name Conference radar, Reload, Open in new tab, and Analytics icons, and a Share button. Below it, the app shows its title, three headline figures, and an expandable question." />
+</Frame>
+
+| You see | What it means |
+|---|---|
+| **v3** | The published version people get |
+| **Draft · unpublished changes** | Your agent has changed the app since the last version. Everyone sees the draft. |
+| **Draft · starting…** | The draft is starting up |
+| **Draft · has an error** | The draft didn't start. Tell your agent in the chat, and it fixes the error. |
+| **Reload** | Loads the app again |
+| **Open in new tab** | Opens the app at its own address |
+| **Analytics** | Shows who uses the app. See [See who uses it](#see-who-uses-it). |
+| **Share** | Chooses who can open the app. See [Share your app](#share-your-app). |
+
+To go back to an earlier version, ask your agent, for example: "Restore the app to v2." It publishes the old version again as a new one. Restoring changes only the app. The agent's database keeps its current data.
+
+## Add a button that runs an agent
+
+An app can carry a button that asks an agent to do some work: rebuild a report, look into the row someone picked, or file what they typed as a ticket. Ask for it in those words, and name the agent:
+
+- "Add a Refresh button that asks you to update the figures."
+- "Add a Look into this button to each row that asks my Account Research agent to dig into that account."
+
+Your agent adds a button like this only when you ask for one. Asking for an app, a form, or filters never gets you one on its own.
+
+- **Everyone who can open the app can press it.** That's the difference from a [dashboard button](/scale/dashboards#ask-for-a-button-that-runs-an-agent), which works only for people who manage the agent.
+- **It runs only when someone presses it.** An app never starts an agent on its own, for example when the page loads.
+- **The app shows how it went.** Your agent builds the button to show that the work is running. A quick answer can come straight back to the page, and the app says plainly if the agent needs more information or the run didn't finish.
+- **The agent you name pays for its run** and works the way it always does, with its own instructions and integrations. The app can call this agent, or any agent this agent [can reach](/scale/agent-to-agent-communication#who-an-agent-can-reach).
+
+## Share your app
+
+At first, only the agent's owners can open its app: you, or every member of the team for a team agent. Only owners can change who has access.
+
+<Steps>
+  <Step title="Open Share">
+    On the agent, click **Workflow** in the top right, open the **App** tab, and click **Share** in its toolbar.
+  </Step>
+  <Step title="Add people">
+    Type into **Add people, teams, or your organization** and click **Add**. You can add people, teams, or your whole organization, which shows as **Everyone in** followed by your organization's name. **Can view** is the only role. It lets them open and use the app.
+  </Step>
+  <Step title="Choose general access">
+    Under **General access**, pick one:
+
+    | Setting | Who can open the app |
+    |---|---|
+    | **Only people with access** | The agent's owners, plus the people, teams, or organization you added |
+    | **Anyone with the link** | Anyone who has the link, without signing in |
+  </Step>
+  <Step title="Send the link">
+    Click **Copy link** and send it.
+  </Step>
+</Steps>
+
+<Warning>
+  **People who open the app act with the agent's integrations.** They can use every list, form, and button the app has, including buttons that change data in your tools or ask an agent to run. Everyone sees the same app. Before you share it, make sure everyone you add should see what it shows and do what it does. Hover over **Before you share** in the share dialog for a reminder.
+</Warning>
+
+Removing someone, or switching **Anyone with the link** off, can take up to a minute.
+
+Sharing an app doesn't share the agent. People who open the app can't see its chat, instructions, or integrations. It also works the other way round: [Use only](/share/use-only) access to the agent doesn't open its app. To let someone use the app, add them in the app's **Share** dialog.
+
+## See who uses it
+
+Click **Analytics** in the app's toolbar. Choose **Last 7 days**, **Last 30 days**, or **Last 90 days** to see:
+
+- **Page views** and **Unique visitors**, day by day
+- **Audience**: how many visitors are from **Your organization** and how many are **Anonymous**, for example people who used a link
+- **Most viewed pages**
+
+Opening the app in the agent's sidebar doesn't count as a page view.
+
+## Costs and limits
+
+- **The agent's owner pays.** When the app uses an integration that costs credits, the agent's owner pays, not the person using the app. A team agent's app is paid from the team. In usage, these costs count as chat costs. When a button asks an agent to run, that agent pays for its run, the same as any other run. See [Credits and usage](/admin/credits-and-usage#chat-costs-vs-run-costs).
+- **Copies and templates don't include the app.** A copy of the agent, or an agent deployed from a [template](/share/templates), starts without one.
+- **Disabling the agent keeps the app working.** Archiving the agent stops the app.
+- **Admins see what the app does.** The integration calls an app makes show in [Integration Activity](/admin/connected-apps-management#integration-activity).
+
+## If someone can't open the app
+
+| They see | What to do |
+|---|---|
+| **This app doesn't exist or you don't have access** | Check the link, or add them in the app's **Share** dialog. |
+| **This app is unavailable** | The app may be starting up or having a problem. Wait a moment and try again. If it keeps happening, tell your agent in the chat. |
+| **Starting this app…** | The page reloads by itself, usually within a minute. |
+| **Your access to this app has expired** or **You're signed out of this app** | Open the app again from Dataleap. |
+| **Too many requests** | The app got too many requests from their network. Wait a minute and try again. |
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Build a dashboard" icon="chart-line" href="/scale/dashboards">
+    For a finished page, such as a report, that doesn't need to stay current.
+  </Card>
+  <Card title="Database" icon="database" href="/build/agent-database">
+    Where your agent keeps the data your app reads and saves.
+  </Card>
+  <Card title="When to share what" icon="share-nodes" href="/share/when-to-share-what">
+    Pick between sharing an app, a dashboard, a template, and the agent itself.
+  </Card>
+  <Card title="Use only" icon="comments" href="/share/use-only">
+    When people should chat with the agent rather than use an app.
+  </Card>
+</CardGroup>
+
+{/* Sources:
+   Product: dataleap-labs/tahoe PR #917 and follow-ups; ADRs 0072, 0073, 0074, 0075, 0086; read at tahoe main 488c5f74 (2026-10-19).
+   UI strings: interface-section.tsx, share-interface-popover.tsx, interface-analytics-view.tsx, interface-preview-card.tsx, interface-gateway/src/pages.ts.
+   Requested in #docs-ideas by Wina Tungmiharja, 2026-10-20. */}

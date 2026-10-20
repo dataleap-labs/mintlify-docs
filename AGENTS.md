@@ -18,7 +18,8 @@
 ## Terminology
 
 - Use "agent" for the thing a user creates and runs
-- Use "Integrations" for the product area and UI label (**Settings** > **Integrations**, **Integrations & Permissions**, **Integration Activity**); use "integration" in normal prose. Do not write "Connected Apps" or "connected app" — the product renamed them in October 2026. Use "app" only for the third-party product itself, such as its own settings page
+- Use "Integrations" for the product area and UI label (**Settings** > **Integrations**, **Integrations & Permissions**, **Integration Activity**); use "integration" in normal prose. Do not write "Connected Apps" or "connected app" — the product renamed them in October 2026
+- Use "app" for the web app an agent builds and hosts at its own address (the **App** tab on an agent, see `scale/apps.mdx`). Never write "interface" for it — that is internal vocabulary. For a third-party product, prefer "integration" or the product's name; use "app" for it only where the context makes it unmistakable, such as the product's own settings page
 - Use "template" for a reusable starting point from the **Templates** area
 - Use "run" for a single execution of an agent
 - Use "knowledge" for uploaded reference files attached to an agent
