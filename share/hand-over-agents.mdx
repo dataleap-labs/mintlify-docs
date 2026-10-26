@@ -1,0 +1,93 @@
+---
+title: "Hand over agents when you leave"
+sidebarTitle: "Hand over your agents"
+description: "Before you leave or change roles, decide which agents stay personal, which become templates, and which move to a team."
+---
+
+Leaving the company, ending a contract, or moving to another role? You can't pass a personal agent on to someone else as it is. Instead, decide for each agent where it belongs, and move the ones other people rely on before your access ends.
+
+<Frame caption="Where each kind of agent goes before you leave.">
+  <img className="block dark:hidden" src="/images/hand-over-agents-light.svg" alt="Diagram: an agent that only helps you stays personal and is turned off when you leave; an agent colleagues could use becomes a template they deploy themselves; an agent that does your team's work is copied to a team, which keeps it running" />
+  <img className="hidden dark:block" src="/images/hand-over-agents-dark.svg" alt="Diagram: an agent that only helps you stays personal and is turned off when you leave; an agent colleagues could use becomes a template they deploy themselves; an agent that does your team's work is copied to a team, which keeps it running" />
+</Frame>
+
+## What happens when you leave
+
+Once you're removed from your organization in Dataleap:
+
+| | What happens |
+|---|---|
+| **Your personal agents** | They're turned off, so they stop running. |
+| **Team agents** | They stay with the team and keep running. |
+| **Integrations connected with your own account** | They leave every team with you. Team agents that used them lose those tools and triggers. |
+| **Skills you own** | They're deleted, including skills you shared with a team. |
+
+So the agent itself is rarely the problem. What breaks is anything still tied to you: your personal space, your logins, and your skills.
+
+## Decide where each agent belongs
+
+| The agent | Do this |
+|---|---|
+| Only helps your own productivity, such as your inbox or your notes | Nothing. It's tied to you, and nobody else needs it. |
+| Would help colleagues with their own work | Share it as a [template](/share/templates). Each colleague deploys their own copy and connects their own integrations. |
+| Does work for your team, or others rely on its results | Copy it to a [team space](/share/team-spaces). The team owns the copy, so it keeps running after you leave. |
+
+Work that belongs to a team should live in a team space anyway, not only when someone leaves. [When to share what](/share/when-to-share-what) has the full decision guide.
+
+## Move a team workflow to a team space
+
+<Steps>
+<Step title="Pick or create the team">
+
+The copy goes into a team you're a member of. Your teams are listed under **Teams** in the sidebar, and **All teams** shows every team in your organization.
+
+If no team fits, create one: click **+** next to **Teams**, enter a name, and add your successor, for example your manager, under **Add Members**. You become the new team's admin.
+
+</Step>
+<Step title="Copy the agent to the team">
+
+Open the agent, click its name at the top of the page, and choose **Copy to team**. Pick the team under **Select team** and confirm with **Copy to team**.
+
+The team gets its own copy. Your original stays unchanged in your personal space.
+
+</Step>
+<Step title="Set up the copy with team accounts">
+
+The copy includes no credentials, and it starts turned off. Dataleap opens a setup chat in the copy that walks you through connecting integrations and setting up triggers for the team.
+
+Have your successor connect the integrations with their own login or a [service account](/admin/connected-apps-management), not yours. Anything connected with your account stops working for the team when you leave.
+
+</Step>
+<Step title="Make your successor a team admin">
+
+Open the team, click **Settings**, and under **Members** open the **⋯** menu next to your successor's name. Choose **Make team admin**.
+
+Team admins can manage every agent in the team and add new members. A team's only admin can't leave it.
+
+</Step>
+</Steps>
+
+<Note>
+  On Enterprise plans, an organization admin may need to approve a new team's budget before its agents can run.
+</Note>
+
+### What stays behind
+
+The copy starts fresh in a few ways:
+
+- Past runs and chats stay with your original agent.
+- The copy's [database](/build/agent-database) starts empty.
+- An [app](/scale/apps) built on the original doesn't come along. Ask the agent in the copy to build it again.
+
+## Hand over your skills
+
+Skills you own are deleted when you leave, even if a team agent uses them. Before you go, [export](/scale/skills#import-and-export-skills) each skill others need. A teammate imports it, shares it with the team, and asks the team's agents to use the new copy.
+
+<CardGroup cols={2}>
+  <Card title="Team spaces & team agents" icon="users" href="/share/team-spaces">
+    How team spaces, team connections, and team agents work.
+  </Card>
+  <Card title="Templates" icon="shapes" href="/share/templates">
+    Turn an agent into a template colleagues deploy themselves.
+  </Card>
+</CardGroup>
