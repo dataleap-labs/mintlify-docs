@@ -1,77 +1,107 @@
 ---
-title: "Use only"
-description: "Invite people to chat with your agent without giving them edit access."
+title: "Share an agent"
+description: "Give people, teams, or everyone in your organization Can use, Can edit, or Can manage on an agent."
 ---
 
-**Use only** lets selected people chat with your agent. They cannot change instructions, tools, or triggers. You stay the owner.
+Share an agent when other people should use it, or help you build it. Everyone you add gets a role. Sharing doesn't change who owns the agent.
 
-Use this when the agent should stay yours, but others need to talk to it.
-
-## Invite people
-
-Ask the agent to invite someone as **Use only**, or do it yourself from the **Share** dialog:
-
-<Frame caption="The Share dialog — set the role to Use only, then add people.">
-  <img src="/images/share-use-only-popover.png" alt="The Share popover with the role set to Use only, an Add people field, and a Copy link button" />
+<Frame caption="Each role includes everything the role before it allows.">
+  <img className="block dark:hidden" src="/images/sharing-roles-light.svg" alt="The three sharing roles. Can use chats with the agent in their own chat, sees its files, reads its instructions, triggers and tools, and opens its app. Can edit also changes how it works, turns it on or off, and sees runs and everyone's chats. Can manage also changes who has access, deletes the agent and moves it." />
+  <img className="hidden dark:block" src="/images/sharing-roles-dark.svg" alt="The three sharing roles. Can use chats with the agent in their own chat, sees its files, reads its instructions, triggers and tools, and opens its app. Can edit also changes how it works, turns it on or off, and sees runs and everyone's chats. Can manage also changes who has access, deletes the agent and moves it." />
 </Frame>
+
+## Roles
+
+| Role | What the Share dialog says | What it allows |
+|---|---|---|
+| **Can use** | Run it and ask it questions in their own chats | Chat with the agent in their own chat. See its files, and read its instructions, triggers, and tools. Open its [app](/scale/apps). |
+| **Can edit** | Also change how it works and see everyone's chats | Everything in **Can use**, plus the setup chat: change the instructions, triggers, tools, and model, and turn the agent on or off. See **Runs** and everyone's chats. |
+| **Can manage** | Also share it, delete it and move it to another team | Everything in **Can edit**, plus change who has access, delete the agent, [move it](/share/team-spaces#move-an-agent-into-a-team), and publish it as a [template](/share/templates). |
+| **No access** | Team members see it but can't open it. They can ask for access | Only for the team that owns an agent. See [Keep a team agent to a few people](#keep-a-team-agent-to-a-few-people). |
+
+## Who can get which role
+
+What you can hand out depends on whether the agent is yours or a team's.
+
+| Who | On a team agent | On a personal agent |
+|---|---|---|
+| A person | **Can use**, **Can edit**, or **Can manage** | **Can use** or **Can edit** |
+| A team | **Can use**, **Can edit**, or **Can manage** | **Can use** |
+| Everyone in your organization | **Can use** | **Can use** |
+| The team that owns it | **Can edit** (the default), **Can use**, or **No access** | — |
+
+You're the only person who can manage a personal agent. On a team agent, whoever created it gets **Can manage**, and the team's admins always have **Can manage**. See [Team spaces](/share/team-spaces#who-can-do-what-in-a-team).
+
+## Share an agent with people or teams
+
+You need **Can manage** to change who has access. With **Can edit**, you can see the list but not change it.
 
 <Steps>
 <Step title="Open Share">
 
-On the agent, click **Share**, then stay on the **Share** tab.
+On the agent, click **Share**. The **Share** tab lists everyone who has access. **Always have access** shows the people you can't remove, such as the owner and the team's admins.
 
 </Step>
-<Step title="Add people">
+<Step title="Add people, teams, or everyone">
 
-Search under **Add people** and click **Add**. You can only add existing members of your organization who have a Dataleap account — not people from outside it.
+Search in **Add people, teams or everyone**. You can pick people and teams from your organization, or **Everyone in** followed by your organization's name.
 
-You invite individual people, not a whole team or the whole organization.
+</Step>
+<Step title="Choose the role and add">
+
+Pick the role in the menu next to the search field. It starts on **Can use**. Click **Add**.
 
 </Step>
 <Step title="Send the link (optional)">
 
-**Copy link** copies a link to the chat. The link does not grant access by itself — add the person first.
+**Copy link** copies a link to the agent. The link doesn't grant access by itself, so add the person first.
 
 </Step>
 </Steps>
 
-People invited as **Use only** can chat with the agent. Their conversations appear in **Runs**.
+To change someone's role or remove them, use the menu next to their name in the same list.
 
-## What recipients can do
+## What people with Can use get
 
-Recipients see the agent on **Agents** with a **Use Only** badge. They can chat, but only the owner can edit.
+People find agents shared with them under **Agents**, on the **Shared with you** tab.
 
-<Frame caption="A shared agent as a recipient sees it — a Use Only badge, and their own chats.">
-  <img src="/images/share-use-only-badge.png" alt="A recipient's view of a shared agent showing a Use Only, Enabled badge, Shared by Growth, a New Chat button, and their own chats" />
-</Frame>
+- **Their own chat.** Each person has one chat with the agent, and it continues where they left off. Only they and people with **Can edit** or **Can manage** see it.
+- **A view of the setup.** They can read the instructions, triggers, and tools, and see the agent's files. They can't change anything.
+- **The app.** If the agent has an [app](/scale/apps), they can open it.
 
-They can start a new chat, continue existing chats, and rename those chats. They cannot edit the agent.
-
-If you disable the agent, they keep existing chats but cannot send new messages. If you remove their access, existing messages stay visible on that page, but they can no longer use the agent.
-
-**Use only** access doesn't open the agent's [app](/scale/apps). To let someone use the app, share the app itself from its own **Share** dialog.
-
-## Which agents you can share
-
-You can share **any agent** as **Use only** — a personal agent you own, or a team agent in a team you belong to. It's most useful when people need to talk to an agent regularly, not for one-off runs.
-
-Agents cloned from a locked template ("managed" agents) can't be shared this way.
+If you turn the agent off, they can't send new messages. If you remove their access, they can still read their earlier messages, but they can't use the agent anymore.
 
 <Warning>
-  Recipients use *your* agent with *your* connections. **Use only** is not a team agent and not a template. If others need their own copy, share a [template](/share/templates) instead.
+  **People you share an agent with work through its integrations.** The agent uses the accounts it's connected with, not theirs. Before you share it, make sure everyone you add should be able to ask for what those accounts can see and do. If people should use their own accounts, share a [template](/share/templates) instead.
 </Warning>
 
-## When to choose it
+## Edit someone else's agent
 
-- **Use it** when teammates should talk to the agent, and you want to keep editing it.
-- **Promote to a [team agent](/share/team-spaces)** when everyone should see, run, and edit it.
-- **Share a [template](/share/templates)** when others should clone the workflow and connect their own integrations.
+With **Can edit** on an agent you don't own, and outside the team that owns it, you work with the tools the agent already has. You can turn tools off, but you can't add integrations or new tools. Ask the owner or a team member to add them.
+
+## Accounts other people added
+
+When an agent uses someone's [Personal account](/share/team-spaces#accounts-in-a-team), that person always keeps at least **Can use** on the agent. If you remove their access, the agent can't keep their account, so its tools are turned off. The account owner can approve it again later.
+
+## Keep a team agent to a few people
+
+By default, everyone in the team that owns an agent has **Can edit**. To limit that, open **Share** and change the owning team's role to **Can use** or **No access**. Then add the people who should have more.
+
+With **No access**, team members still see the agent in the team, but they can't open it. They can click **Request access to** the agent and say why. Everyone who can manage the agent gets an email and can approve it. You also see waiting requests under **Access requests** in the **Share** dialog. A request closes after 14 days if nobody decides.
+
+## Agents you can't share
+
+Agents deployed from a [locked template](/share/locked-templates) can't be shared. The template's owner decides who has access.
 
 <CardGroup cols={2}>
+  <Card title="Team spaces & team agents" icon="users" href="/share/team-spaces">
+    When a whole team should own and run the agent.
+  </Card>
   <Card title="When to share what" icon="signs-post" href="/share/when-to-share-what">
     The decision guide across all sharing options.
   </Card>
-  <Card title="Team spaces & team agents" icon="users" href="/share/team-spaces">
-    When the whole team should own the agent.
-  </Card>
 </CardGroup>
+
+{/* Sources:
+   Product: dataleap-labs/tahoe PR #985 (Teams Phase 1) and follow-ups; ADRs 0084, 0093, 0094; read at tahoe main ceafa331 (2026-10-29).
+   UI strings: lib/agents/agent-role.ts, share-agent-access-section.tsx, share-agent/-helper/share-agent-access.ts, use-only-agent-view.tsx, agents/index.tsx, approval-requests/lib/request-copy.ts. */}
