@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="292" viewBox="0 0 760 292" role="img" aria-label="Three kinds of agent and where each one goes before you leave: an agent that only helps you stays personal and is turned off when you leave; an agent colleagues could use becomes a template they deploy themselves; an agent that does your team's work is moved to a team, which keeps it running">
+<rect width="760" height="292" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#6176F3"/></marker></defs>
+<rect x="24" y="24" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="124" y="54.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Only helps you</text>
+<text x="124" y="74.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">your inbox, your notes</text>
+<path d="M224 58.0 H274" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="280" y="24" width="200" height="68" rx="12" fill="#EEF0FE" stroke="#6176F3" stroke-width="2"/>
+<text x="380" y="54.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Keep it personal</text>
+<text x="380" y="74.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">nothing to do</text>
+<path d="M480 58.0 H530" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="536" y="24" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="636" y="54.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Turned off</text>
+<text x="636" y="74.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">when you leave</text>
+<rect x="24" y="112" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="124" y="142.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Useful to colleagues</text>
+<text x="124" y="162.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">for their own work</text>
+<path d="M224 146.0 H274" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="280" y="112" width="200" height="68" rx="12" fill="#EEF0FE" stroke="#6176F3" stroke-width="2"/>
+<text x="380" y="142.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Share as a template</text>
+<text x="380" y="162.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">they deploy their own</text>
+<path d="M480 146.0 H530" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="536" y="112" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="636" y="142.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Their copies</text>
+<text x="636" y="162.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">stay with them</text>
+<rect x="24" y="200" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="124" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Your team's work</text>
+<text x="124" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">others rely on it</text>
+<path d="M224 234.0 H274" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="280" y="200" width="200" height="68" rx="12" fill="#EEF0FE" stroke="#6176F3" stroke-width="2"/>
+<text x="380" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Move to team</text>
+<text x="380" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">the team owns it</text>
+<path d="M480 234.0 H530" fill="none" stroke="#6176F3" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="536" y="200" width="200" height="68" rx="12" fill="#f5f5f4" stroke="#e7e5e4"/>
+<text x="636" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#292524">Keeps running</text>
+<text x="636" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#78716c">for the team</text>
+</svg>

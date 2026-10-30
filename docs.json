@@ -64,7 +64,8 @@
           "share/use-only",
           "share/templates",
           "share/locked-templates",
-          "share/when-to-share-what"
+          "share/when-to-share-what",
+          "share/hand-over-agents"
         ]
       },
       {
