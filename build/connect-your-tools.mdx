@@ -21,7 +21,7 @@ You can connect an integration while building an agent or from **Settings** > **
   </Step>
 
   <Step title="Choose where to save the connection">
-    Select **Personal** for a connection that belongs to you. If your workspace has teams, select a team to create a Team Connection. Team members may be able to use it from agents owned by that team, depending on your organization settings.
+    Select **Personal** for a connection that belongs to you. If you're in a team, you can select the team instead. Dataleap then asks **Whose account is this?**: choose **My own account** for your own login, or **A shared account** for a team or service login. See [Accounts in a team](/share/team-spaces#accounts-in-a-team).
   </Step>
 
   <Step title="Find the integration">
@@ -75,8 +75,8 @@ An integration's available actions depend on the integration, the connection typ
 
 ### Personal and team connections
 
-- A **Personal** connection runs with the account you authorized and is intended for your agents.
-- A Team Connection is saved for a team. Its availability depends on the team's use scope and organization settings.
+- A **Personal** connection runs with the account you authorized. It's yours, and your personal agents use it.
+- In a team, an account is either a **Shared account**, which any team member can use on the team's agents, or a **Personal account**: someone's own login added to the team. A team agent can use a Personal account only after its owner approves it for that agent. See [Accounts in a team](/share/team-spaces#accounts-in-a-team).
 - If the same integration appears more than once, check the account and team labels before approving access. They may refer to different accounts or credentials.
 
 ## Which Slack connection to use
@@ -118,7 +118,7 @@ Disconnect an integration when you no longer want Dataleap to use the connection
   </Step>
 
   <Step title="Review the impact">
-    Review the account label, team information, and the list of agents that use the connection. Team Connections may be unavailable to other team members after you disconnect them.
+    Review the account label, team information, and the list of agents that use the connection. If you added the account to a team, that team's agents lose it too.
   </Step>
 
   <Step title="Choose what happens to affected agents">
@@ -134,7 +134,7 @@ Disconnect an integration when you no longer want Dataleap to use the connection
 
 For supported managed integrations, Dataleap also removes the managed provider connection. Some providers keep a separate authorization record. If the provider still lists Dataleap under **Authorized apps**, **Connected applications**, or a similar setting, remove Dataleap there to complete provider-side deauthorization.
 
-Disconnecting a Team Connection affects every team member or team agent that depends on that connection. Coordinate with the team before removing it.
+Disconnecting a team's Shared account affects every team agent that depends on it. Coordinate with the team before removing it. To take your own account out of one team without disconnecting it, use **Remove from team** on the team's page instead.
 
 ## Delete your data
 

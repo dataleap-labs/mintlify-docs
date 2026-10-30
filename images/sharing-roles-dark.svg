@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="216" viewBox="0 0 760 216" role="img" aria-label="The three sharing roles, each including the one before it: Can use chats with the agent in their own chat, sees its files, reads its instructions, triggers and tools, and opens its app; Can edit also changes how it works, turns it on or off, and sees runs and everyone's chats; Can manage also changes who has access, deletes the agent and moves it">
+<rect width="760" height="216" fill="#1c1917"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#A5B4FC"/></marker></defs>
+<rect x="24" y="24" width="208" height="168" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="128.0" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can use</text>
+<path d="M44 72 H212" stroke="#44403c" stroke-width="1"/>
+<text x="128.0" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Chats in their own chat</text>
+<text x="128.0" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Sees its files</text>
+<text x="128.0" y="144" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Reads instructions, triggers,</text>
+<text x="128.0" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">tools; opens its app</text>
+<path d="M238 108 H272" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="280" y="24" width="208" height="168" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="384.0" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can edit</text>
+<path d="M300 72 H468" stroke="#44403c" stroke-width="1"/>
+<text x="384.0" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Everything in Can use</text>
+<text x="384.0" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Changes how it works</text>
+<text x="384.0" y="144" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Turns it on or off</text>
+<text x="384.0" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Sees runs and all chats</text>
+<path d="M494 108 H528" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="536" y="24" width="208" height="168" rx="12" fill="#272a4a" stroke="#A5B4FC" stroke-width="2"/>
+<text x="640.0" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can manage</text>
+<path d="M556 72 H724" stroke="#44403c" stroke-width="1"/>
+<text x="640.0" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Everything in Can edit</text>
+<text x="640.0" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Changes who has access</text>
+<text x="640.0" y="144" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Deletes it</text>
+<text x="640.0" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">Moves it</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="232" viewBox="0 0 760 232" role="img" aria-label="The two kinds of account in a team: a Shared account is a team or service login that any team member can use on the team's agents; a Personal account is your own login added to the team, which teammates need your approval to use for each agent and which stays yours">
+<rect width="760" height="232" fill="#1c1917"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#A5B4FC"/></marker></defs>
+<rect x="24" y="24" width="300" height="84" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="174" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">Shared account</text>
+<text x="174" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">a team or service login</text>
+<path d="M324 66 H402" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="408" y="24" width="328" height="84" rx="12" fill="#272a4a" stroke="#A5B4FC" stroke-width="2"/>
+<text x="572" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f5f5f4">Any team member can use it</text>
+<text x="572" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">on the team's agents</text>
+<rect x="24" y="124" width="300" height="84" rx="12" fill="#292524" stroke="#44403c"/>
+<text x="174" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">Personal account</text>
+<text x="174" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">your own login, added to the team</text>
+<path d="M324 166 H402" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="408" y="124" width="328" height="84" rx="12" fill="#272a4a" stroke="#A5B4FC" stroke-width="2"/>
+<text x="572" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f5f5f4">Teammates need your approval</text>
+<text x="572" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">for each agent. It stays yours.</text>
+</svg>
