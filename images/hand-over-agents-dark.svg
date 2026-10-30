@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="292" viewBox="0 0 760 292" role="img" aria-label="Three kinds of agent and where each one goes before you leave: an agent that only helps you stays personal and is turned off when you leave; an agent colleagues could use becomes a template they deploy themselves; an agent that does your team's work is copied to a team, which keeps it running">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="292" viewBox="0 0 760 292" role="img" aria-label="Three kinds of agent and where each one goes before you leave: an agent that only helps you stays personal and is turned off when you leave; an agent colleagues could use becomes a template they deploy themselves; an agent that does your team's work is moved to a team, which keeps it running">
 <rect width="760" height="292" fill="#1c1917"/>
 <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#A5B4FC"/></marker></defs>
 <rect x="24" y="24" width="200" height="68" rx="12" fill="#292524" stroke="#44403c"/>
@@ -28,8 +28,8 @@
 <text x="124" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">others rely on it</text>
 <path d="M224 234.0 H274" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="280" y="200" width="200" height="68" rx="12" fill="#272a4a" stroke="#A5B4FC" stroke-width="2"/>
-<text x="380" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">Copy to team</text>
-<text x="380" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">team owns the copy</text>
+<text x="380" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">Move to team</text>
+<text x="380" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#a8a29e">the team owns it</text>
 <path d="M480 234.0 H530" fill="none" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="536" y="200" width="200" height="68" rx="12" fill="#292524" stroke="#44403c"/>
 <text x="636" y="230.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#f5f5f4">Keeps running</text>
