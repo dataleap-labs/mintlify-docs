@@ -1,38 +1,158 @@
 ---
 title: "Team spaces & team agents"
-description: "One shared workspace for the team — agents everyone can access, edit, and build on together."
+description: "Create or join a team, add the accounts its agents use, and move agents into it."
 ---
 
-Why team agents? Because some workflows affect the **whole team** — and then everyone should be able to access the agent, edit it, and collaborate on it. That's the purpose of a team space.
+Some workflows do work for a **whole team**. Put those agents in a team space. The team owns them, the team's members can work on them together, and they keep running when one person leaves.
 
 <Frame caption="A team space: shared prompt box, shared agents, templates, and skills.">
-  <img src="/images/team-space.png" alt="A Dataleap team space showing members, connected apps, a prompt box, and tabs for Agents, Templates, and Skills with team agents below" />
+  <img src="/images/team-space.png" alt="A Dataleap team space showing members, connected integrations, a prompt box, and tabs for Agents, Templates, and Skills with team agents below" />
 </Frame>
 
 ## Personal vs. team
 
-- **Personal space** — your private agents, for experiments and your own productivity.
-- **Team space** — a full workspace for the team: its own prompt box (agents built there are team agents from the start), its own **Agents**, **Templates**, and **Skills** tabs, its own connections and [budget](/admin/credits-and-usage).
+- **Personal space**: your own agents, for experiments and your own productivity. Nobody else sees them unless you [share them](/share/use-only).
+- **Team space**: a space the team shares. It has its own prompt box (agents you build there are team agents from the start), its own **Agents**, **Templates**, and **Skills** tabs, its own accounts, and its own [budget](/admin/credits-and-usage).
 
-## Connections in a team
+## Who can do what in a team
 
-Connect a tool once in the team, and **every team agent can use it** — including agents teammates build later.
+| Who | On the team's agents |
+|---|---|
+| Team members | **Can edit** by default: they can chat with every team agent, change how it works, and see its runs and everyone's chats. |
+| Whoever created an agent | **Can manage** on that agent. |
+| Team admins | Always **Can manage** on every team agent. They also add members and rename or delete the team. |
 
-<Warning>
-  Use [service accounts](/admin/connected-apps-management), not personal logins — a tool connected in a team is usable by every agent in that team.
-</Warning>
+People with **Can manage** can [lower the team's role](/share/use-only#keep-a-team-agent-to-a-few-people) on one agent to **Can use** or **No access**. They can also share a team agent with people outside the team. See [Share an agent](/share/use-only) for what each role allows.
 
-## Promote a personal agent to the team
+## Create a team
 
-Click **Copy to team** on your agent. The team gets its own copy — **your original stays unchanged** in your personal space. That's useful: keep iterating privately, and promote again when you have a better version.
+Any member of your organization can create a team.
+
+<Steps>
+<Step title="Start a new team">
+
+In the sidebar, click **+** next to **Teams**. You can also open **All teams** and click **New Team**.
+
+</Step>
+<Step title="Name it">
+
+Enter the team's name. If a team with a similar name already exists, Dataleap shows it, so you can ask to join that team instead of creating a second one.
+
+</Step>
+<Step title="Add members">
+
+Add colleagues under **Add Members**. You can also add people later.
+
+</Step>
+</Steps>
+
+You become the new team's admin.
+
+<Note>
+  On Enterprise plans, an organization admin may need to approve a new team's budget before its agents can run.
+</Note>
+
+## Join a team
+
+Open **All teams** in the sidebar. The page lists **Your teams** and **Other teams** in your organization. Click **Request to join** on the team you want, and say why. Every admin of that team gets an email and can approve it. You become a member once a team admin approves. A request closes after 14 days if nobody decides.
+
+A team admin can also add you directly.
+
+## Manage the team
+
+Open the team and click **Settings**. Under **Members**, team admins can:
+
+- Add members with **+**.
+- Make someone a team admin: open the **⋯** menu next to their name and choose **Make team admin**.
+
+Team admins rename or delete the team from the team's actions menu. A team's only admin can't leave it, so make someone else an admin first.
+
+## Accounts in a team
+
+A team agent can use two kinds of account. When you connect an integration for a team, Dataleap asks **Whose account is this?**
+
+<Frame caption="Shared accounts are for the whole team. A Personal account stays yours.">
+  <img className="block dark:hidden" src="/images/team-accounts-light.svg" alt="The two kinds of account in a team. A Shared account is a team or service login that any team member can use on the team's agents. A Personal account is your own login added to the team; teammates need your approval to use it for each agent, and it stays yours." />
+  <img className="hidden dark:block" src="/images/team-accounts-dark.svg" alt="The two kinds of account in a team. A Shared account is a team or service login that any team member can use on the team's agents. A Personal account is your own login added to the team; teammates need your approval to use it for each agent, and it stays yours." />
+</Frame>
+
+| | **Shared account** | **Personal account** |
+|---|---|---|
+| What it is | A team or service login, such as a shared sales mailbox. Choose **A shared account**. | Your own login, such as your own mailbox. Choose **My own account**. |
+| Who can use it | Any team member, on the team's agents. | Teammates need your approval for each agent that uses it. |
+| Who it belongs to | The team. It can't be turned into a personal account. | You. You can remove it from the team any time. |
+
+Not sure? Choose **My own account**. It stays yours.
+
+### Add an account you already connected
+
+You don't have to sign in again to use your own account in a team:
+
+- In **Settings** > **Integrations**, open the account's menu and choose **Add to team**. Pick the team. It stays your account, and your personal agents keep using it.
+- When you connect an integration for a team agent, choose **Use an account you already connected**.
+
+A personal Slack account can't be added to a team. Team agents use your organization's Slack connection instead. See [Which Slack connection to use](/build/connect-your-tools#which-slack-connection-to-use).
+
+### Approve a Personal account for an agent
+
+When a team agent wants to use someone's Personal account, the person setting it up sees **Send request to** the account owner. The owner gets the request and decides for that one agent. Each agent needs its own approval.
+
+### Let personal agents use a Shared account
+
+A Shared account is for team agents only by default. To let team members also use it in their personal agents, open its menu, choose **Connection settings**, and turn on **Allow personal agents**.
+
+### Remove an account from a team
+
+Open the team's **Settings**, find the account under **Connected Integrations**, and choose **Remove from team** in its menu. Any team member can do this. The account stays its owner's, and only the owner can add it to the team again.
+
+Team agents that used it lose its tools, and its triggers on them are removed. An agent left without triggers is turned off.
+
+## Move an agent into a team
+
+When a personal agent turns into team work, move it. The team then owns the agent, with its chats, runs, and setup. You need **Can manage** on the agent.
+
+<Steps>
+<Step title="Choose Move to team">
+
+Open the agent's actions menu and choose **Move to team**. Pick one of your teams.
+
+</Step>
+<Step title="Review what changes">
+
+Before you confirm, Dataleap lists what the move changes:
+
+- **Your own accounts** stay yours. They're added to the team, so the agent keeps using them. Other team agents need your approval to use them.
+- **Other people's accounts** and **another team's accounts** stay with their owners and come off the agent. Their tools stop working and their triggers are deleted.
+- **Past chats and runs** become visible to the team. They may contain data from your accounts.
+- **The agent turns off** if anything is removed, or if no trigger is left. Reconnect what's missing, then turn it back on.
+
+</Step>
+<Step title="Move">
+
+Click **Move**. The setup chat gets a note that records the move and the steps to bring back anything that was removed.
+
+</Step>
+</Steps>
+
+You can't move an agent while it's working. Stop what's running or let it finish, then check again.
+
+To move a team agent back, choose **Move to personal**. The team can't open it after that. People it was shared with directly keep their access.
+
+<Tip>
+  Want to keep your personal version too? Click **Duplicate** first, then move one of the two.
+</Tip>
+
+## Leave a team
+
+Open the team's **Settings** and click **Leave team**. Your Personal accounts leave the team with you. Team agents that use them stop using them, and your triggers on them are removed. You also lose the access you had to the team's agents.
 
 <Card title="Watch: Team spaces & team agents" icon="clapperboard" href="/video-series/section-4#team-spaces-team-agents" horizontal>
   See team sharing in action.
 </Card>
 
 <CardGroup cols={2}>
-  <Card title="Templates" icon="shapes" href="/share/templates">
-    Next: share a workflow beyond one team.
+  <Card title="Share an agent" icon="user-plus" href="/share/use-only">
+    Give people or teams Can use, Can edit, or Can manage.
   </Card>
   <Card title="When to share what" icon="signs-post" href="/share/when-to-share-what">
     The decision guide across all sharing options.
@@ -41,4 +161,5 @@ Click **Copy to team** on your agent. The team gets its own copy — **your orig
 
 {/* Sources:
    https://www.notion.so/39522bd1f6b68172b8a9f57cf4fe754e
-   Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): trimmed, purpose-first */}
+   Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): trimmed, purpose-first
+   Teams rewrite (Oct 2026): dataleap-labs/tahoe PR #985 and follow-ups, agent move (ENG-994), ADRs 0084 and 0098; read at tahoe main ceafa331 (2026-10-29). */}
