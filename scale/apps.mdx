@@ -81,7 +81,7 @@ To see the app on the agent, click **Workflow** in the top right and open the **
 | **Reload** | Loads the app again |
 | **Open in new tab** | Opens the app at its own address |
 | **Analytics** | Shows who uses the app. See [See who uses it](#see-who-uses-it). |
-| **Share** | Chooses who can open the app. See [Share your app](#share-your-app). |
+| **Share** | Chooses who can open the app. See [Share your app](#share-your-app). A globe on the button means people outside your organization can open it. |
 
 To go back to an earlier version, ask your agent, for example: "Restore the app to v2." It publishes the old version again as a new one. Restoring changes only the app. The agent's database keeps its current data.
 
@@ -99,35 +99,57 @@ Your agent adds a button like this only when you ask for one. Asking for an app,
 - **The app shows how it went.** Your agent builds the button to show that the work is running. A quick answer can come straight back to the page, and the app says plainly if the agent needs more information or the run didn't finish.
 - **The agent you name pays for its run** and works the way it always does, with its own instructions and integrations. The app can call this agent, or any agent this agent [can reach](/scale/agent-to-agent-communication#who-an-agent-can-reach).
 
+## Show each person their own view
+
+An app knows who is viewing it: their email address, and their role on the agent. So the same app can show different people different things. Ask for it in those words:
+
+- "Show each person only the requests they submitted."
+- "Only people who can manage the agent should see the Approve button."
+
+Your agent builds views like this only when you ask. It never adds a login page or passwords to the app, because Dataleap checks who people are before they reach it.
+
+<Note>
+  The app's code decides who sees what, so check the result before you rely on it. For example, ask a colleague to open the app and confirm they see only their own rows.
+</Note>
+
 ## Share your app
 
-At first, only the agent's owners can open its app: you, or every member of the team for a team agent. Only owners can change who has access.
+At first, only people who have access to the agent can open its app. To let anyone else open it, add them in the app's **Share** dialog. You need **Can manage** on the agent to change this. With **Can edit**, you see who can open the app but can't change it.
 
 <Steps>
   <Step title="Open Share">
     On the agent, click **Workflow** in the top right, open the **App** tab, and click **Share** in its toolbar.
   </Step>
   <Step title="Add people">
-    Type into **Add people, teams, or your organization** and click **Add**. You can add people, teams, or your whole organization, which shows as **Everyone in** followed by your organization's name. **Can view** is the only role. It lets them open and use the app.
-  </Step>
-  <Step title="Choose general access">
-    Under **General access**, pick one:
+    Type into **Add people, teams, or email addresses**, pick a suggestion, and click **Add**. **Can view** is the only role. It lets them open and use the app.
 
-    | Setting | Who can open the app |
+    | You add | Who can open the app |
     |---|---|
-    | **Only people with access** | The agent's owners, plus the people, teams, or organization you added |
-    | **Anyone with the link** | Anyone who has the link, without signing in |
+    | A person or a team in your organization | That person, or every member of that team. They log in to Dataleap. |
+    | **Everyone in** followed by your organization's name | Every member of your organization. If your organization has verified email domains, anyone with an address at those domains can open it too. |
+    | An email address outside your organization | That person, as a guest. They get an email invitation. |
+    | A whole domain, such as `@customer.com` | Anyone with an address at that domain, as a guest. No email is sent, so send them the link yourself. |
   </Step>
   <Step title="Send the link">
-    Click **Copy link** and send it.
+    Click **Copy link** and send it. The link opens the app only for people you added.
   </Step>
 </Steps>
 
 <Warning>
-  **People who open the app act with the agent's integrations.** They can use every list, form, and button the app has, including buttons that change data in your tools or ask an agent to run. Everyone sees the same app. Before you share it, make sure everyone you add should see what it shows and do what it does. Hover over **Before you share** in the share dialog for a reminder.
+  **People who open the app act with the agent's integrations.** That includes guests from outside your organization. They can use every list, form, and button the app has, including buttons that change data in your tools or ask an agent to run. Before you share it, make sure everyone you add should see what it shows and do what it does. **How sharing works** in the share dialog sums this up.
 </Warning>
 
-Removing someone, or switching **Anyone with the link** off, can take up to a minute.
+### Share with people outside your organization
+
+People outside your organization open the app as guests. Guests don't need a Dataleap account.
+
+- **Guests confirm their email address with a code.** When a guest opens the app, they click **Continue with email**, enter the address you shared the app with, and type the 6-digit code they get by email. A code works for 10 minutes.
+- **Guests stay signed in.** A guest usually confirms their address once per browser. Guests who get in through a domain confirm it again every 90 days.
+- **You see who is outside.** Guests carry a **Guest** badge in the share dialog, and a line under the list tells you whether people outside your organization can open the app. While they can, the app's **Share** button shows a globe.
+- **Some domains can't be added.** You can't add a whole free email domain, such as `@gmail.com`, or a disposable email domain. Add people by their own address instead.
+- **Colleagues stay colleagues.** If you type the address of someone in your organization, they're added as themselves and open the app by logging in to Dataleap.
+
+Removing someone, including a guest, can take up to a minute.
 
 Sharing an app doesn't share the agent. People who open the app can't see its chat, instructions, or integrations. It also works the other way round: [Use only](/share/use-only) access to the agent doesn't open its app. To let someone use the app, add them in the app's **Share** dialog.
 
@@ -136,7 +158,7 @@ Sharing an app doesn't share the agent. People who open the app can't see its ch
 Click **Analytics** in the app's toolbar. Choose **Last 7 days**, **Last 30 days**, or **Last 90 days** to see:
 
 - **Page views** and **Unique visitors**, day by day
-- **Audience**: how many visitors are from **Your organization** and how many are **Anonymous**, for example people who used a link
+- **Audience**: how many visitors are from **Your organization** and how many are **Guests**. Visits from before guests replaced public links show as **Anonymous**.
 - **Most viewed pages**
 
 Opening the app in the agent's sidebar doesn't count as a page view.
@@ -152,11 +174,12 @@ Opening the app in the agent's sidebar doesn't count as a page view.
 
 | They see | What to do |
 |---|---|
-| **This app doesn't exist or you don't have access** | Check the link, or add them in the app's **Share** dialog. |
+| **This app doesn't exist or you don't have access** | Check the link, or add them in the app's **Share** dialog. A guest who confirmed a different address can click **Use a different email**. |
 | **This app is unavailable** | The app may be starting up or having a problem. Wait a moment and try again. If it keeps happening, tell your agent in the chat. |
 | **Starting this app…** | The page reloads by itself, usually within a minute. |
-| **Your access to this app has expired** or **You're signed out of this app** | Open the app again from Dataleap. |
-| **Too many requests** | The app got too many requests from their network. Wait a minute and try again. |
+| **Your access to this app has expired** or **You're signed out of this app** | Open the app again from Dataleap. A guest opens the app's link again. |
+| A guest gets no code | Dataleap sends a code only to an address that has access. Check that you added their exact address, or their domain. |
+| **That code didn't work**, **This code has expired**, or **Too many attempts** | Check the code, or click **Request a new code** and use the newest one. |
 
 ## Related
 
@@ -178,4 +201,5 @@ Opening the app in the agent's sidebar doesn't count as a page view.
 {/* Sources:
    Product: dataleap-labs/tahoe PR #917 and follow-ups; ADRs 0072, 0073, 0074, 0075, 0086; read at tahoe main 488c5f74 (2026-10-19).
    UI strings: interface-section.tsx, share-interface-popover.tsx, interface-analytics-view.tsx, interface-preview-card.tsx, interface-gateway/src/pages.ts.
-   Requested in #docs-ideas by Wina Tungmiharja, 2026-10-20. */}
+   Requested in #docs-ideas by Wina Tungmiharja, 2026-10-20.
+   Guests and per-viewer views: tahoe PR #1011 (ADR 0096) and ADR 0102; share-interface-popover.tsx, interface-guests.ts, -guest-sign-in.tsx, guest_emails.go, grants.go, agent_access.go, apps SKILL.md; read at tahoe main 04b4aadd (2026-10-30). */}
