@@ -129,6 +129,9 @@ Before you confirm, Dataleap lists what the move changes:
 - **Other people's accounts** and **another team's accounts** stay with their owners and come off the agent. Their tools stop working and their triggers are deleted.
 - **Past chats and runs** become visible to the team. They may contain data from your accounts.
 - **The agent turns off** if anything is removed, or if no trigger is left. Reconnect what's missing, then turn it back on.
+- **Apps that call other agents** can only call agents in the same space. If an app calls another of your agents, move that agent too.
+
+Everything else comes along: chats, runs, files, memory, database, triggers, versions, apps, and the weekly budget limit.
 
 </Step>
 <Step title="Move">
@@ -140,11 +143,42 @@ Click **Move**. The setup chat gets a note that records the move and the steps t
 
 You can't move an agent while it's working. Stop what's running or let it finish, then check again.
 
-To move a team agent back, choose **Move to personal**. The team can't open it after that. People it was shared with directly keep their access.
-
 <Tip>
   Want to keep your personal version too? Click **Duplicate** first, then move one of the two.
 </Tip>
+
+## Move a team agent to your personal space
+
+The reverse works too. When a team agent should become yours alone, move it into your personal space. You need **Can manage** on the agent, which team admins have.
+
+<Steps>
+<Step title="Choose Move to personal">
+
+Open the agent's actions menu and choose **Move to personal**. The destination is always **Your personal space**.
+
+</Step>
+<Step title="Review what changes">
+
+<Frame caption="Moving a team agent to your personal space: who loses access, and which accounts are removed.">
+  <img src="/images/move-to-personal.svg" alt="The Move dialog with Move to set to Your personal space. Loses access lists a team member who had Can manage and the Engineering team, which had Can edit. Removed lists a Granola account with the reason: Engineering's Granola connection doesn't allow personal Agents. Buttons: Cancel and Move to personal." />
+</Frame>
+
+- **Loses access** lists the team and the people who can't open the agent after the move. People it was shared with directly keep their access.
+- **Removed** lists the accounts that come off the agent. A team's Shared account comes off unless it [allows personal agents](#let-personal-agents-use-a-shared-account). Other people's accounts come off too. Their tools stop working and their triggers are deleted.
+- **Your own accounts** stay on the agent.
+- **The agent turns off** if anything is removed, or if no trigger is left.
+
+Chats, runs, files, memory, database, triggers, versions, apps, and the weekly budget limit come along.
+
+</Step>
+<Step title="Move to personal">
+
+Click **Move to personal**. The setup chat gets a note with the steps to bring back anything that was removed.
+
+</Step>
+</Steps>
+
+The agent is now a personal agent again. It runs on your accounts, and it's turned off if you leave the organization.
 
 ## Leave a team
 
@@ -166,4 +200,4 @@ Open the team's **Settings** and click **Leave team**. Your Personal accounts le
 {/* Sources:
    https://www.notion.so/39522bd1f6b68172b8a9f57cf4fe754e
    Dataleap Workshop 2 deck + transcripts; Simon's review (Jul 2026): trimmed, purpose-first
-   Teams rewrite (Oct 2026): dataleap-labs/tahoe PR #985 and follow-ups, agent move (ENG-994), ADRs 0084 and 0098; read at tahoe main ceafa331 (2026-10-29). */}
+   Teams rewrite (Oct 2026): dataleap-labs/tahoe PR #985 and follow-ups, agent move (ENG-994), ADRs 0084 and 0098; read at tahoe main ceafa331 (2026-10-29); move-to-personal and what comes along re-read at ff429533 (2026-11-01). */}
