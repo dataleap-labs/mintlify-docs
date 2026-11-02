@@ -143,6 +143,10 @@ At first, only people who have access to the agent can open its app. To let anyo
 
 People outside your organization open the app as guests. Guests don't need a Dataleap account.
 
+<Frame caption="The share dialog with one guest added by email. Names, email addresses, and the profile picture are blurred.">
+  <img src="/images/apps-share-dialog.svg" alt="An app's share dialog. Above it, the Share button shows a globe. The dialog has the field Add people, teams, or email addresses with an Add button, the owner's row, a guest row with a Guest badge, Invited by email and Can view, a box saying People outside Dataleap can open this app, and How sharing works and Copy link at the bottom." />
+</Frame>
+
 - **Guests confirm their email address with a code.** When a guest opens the app, they click **Continue with email**, enter the address you shared the app with, and type the 6-digit code they get by email. A code works for 10 minutes.
 - **Guests stay signed in.** A guest usually confirms their address once per browser. Guests who get in through a domain confirm it again every 90 days.
 - **You see who is outside.** Guests carry a **Guest** badge in the share dialog, and a line under the list tells you whether people outside your organization can open the app. While they can, the app's **Share** button shows a globe.
@@ -202,4 +206,5 @@ Opening the app in the agent's sidebar doesn't count as a page view.
    Product: dataleap-labs/tahoe PR #917 and follow-ups; ADRs 0072, 0073, 0074, 0075, 0086; read at tahoe main 488c5f74 (2026-10-19).
    UI strings: interface-section.tsx, share-interface-popover.tsx, interface-analytics-view.tsx, interface-preview-card.tsx, interface-gateway/src/pages.ts.
    Requested in #docs-ideas by Wina Tungmiharja, 2026-10-20.
-   Guests and per-viewer views: tahoe PR #1011 (ADR 0096) and ADR 0102; share-interface-popover.tsx, interface-guests.ts, -guest-sign-in.tsx, guest_emails.go, grants.go, agent_access.go, apps SKILL.md; read at tahoe main 04b4aadd (2026-10-30). */}
+   Guests and per-viewer views: tahoe PR #1011 (ADR 0096) and ADR 0102; share-interface-popover.tsx, interface-guests.ts, -guest-sign-in.tsx, guest_emails.go, grants.go, agent_access.go, apps SKILL.md; read at tahoe main 04b4aadd (2026-10-30).
+   Screenshot images/apps-share-dialog.svg: PNG supplied by Kai Klede in #docs-ideas 2026-11-02, cropped to the dialog, names/emails/avatar blurred, wrapped in SVG. */}
