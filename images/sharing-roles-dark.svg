@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-label="The three sharing roles as layers. Can use, in the middle, chats with the agent in their own chat, sees its files, reads its instructions, triggers and tools, and opens its app. Can edit wraps around it and also changes how the agent works, turns it on or off, and sees runs and everyone's chats. Can manage is the outer layer and also changes who has access, deletes the agent and moves it.">
+<rect width="760" height="440" fill="#1c1917"/>
+<ellipse cx="380" cy="220" rx="360" ry="200" fill="#1f2033" stroke="#A5B4FC" stroke-opacity="0.45" stroke-width="1.5"/>
+<ellipse cx="380" cy="280" rx="262" ry="140" fill="#282b4b" stroke="#A5B4FC" stroke-opacity="0.7" stroke-width="1.5"/>
+<ellipse cx="380" cy="340" rx="168" ry="80" fill="#323766" stroke="#A5B4FC" stroke-opacity="1" stroke-width="1.5"/>
+<text x="380" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can manage</text>
+<text x="380" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Everything inside, plus:</text>
+<text x="380" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Changes who has access · Deletes it · Moves it</text>
+<text x="380" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can edit</text>
+<text x="380" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Everything inside, plus:</text>
+<text x="380" y="224" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Changes how it works · Turns it on or off</text>
+<text x="380" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Sees runs and all chats</text>
+<text x="380" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f5f5f4">Can use</text>
+<text x="380" y="326" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Chats in their own chat</text>
+<text x="380" y="348" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Sees its files</text>
+<text x="380" y="370" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Reads instructions, triggers, tools</text>
+<text x="380" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#d6d3d1">Opens its app</text>
+</svg>
