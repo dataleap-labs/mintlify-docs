@@ -47,7 +47,7 @@ The **Analytics** page answers "what's actually happening":
 Your organization's cost and usage figures can also leave Dataleap — into a finance tool, a data warehouse, a scheduled reporting job, or an agent that reports on spend. You get them with an API key from **Workspace Settings** > **API Keys**. The same kind of key can also feed [Integration Activity](/admin/connected-apps-management#integration-activity) into a security tool.
 
 <Info>
-  **API Keys** is only available to admins in organizations on an Enterprise plan, including an Enterprise trial. Other members and plans don't see it.
+  **API Keys** is only available in organizations on an Enterprise plan, including an Enterprise trial. **Owners** and **Admins** create and revoke keys, and **Security reviewers** can see them. Other roles and plans don't see the page.
 </Info>
 
 ### Create a key
@@ -63,6 +63,8 @@ Your organization's cost and usage figures can also leave Dataleap — into a fi
     |---|---|
     | **Cost and usage · Read** | Your organization's cost and usage data. |
     | **Integration activity · Read** | The [Integration Activity](/admin/connected-apps-management#integration-activity) record, for a security tool such as a SIEM. It never includes a tool's input or output. |
+
+    You can only give a key scopes for data you can see yourself. Scopes you can't give are greyed out, so an **Admin** can't create a key with **Integration activity · Read**.
   </Step>
   <Step title="Set an expiry">
     Under **Expiration**, pick **Never**, **30 days**, **90 days**, **1 year**, or **Custom** to choose a date. A key with an expiry stops working at the end of that day. A key set to **Never** keeps working until you revoke it.
@@ -103,6 +105,8 @@ The instructions can be copied only while the key is active.
 The **API Keys** list shows each key's name and the start of the key, its **Scopes**, who created it and when, when it was **Last used**, and its **Status**: **Active**, **Expires soon** (within seven days), **Expired**, or **Revoked**. Expired and revoked keys sit in a separate **Inactive keys** group below the active ones, which you can collapse.
 
 Click a key to open its details: when it expires, what each of its scopes allows, and its agent instructions.
+
+A key belongs to your organization, not to the person who created it. It keeps working if they change role or leave, and any Owner or Admin can revoke it.
 
 To revoke a key, choose **Revoke** in its row's actions menu or at the bottom of its details, and confirm with **Revoke key**. Revoking is permanent, and any job that uses the key stops working. The key moves to **Inactive keys** as **Revoked**.
 

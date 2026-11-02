@@ -9,13 +9,44 @@ Admins get their own area at `app.dataleap.ai/admin`. The **Management** section
 
 Invite people, assign roles, and manage access:
 
-- **Roles:** every member is an **Admin** or a **Member** — switchable per person.
+- **Roles:** every member has one organization role, which decides what they can do in the admin panel. You change it per person in the **Role** column. See [Organization roles](#organization-roles).
 - **Team admins:** members can additionally administer specific teams (shown per user). Whoever creates a team becomes its admin.
-- **Invite Members** handles new joiners. Access requests and invites that haven't been accepted yet have their own tabs: **Pending requests** and **Pending invites**.
+- **Invite Members** handles new joiners. You choose each person's role as you invite them. Access requests and invites that haven't been accepted yet have their own tabs: **Pending requests** and **Pending invites**.
 
 <Frame caption="Members: roles, team-admin rights, invites — one list.">
   <img src="/images/admin-members.png" alt="The Members page of the admin panel showing users with Admin or Member roles, team admin badges, and an Invite Members button" />
 </Frame>
+
+### Organization roles
+
+Every role includes everything a **Member** can do: build agents, run them, and work in teams. The role decides what else someone can do in the admin panel.
+
+Free, Pro, and Max plans have two roles, **Admin** and **Member**. There, **Admin** is the top role. Enterprise plans have five:
+
+| Role | What they can do in the admin panel |
+|---|---|
+| **Owner** | Everything, including **Integration Activity**. Only Owners can make someone an Owner or a Security reviewer. |
+| **Admin** | Runs the organization day to day: members, teams, budgets, billing, analytics, models, integrations, API keys, and organization settings. Has no access to **Integration Activity**. |
+| **Finance admin** | **Budgets** and budget requests, **Billing**, and the cost figures on **Analytics**. Nothing else. |
+| **Security reviewer** | Can look at, but not change, **Organization**, **Analytics** without cost figures, **Models**, **Model Providers**, **Skills**, **Integration Activity**, **Integrations & Permissions**, **Tool Requests**, **Custom Integrations**, **API Keys**, and **Slack**. |
+| **Member** | No admin panel access. |
+
+<Frame caption="On Enterprise plans, the Role menu offers all five roles.">
+  <img src="/images/admin-members-roles.svg" width="514" alt="The Role column on the Members page with one member's menu open, listing Owner, Admin, Finance admin, Security reviewer, and Member" />
+</Frame>
+
+A page your role can only look at opens with its controls turned off. Search, filters, and paging still work.
+
+Who can change what:
+
+- **Owners** can give anyone any role.
+- **Admins** can give the **Admin**, **Finance admin**, and **Member** roles. They can't change or remove an Owner or a Security reviewer.
+- Nobody can change their own role or remove themselves.
+- Emails and approval requests about an area go to everyone whose role manages it. Budget requests, for example, go to Owners, Admins, and Finance admins.
+
+<Note>
+  When your organization moves to an Enterprise plan, its Admins become Owners. If it leaves Enterprise, Owners become Admins, and Finance admins and Security reviewers become Members.
+</Note>
 
 ### Follow up on a pending invite
 
