@@ -61,7 +61,7 @@
         "pages": [
           "share/overview",
           "share/team-spaces",
-          "share/use-only",
+          "share/share-an-agent",
           "share/templates",
           "share/locked-templates",
           "share/when-to-share-what"
@@ -129,7 +129,8 @@
     { "source": "/connect-apps", "destination": "/build/connect-your-tools" },
     { "source": "/add-knowledge", "destination": "/build/add-knowledge" },
     { "source": "/use-templates", "destination": "/share/templates" },
-    { "source": "/usage-and-runs", "destination": "/admin/credits-and-usage" }
+    { "source": "/usage-and-runs", "destination": "/admin/credits-and-usage" },
+    { "source": "/share/use-only", "destination": "/share/share-an-agent" }
   ],
   "contextual": {
     "options": [
