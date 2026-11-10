@@ -68,8 +68,8 @@ Ask for changes in the same chat. Your agent edits the app, checks it, and publi
 
 To see the app on the agent, click **Workflow** in the top right and open the **App** tab. It shows the app with a toolbar above it:
 
-<Frame caption="An app open in the App tab. The toolbar above it shows the published version, the app's name, Reload, Open in new tab, Analytics, and Share.">
-  <img src="/images/app-tab-toolbar.svg" alt="The App tab selected in an agent's side panel. A toolbar shows a v2 badge, the app name Conference radar, Reload, Open in new tab, and Analytics icons, and a Share button. Below it, the app shows its title, three headline figures, and an expandable question." />
+<Frame caption="An app open in the App tab. The toolbar above it shows the published version, the app's name, Reload, Open in new tab, Analytics, Request edits, and Share.">
+  <img src="/images/app-tab-toolbar.svg" alt="The App tab selected in an agent's side panel. A toolbar shows a v4 badge, the app name Bakery workspace, Reload, Open in new tab, and Analytics icons, and the Request edits and Share buttons. Below it, the app shows its title, a Manage orders button, and two headline figures." />
 </Frame>
 
 | You see | What it means |
@@ -81,9 +81,32 @@ To see the app on the agent, click **Workflow** in the top right and open the **
 | **Reload** | Loads the app again |
 | **Open in new tab** | Opens the app at its own address |
 | **Analytics** | Shows who uses the app. See [See who uses it](#see-who-uses-it). |
+| **Request edits** | Lets you click a part of the app and tell your agent what to change. See [Point at what to change](#point-at-what-to-change). |
 | **Share** | Chooses who can open the app. See [Share your app](#share-your-app). A globe on the button means people outside your organization can open it. |
 
 To go back to an earlier version, ask your agent, for example: "Restore the app to v2." It publishes the old version again as a new one. Restoring changes only the app. The agent's database keeps its current data.
+
+### Point at what to change
+
+Instead of describing where something is in the app, click it. Your agent gets the exact part you clicked together with your note, so you don't need to paste a screenshot or explain where to look.
+
+<Steps>
+  <Step title="Turn on Request edits">
+    In the **App** tab, click **Request edits** in the toolbar. Inside the app, the part under your pointer is outlined, and a bar at the bottom reads **Click anything to request an edit**. While it's on, a click picks that part of the app instead of pressing a button or following a link.
+  </Step>
+  <Step title="Click the part you want changed">
+    Click it, type what should change into **What should change?**, and click **Add**. Your request appears above the chat box. Repeat for anything else you want changed.
+  </Step>
+  <Step title="Send your requests">
+    Click **Send** in the bar in the app, or send your next chat message. Your requests go into the agent's chat, and your agent makes the changes.
+  </Step>
+</Steps>
+
+- **Up to five requests per message.** After five, send the message to add more.
+- **Remove a request before you send it** by clicking × on it above the chat box.
+- **Use the app normally again** by clicking **Request edits** again or pressing Esc. Requests you've added stay above the chat box.
+
+You see **Request edits** only if you can edit the agent, and only when you use a mouse or trackpad. It stays greyed out until the app has loaded.
 
 ## Add a button that runs an agent
 
@@ -207,4 +230,5 @@ Opening the app in the agent's sidebar doesn't count as a page view.
    UI strings: interface-section.tsx, share-interface-popover.tsx, interface-analytics-view.tsx, interface-preview-card.tsx, interface-gateway/src/pages.ts.
    Requested in #docs-ideas by Wina Tungmiharja, 2026-10-20.
    Guests and per-viewer views: tahoe PR #1011 (ADR 0096) and ADR 0102; share-interface-popover.tsx, interface-guests.ts, -guest-sign-in.tsx, guest_emails.go, grants.go, agent_access.go, apps SKILL.md; read at tahoe main 04b4aadd (2026-10-30).
-   Screenshot images/apps-share-dialog.svg: PNG supplied by Kai Klede in #docs-ideas 2026-11-02, cropped to the dialog, names/emails/avatar blurred, wrapped in SVG. */}
+   Screenshot images/apps-share-dialog.svg: PNG supplied by Kai Klede in #docs-ideas 2026-11-02, cropped to the dialog, names/emails/avatar blurred, wrapped in SVG.
+   Request edits: tahoe PR #1049 (ADR 0101); request-edits-button.tsx, interface-section.tsx, composer-requests.tsx, sandbox runtime comments.js; read at tahoe main 73696df2 (2026-11-04). */}
