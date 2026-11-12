@@ -17,6 +17,27 @@ Every integration (240+) can be tuned per tool:
   <img src="/images/admin-integrations-permissions.svg" alt="The Integrations & Permissions page showing an integration's read-only and write tools, each individually allowed or blocked, with the Restricted section above the list of all integrations" />
 </Frame>
 
+### Change the defaults for all integrations
+
+Click the settings icon next to the **Integrations & Permissions** title to open **Integrations & Permissions Settings**. It has two switches:
+
+| Switch | What it does |
+|---|---|
+| **Block all integrations by default** | When on, every integration is blocked until you explicitly allow it. When off, every integration is allowed until you explicitly restrict it. |
+| **Make blocked integrations invisible to users** | Hides an integration from someone when none of its tools are allowed for them through personal, team, or organization permissions. Admins still see and manage every integration on this page. |
+
+Click **Save changes** to apply them.
+
+### What blocking a tool does to agents
+
+Blocking a tool can stop agents that already use it. This happens whether you block a single tool, block it for a team or a user, or turn on **Block all integrations by default**.
+
+- Every enabled agent that runs on its own, on a trigger such as a schedule, is turned off if it uses a newly blocked tool. A run in progress stops.
+- The owner of each personal agent that was turned off gets an email listing the agents.
+- Allowing the tool again doesn't turn these agents back on. Their owners turn them back on with the switch next to the agent's triggers.
+
+Before you save a change to **Block all integrations by default**, the settings show how many agents that run on their own will be turned off. When you block tools one at a time, you don't see that count before you click **Save**.
+
 ## Tool Requests
 
 When someone needs a restricted tool, they don't email IT — they request it in Dataleap, and admins **approve or reject** with one click. Every request keeps its status, so decisions are documented. Filter the list by status with **All**, **Open**, **Accepted**, **Rejected**, and **Stale**.
