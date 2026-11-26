@@ -10,7 +10,7 @@ Triggers are how agents **wake up**. Instead of you starting each run, the agent
 | Type | The agent runs… | Best for | Watch out |
 |---|---|---|---|
 | **Manual** | when you start it | experiments, one-off jobs, sensitive workflows where a human decides every run | doesn't scale beyond you |
-| **Scheduled** | on a fixed cadence (hourly, daily, weekly) | digests, briefings, genuinely time-based reports | usually not the best option — runs whether or not there's work |
+| **Scheduled** | on a fixed cadence (hourly, daily, weekly) | digests, briefings, genuinely time-based reports | usually not the best option — runs whether or not there's work (though a [quick check](#skip-quiet-runs-with-a-quick-check) can skip the quiet runs) |
 | **Event-based** | only when something happens (Slack message, webhook, integration event) | reactive workflows — "when X happens, do Y" | design for missed events in very bursty scenarios |
 
 The rule of thumb: **event-based triggers are often the best choice** — the agent runs only when there is actual work, and it reacts instantly. Scheduled triggers can work, and manual triggers have their place for workflows a human should start deliberately. But the rule that holds for every type: **make the trigger as precise as possible**.
@@ -36,9 +36,9 @@ Specific triggers = fewer runs, lower cost.
 
 ## Skip quiet runs with a quick check
 
-Some triggers can't be made precise enough. A schedule that looks for new orders still wakes the agent every time, even when there are none. In cases like this, the agent can add a quick check that runs first, before the AI does anything.
+Some triggers can't be made precise enough. A schedule that looks for new orders still wakes the agent every time, even when there are none. In cases like this, the agent can add a quick check: a small piece of fixed logic, like a filter, that runs in code before the AI does anything. In the agent's instructions, this check is called the Entry command.
 
-- **The check finds nothing to do.** The run ends right there and shows as **Success**, with the check's short message as its result. No AI step runs, so a quiet run costs almost nothing.
+- **The check finds nothing to do.** The run ends right there and shows as **Success**, with the check's short message as its result. No AI step runs, so a quiet run uses no credits, except for any paid tool calls the check makes.
 - **The check finds work, fails, or can't decide.** The agent takes over as usual. It sees what the check did and found, so it can pick up from there.
 
 The check runs whenever a trigger starts a run, and when you start a run by hand. It never runs when someone chats with the agent or when another agent calls it.
