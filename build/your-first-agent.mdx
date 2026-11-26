@@ -108,6 +108,38 @@ Every run in the agent's **Runs** list shows one of four statuses. Open a run to
 
 A **Degraded** or **Failed** run comes with a one-line reason, such as *A connection, permission or quota problem blocked the work.* You see it in the **Runs** list and when you open the run.
 
+#### Correct a run's status
+
+If a run got the wrong status — say it's marked **Failed** for something you meant it to do — you can change it. You need [**Can edit**](/share/share-an-agent) on the agent, and the run has to be finished.
+
+<Steps>
+<Step title="Open the run">
+
+In the agent's **Runs** list, open the run.
+
+</Step>
+<Step title="Pick the right status">
+
+Next to **Status**, click **Change**, then choose **Mark as Success**, **Mark as Degraded**, or **Mark as Failed**.
+
+</Step>
+<Step title="Say why">
+
+Write what was intended and why, then click **Save**. A reason is required and can be up to 500 characters.
+
+</Step>
+</Steps>
+
+The run now shows the status you picked, in the **Runs** list and everywhere else it appears. Your reason becomes its one-line reason, followed by *Corrected by* and your name.
+
+Later runs of the same agent in the same situation get that status too. So describe the situation in your reason, not just this one run. A later run that got its status this way shows a one-line reason that explains why, even when it's a **Success**. Later runs don't pick up a new correction straight away — it can take up to a day.
+
+To change your mind, click **Change** again. **Edit reason** lets you rewrite the reason, and **Remove correction** puts back the status the run had before.
+
+If a run's status is right, you can click **Confirm** next to it. The run keeps its status and shows *Confirmed by* and your name. **Remove confirmation** in the **Change** menu undoes it.
+
+You can also do this in the agent's chat: tell the agent which run got the wrong status and why, and it corrects the status for you.
+
 <Card title="Watch: Your first agent" icon="clapperboard" href="/video-series/section-2#your-first-agent" horizontal>
   See the build flow in action.
 </Card>
@@ -124,4 +156,5 @@ A **Degraded** or **Failed** run comes with a one-line reason, such as *A connec
 {/* Sources:
    https://www.notion.so/39522bd1f6b68153ae51ed300874ca95
    https://www.notion.so/a0822bd1f6b68301a250818d30e8ab93
-   Dataleap Workshop 2 deck + Simon's review (Jul 2026): chat-first flow */}
+   Dataleap Workshop 2 deck + Simon's review (Jul 2026): chat-first flow
+   Correct a run's status: tahoe PRs #1300 + #1328 (Nov 2026) */}
