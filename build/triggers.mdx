@@ -34,6 +34,21 @@ Use trigger conditions so the agent does not run on irrelevant events — every 
 
 Specific triggers = fewer runs, lower cost.
 
+## Skip quiet runs with a quick check
+
+Some triggers can't be made precise enough. A schedule that looks for new orders still wakes the agent every time, even when there are none. In cases like this, the agent can add a quick check that runs first, before the AI does anything.
+
+- **The check finds nothing to do.** The run ends right there and shows as **Success**, with the check's short message as its result. No AI step runs, so a quiet run costs almost nothing.
+- **The check finds work, fails, or can't decide.** The agent takes over as usual. It sees what the check did and found, so it can pick up from there.
+
+The check runs whenever a trigger starts a run, and when you start a run by hand. It never runs when someone chats with the agent or when another agent calls it.
+
+You don't set this up yourself. When you create or change a trigger where most runs would find nothing, or where a fixed rule decides what happens, the agent can offer the check in plain words. It adds the check only if you agree. You can also ask for it in the agent's chat, for example: "Most runs find nothing. Add a quick check that skips the run when there's nothing new." The agent's instructions then get one line that starts with `Entry command:` and says what the check decides. To remove the check, ask the agent.
+
+<Note>
+  A quick check fits when a simple rule decides: there are no new orders, the email isn't from a customer, or the ticket was already handled. It doesn't fit when each run needs judgment, such as reading, weighing, or writing. Most agents don't need one.
+</Note>
+
 ## Manual triggers you already have
 
 The best trigger is often a quick action you already do in your daily tools — no new infrastructure needed:
