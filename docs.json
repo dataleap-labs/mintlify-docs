@@ -41,6 +41,7 @@
           "build/add-knowledge",
           "build/agent-database",
           "build/triggers",
+          "build/check-your-runs",
           "build/versioning"
         ]
       },
