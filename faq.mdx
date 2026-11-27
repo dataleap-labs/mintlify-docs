@@ -176,6 +176,20 @@ Admins see it organization-wide: every tool call in [Integration Activity](/admi
 
 </Accordion>
 
+<Accordion title="Can I delete an agent's old runs?">
+
+Yes. Dataleap keeps every run unless you choose otherwise. If you have **Can manage** on an agent, you can have its runs deleted once they reach a certain age. This helps when runs hold personal data, such as email addresses or form answers, that you shouldn't keep for long.
+
+Open the agent's **Runs** and click **…** next to **Previous Runs**. Under **Delete runs older than**, choose **7 days**, **30 days**, or **90 days**, then confirm with **Delete old runs**.
+
+Runs older than that disappear from **Runs** and the **Activity** page right away, and are deleted for good within the hour. From then on, each run is deleted once it reaches that age. Age counts from a run's last activity, so a run that's still working stays. Deleted runs can't be restored.
+
+Chats that people with **Can use** have with the agent are deleted the same way. If someone writes again after their chat was deleted, a new chat starts.
+
+Deleting a run also removes its entries from [Integration Activity](/admin/connected-apps-management). It doesn't touch the agent's knowledge, its database, files the agent saved, or files attached in a chat, and money already spent stays in your usage. To keep every run again, choose **Never**.
+
+</Accordion>
+
 </AccordionGroup>
 
 <CardGroup cols={2}>
@@ -187,4 +201,4 @@ Admins see it organization-wide: every tool call in [Integration Activity](/admi
   </Card>
 </CardGroup>
 
-{/* Sources: real Q&A from customer Level 2 workshops (Jul 2026 transcripts); enterprise question list reviewed Aug 2026 */}
+{/* Sources: real Q&A from customer Level 2 workshops (Jul 2026 transcripts); enterprise question list reviewed Aug 2026; deleting old runs: dataleap-labs/tahoe#1177 (Nov 2026) */}
