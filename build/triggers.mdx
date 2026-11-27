@@ -10,7 +10,7 @@ Triggers are how agents **wake up**. Instead of you starting each run, the agent
 | Type | The agent runs… | Best for | Watch out |
 |---|---|---|---|
 | **Manual** | when you start it | experiments, one-off jobs, sensitive workflows where a human decides every run | doesn't scale beyond you |
-| **Scheduled** | on a fixed cadence (hourly, daily, weekly) | digests, briefings, genuinely time-based reports | usually not the best option — runs whether or not there's work (though a [quick check](#skip-quiet-runs-with-a-quick-check) can skip the quiet runs) |
+| **Scheduled** | on a fixed cadence (hourly, daily, weekly) | digests, briefings, genuinely time-based reports | usually not the best option — runs whether or not there's work (though an [Entry command](#skip-quiet-runs-with-an-entry-command) can skip the quiet runs) |
 | **Event-based** | only when something happens (Slack message, webhook, integration event) | reactive workflows — "when X happens, do Y" | design for missed events in very bursty scenarios |
 
 The rule of thumb: **event-based triggers are often the best choice** — the agent runs only when there is actual work, and it reacts instantly. Scheduled triggers can work, and manual triggers have their place for workflows a human should start deliberately. But the rule that holds for every type: **make the trigger as precise as possible**.
@@ -34,19 +34,25 @@ Use trigger conditions so the agent does not run on irrelevant events — every 
 
 Specific triggers = fewer runs, lower cost.
 
-## Skip quiet runs with a quick check
+## Skip quiet runs with an Entry command
 
-Some triggers can't be made precise enough. A schedule that looks for new orders still wakes the agent every time, even when there are none. In cases like this, the agent can add a quick check: a small piece of fixed logic, like a filter, that runs in code before the AI does anything. In the agent's instructions, this check is called the Entry command.
+Some triggers can't be made precise enough. A schedule that looks for new orders still wakes the agent every time, even when there are none. For cases like this, your agent can start each triggered run with an Entry command: a script, usually in Python, that runs before the AI does anything.
 
-- **The check finds nothing to do.** The run ends right there and shows as **Success**, with the check's short message as its result. No AI step runs, so a quiet run uses no credits, except for any paid tool calls the check makes.
-- **The check finds work, fails, or can't decide.** The agent takes over as usual. It sees what the check did and found, so it can pick up from there.
+You can use an Entry command in two ways:
 
-The check runs whenever a trigger starts a run, and when you start a run by hand. It never runs when someone chats with the agent or when another agent calls it.
+- **Filter before the AI.** The script checks whether there's anything to do, such as new orders or an email from a customer. If there isn't, the run ends right there.
+- **Do the whole job in code.** When fixed rules decide every step, the script can do the work itself and end the run without the AI.
 
-You don't set this up yourself. When you create or change a trigger where most runs would find nothing, or where a fixed rule decides what happens, the agent can offer the check in plain words. It adds the check only if you agree. You can also ask for it in the agent's chat, for example: "Most runs find nothing. Add a quick check that skips the run when there's nothing new." The agent's instructions then get one line that starts with `Entry command:` and says what the check decides. To remove the check, ask the agent.
+A run the script ends shows as **Success**, with the script's short message as its result. It uses no credits, except for any paid tool calls the script makes.
+
+If the script doesn't end the run, or fails unexpectedly, the agent takes over as usual. It sees what the script did and returned, so it can finish the work and repair the script for future runs.
+
+The Entry command runs whenever a trigger starts a run, and when you start a run by hand. It never runs when someone chats with the agent or when another agent calls it.
+
+You don't write the script yourself. When you create or change a trigger where most runs would find nothing, or where a fixed rule decides what happens, the agent can offer one. It may describe it in plain words, as a quick check that skips the AI when there's nothing new. It adds the Entry command only if you agree. You can also ask for one in the agent's chat, for example: "Most runs find nothing. Add an Entry command that ends the run when there's nothing new." The agent's instructions then get one line that starts with `Entry command:` and says what the script decides. To remove the Entry command, ask the agent.
 
 <Note>
-  A quick check fits when a simple rule decides: there are no new orders, the email isn't from a customer, or the ticket was already handled. It doesn't fit when each run needs judgment, such as reading, weighing, or writing. Most agents don't need one.
+  An Entry command fits when simple rules decide: there are no new orders, the email isn't from a customer, or the ticket was already handled. It doesn't fit when each run needs judgment, such as reading, weighing, or writing. Most agents don't need one.
 </Note>
 
 ## Manual triggers you already have
