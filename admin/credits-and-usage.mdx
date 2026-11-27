@@ -119,6 +119,7 @@ Outside the admin panel, everyone sees their own picture: **Usage** in the sideb
 | Lever | Effect |
 |---|---|
 | [Event triggers instead of frequent polling](/build/triggers) | Agents run only when there's real work — ~100x cheaper than tight schedules. |
+| [An Entry command before the AI](/build/triggers#skip-quiet-runs-with-an-entry-command) | A script filters out triggered runs that have nothing to do, or does fixed-rule work itself. Those runs end before the AI starts and use no credits, except for any paid tool calls the script makes. |
 | [Programmatic tool calling](/scale/programmatic-tool-calling) | Deterministic workflows use far fewer credits — 30–80% reduction. |
 | [Model tiers](/scale/sub-agents-and-intelligence-levels#model-tiers) | Pro or Expert to build, Basic to run; move up only when runs struggle — a higher tier can cost 3–4x more. |
 | Optimized instructions | Clear instructions reduce iterations per run — fewer loops, fewer credits. |
