@@ -108,6 +108,19 @@ Every run in the agent's **Runs** list shows one of four statuses. Open a run to
 
 A **Degraded** or **Failed** run comes with a one-line reason, such as *A connection, permission or quota problem blocked the work.* You see it in the **Runs** list and when you open the run.
 
+#### Get notified when a run needs you
+
+Dataleap emails you when a run hits a technical problem or the agent asks for help. It doesn't notify you about runs that finish but fall short.
+
+| What happened | What you get |
+| --- | --- |
+| The run stopped because of a technical error. | An email titled *Agent execution failed* with the error message. |
+| The agent got stuck during the run — for example, it kept failing or was missing information or a permission — and flagged it. | An email titled *Agent needs attention* with a link to the run. If you've connected your own Slack account, you also get it as a Slack direct message. |
+
+A run that finishes but is marked **Degraded** or **Failed** doesn't send an email or message. Its status and reason show only in the **Runs** list, so check the list for agents that matter to you. Chats in the agent's chat don't send alerts; only runs do.
+
+Alerts go to the agent's owner. For a team agent, they go to the person who created it. If that person can no longer edit the agent, everyone with **Can manage** access gets them instead.
+
 <Card title="Watch: Your first agent" icon="clapperboard" href="/video-series/section-2#your-first-agent" horizontal>
   See the build flow in action.
 </Card>
